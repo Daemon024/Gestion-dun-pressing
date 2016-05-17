@@ -15,7 +15,6 @@ namespace Gestion_dun_pressing
         public Connexion()
         {
             InitializeComponent();
-            this.CenterToScreen();
         }
     }
 }

@@ -111,7 +111,11 @@
             this.Controls.Add(this.idLbl);
             this.Controls.Add(this.title2Lbl);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Connexion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connexion";
             this.ResumeLayout(false);
             this.PerformLayout();
