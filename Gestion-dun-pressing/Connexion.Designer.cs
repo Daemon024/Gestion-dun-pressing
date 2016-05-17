@@ -98,6 +98,7 @@
             this.connectBtn.TabIndex = 6;
             this.connectBtn.Text = "Se connecter";
             this.connectBtn.UseVisualStyleBackColor = true;
+            this.connectBtn.Click += new System.EventHandler(this.connectBtn_Click);
             // 
             // Connexion
             // 

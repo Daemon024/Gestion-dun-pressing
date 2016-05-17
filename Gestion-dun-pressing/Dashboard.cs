@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace Gestion_dun_pressing
 {
-    public partial class Connexion : Form
+    public partial class Dashboard : Form
     {
-        public Connexion()
+        public Dashboard()
         {
             InitializeComponent();
-        }
-
-        private void connectBtn_Click(object sender, EventArgs e)
-        {
-            Dashboard dashboardWindow = new Dashboard();
-            dashboardWindow.ShowDialog();
-            this.Close();
         }
     }
 }
