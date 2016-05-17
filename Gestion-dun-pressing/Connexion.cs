@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace Gestion_dun_pressing
 {
-    public partial class Form1 : Form
+    public partial class Connexion : Form
     {
-        public Form1()
+        public Connexion()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
     }
 }
