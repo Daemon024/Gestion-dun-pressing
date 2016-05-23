@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.questionLbl = new System.Windows.Forms.Label();
             this.statLbl = new System.Windows.Forms.Label();
             this.gererClientBtn = new System.Windows.Forms.Button();
@@ -89,6 +89,7 @@
             this.gererProduitBtn.TabIndex = 3;
             this.gererProduitBtn.Text = "Gérer les produits";
             this.gererProduitBtn.UseVisualStyleBackColor = false;
+            this.gererProduitBtn.Click += new System.EventHandler(this.gererProduitBtn_Click);
             // 
             // gererEmployeBtn
             // 
@@ -113,37 +114,37 @@
             // 
             // CAChart
             // 
-            chartArea7.Name = "ChartArea1";
-            this.CAChart.ChartAreas.Add(chartArea7);
+            chartArea9.Name = "ChartArea1";
+            this.CAChart.ChartAreas.Add(chartArea9);
             this.CAChart.Location = new System.Drawing.Point(27, 505);
             this.CAChart.Name = "CAChart";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series7.Name = "ChiffreAffaire";
-            this.CAChart.Series.Add(series7);
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series9.Name = "ChiffreAffaire";
+            this.CAChart.Series.Add(series9);
             this.CAChart.Size = new System.Drawing.Size(1021, 531);
             this.CAChart.TabIndex = 6;
             this.CAChart.Text = "Chiffre d\'affaire";
-            title4.Name = "Vide pour le titre en label";
-            this.CAChart.Titles.Add(title4);
+            title5.Name = "Vide pour le titre en label";
+            this.CAChart.Titles.Add(title5);
             // 
             // typesProduitsChart
             // 
-            chartArea8.Name = "ChartArea1";
-            this.typesProduitsChart.ChartAreas.Add(chartArea8);
-            legend4.Alignment = System.Drawing.StringAlignment.Center;
-            legend4.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDot;
-            legend4.Name = "Legend1";
-            this.typesProduitsChart.Legends.Add(legend4);
+            chartArea10.Name = "ChartArea1";
+            this.typesProduitsChart.ChartAreas.Add(chartArea10);
+            legend5.Alignment = System.Drawing.StringAlignment.Center;
+            legend5.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDot;
+            legend5.Name = "Legend1";
+            this.typesProduitsChart.Legends.Add(legend5);
             this.typesProduitsChart.Location = new System.Drawing.Point(1083, 505);
             this.typesProduitsChart.Name = "typesProduitsChart";
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series8.LabelForeColor = System.Drawing.Color.White;
-            series8.Legend = "Legend1";
-            series8.Name = "TypesProduits";
-            series8.YValuesPerPoint = 2;
-            this.typesProduitsChart.Series.Add(series8);
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series10.LabelForeColor = System.Drawing.Color.White;
+            series10.Legend = "Legend1";
+            series10.Name = "TypesProduits";
+            series10.YValuesPerPoint = 2;
+            this.typesProduitsChart.Series.Add(series10);
             this.typesProduitsChart.Size = new System.Drawing.Size(511, 531);
             this.typesProduitsChart.TabIndex = 7;
             this.typesProduitsChart.Text = "Types de produits";

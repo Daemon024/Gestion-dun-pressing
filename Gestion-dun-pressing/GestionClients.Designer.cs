@@ -36,19 +36,19 @@
             this.validerBtn = new System.Windows.Forms.Button();
             this.modifierBtn = new System.Windows.Forms.Button();
             this.supprimerBtn = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listeClientsListView = new System.Windows.Forms.ListView();
             this.mdpLbl = new System.Windows.Forms.Label();
             this.adresseLbl = new System.Windows.Forms.Label();
             this.prenomLbl = new System.Windows.Forms.Label();
             this.nomLbl = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.nomTxtBox = new System.Windows.Forms.TextBox();
+            this.prenomTxtBox = new System.Windows.Forms.TextBox();
+            this.mdpTxtBox = new System.Windows.Forms.TextBox();
+            this.emailTxtBox = new System.Windows.Forms.TextBox();
+            this.villeTxtBox = new System.Windows.Forms.TextBox();
+            this.telTxtBox = new System.Windows.Forms.TextBox();
+            this.codePostalTxtBox = new System.Windows.Forms.TextBox();
+            this.adresseTxtBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // titreLbl
@@ -136,13 +136,13 @@
             this.supprimerBtn.Text = "Supprimer";
             this.supprimerBtn.UseVisualStyleBackColor = false;
             // 
-            // listView1
+            // listeClientsListView
             // 
-            this.listView1.Location = new System.Drawing.Point(52, 519);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1518, 521);
-            this.listView1.TabIndex = 8;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listeClientsListView.Location = new System.Drawing.Point(52, 519);
+            this.listeClientsListView.Name = "listeClientsListView";
+            this.listeClientsListView.Size = new System.Drawing.Size(1518, 521);
+            this.listeClientsListView.TabIndex = 8;
+            this.listeClientsListView.UseCompatibleStateImageBehavior = false;
             // 
             // mdpLbl
             // 
@@ -180,61 +180,61 @@
             this.nomLbl.TabIndex = 11;
             this.nomLbl.Text = "Nom : ";
             // 
-            // textBox1
+            // nomTxtBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(584, 131);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(164, 31);
-            this.textBox1.TabIndex = 14;
+            this.nomTxtBox.Location = new System.Drawing.Point(584, 131);
+            this.nomTxtBox.Name = "nomTxtBox";
+            this.nomTxtBox.Size = new System.Drawing.Size(164, 31);
+            this.nomTxtBox.TabIndex = 14;
             // 
-            // textBox2
+            // prenomTxtBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(586, 193);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(164, 31);
-            this.textBox2.TabIndex = 15;
+            this.prenomTxtBox.Location = new System.Drawing.Point(586, 193);
+            this.prenomTxtBox.Name = "prenomTxtBox";
+            this.prenomTxtBox.Size = new System.Drawing.Size(164, 31);
+            this.prenomTxtBox.TabIndex = 15;
             // 
-            // textBox3
+            // mdpTxtBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(586, 252);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(164, 31);
-            this.textBox3.TabIndex = 16;
+            this.mdpTxtBox.Location = new System.Drawing.Point(586, 252);
+            this.mdpTxtBox.Name = "mdpTxtBox";
+            this.mdpTxtBox.Size = new System.Drawing.Size(164, 31);
+            this.mdpTxtBox.TabIndex = 16;
             // 
-            // textBox4
+            // emailTxtBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(951, 252);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(164, 31);
-            this.textBox4.TabIndex = 19;
+            this.emailTxtBox.Location = new System.Drawing.Point(951, 252);
+            this.emailTxtBox.Name = "emailTxtBox";
+            this.emailTxtBox.Size = new System.Drawing.Size(164, 31);
+            this.emailTxtBox.TabIndex = 19;
             // 
-            // textBox5
+            // villeTxtBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(951, 193);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(164, 31);
-            this.textBox5.TabIndex = 18;
+            this.villeTxtBox.Location = new System.Drawing.Point(951, 193);
+            this.villeTxtBox.Name = "villeTxtBox";
+            this.villeTxtBox.Size = new System.Drawing.Size(164, 31);
+            this.villeTxtBox.TabIndex = 18;
             // 
-            // textBox6
+            // telTxtBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(951, 131);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(164, 31);
-            this.textBox6.TabIndex = 17;
+            this.telTxtBox.Location = new System.Drawing.Point(951, 131);
+            this.telTxtBox.Name = "telTxtBox";
+            this.telTxtBox.Size = new System.Drawing.Size(164, 31);
+            this.telTxtBox.TabIndex = 17;
             // 
-            // textBox7
+            // codePostalTxtBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(587, 314);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(164, 31);
-            this.textBox7.TabIndex = 21;
+            this.codePostalTxtBox.Location = new System.Drawing.Point(587, 314);
+            this.codePostalTxtBox.Name = "codePostalTxtBox";
+            this.codePostalTxtBox.Size = new System.Drawing.Size(164, 31);
+            this.codePostalTxtBox.TabIndex = 21;
             // 
-            // textBox8
+            // adresseTxtBox
             // 
-            this.textBox8.Location = new System.Drawing.Point(951, 311);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(164, 31);
-            this.textBox8.TabIndex = 20;
+            this.adresseTxtBox.Location = new System.Drawing.Point(951, 311);
+            this.adresseTxtBox.Name = "adresseTxtBox";
+            this.adresseTxtBox.Size = new System.Drawing.Size(164, 31);
+            this.adresseTxtBox.TabIndex = 20;
             // 
             // GestionClients
             // 
@@ -242,19 +242,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1624, 1079);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.codePostalTxtBox);
+            this.Controls.Add(this.adresseTxtBox);
+            this.Controls.Add(this.emailTxtBox);
+            this.Controls.Add(this.villeTxtBox);
+            this.Controls.Add(this.telTxtBox);
+            this.Controls.Add(this.mdpTxtBox);
+            this.Controls.Add(this.prenomTxtBox);
+            this.Controls.Add(this.nomTxtBox);
             this.Controls.Add(this.adresseLbl);
             this.Controls.Add(this.prenomLbl);
             this.Controls.Add(this.nomLbl);
             this.Controls.Add(this.mdpLbl);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listeClientsListView);
             this.Controls.Add(this.supprimerBtn);
             this.Controls.Add(this.modifierBtn);
             this.Controls.Add(this.validerBtn);
@@ -285,18 +285,18 @@
         private System.Windows.Forms.Button validerBtn;
         private System.Windows.Forms.Button modifierBtn;
         private System.Windows.Forms.Button supprimerBtn;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listeClientsListView;
         private System.Windows.Forms.Label mdpLbl;
         private System.Windows.Forms.Label adresseLbl;
         private System.Windows.Forms.Label prenomLbl;
         private System.Windows.Forms.Label nomLbl;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox nomTxtBox;
+        private System.Windows.Forms.TextBox prenomTxtBox;
+        private System.Windows.Forms.TextBox mdpTxtBox;
+        private System.Windows.Forms.TextBox emailTxtBox;
+        private System.Windows.Forms.TextBox villeTxtBox;
+        private System.Windows.Forms.TextBox telTxtBox;
+        private System.Windows.Forms.TextBox codePostalTxtBox;
+        private System.Windows.Forms.TextBox adresseTxtBox;
     }
 }

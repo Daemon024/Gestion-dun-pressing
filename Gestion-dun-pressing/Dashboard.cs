@@ -51,5 +51,11 @@ namespace Gestion_dun_pressing
             GestionEmployes gestionEmployesForm = new GestionEmployes();
             gestionEmployesForm.Show();
         }
+
+        private void gererProduitBtn_Click(object sender, EventArgs e)
+        {
+            GestionProduits gestionProduitsForm = new GestionProduits();
+            gestionProduitsForm.Show();
+        }
     }
 }
