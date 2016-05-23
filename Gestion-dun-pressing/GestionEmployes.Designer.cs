@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.salaireTxtBox = new System.Windows.Forms.TextBox();
+            this.typeContratTxtBox = new System.Windows.Forms.TextBox();
+            this.dateArriveeTxtBox = new System.Windows.Forms.TextBox();
+            this.mdpTxtBox = new System.Windows.Forms.TextBox();
+            this.prenomTxtBox = new System.Windows.Forms.TextBox();
+            this.nomTxtBox = new System.Windows.Forms.TextBox();
             this.prenomLbl = new System.Windows.Forms.Label();
             this.nomLbl = new System.Windows.Forms.Label();
             this.mdpLbl = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listeEmployesListView = new System.Windows.Forms.ListView();
             this.supprimerBtn = new System.Windows.Forms.Button();
             this.modifierBtn = new System.Windows.Forms.Button();
             this.validerBtn = new System.Windows.Forms.Button();
@@ -47,47 +47,47 @@
             this.titreLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox4
+            // salaireTxtBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(981, 259);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(164, 31);
-            this.textBox4.TabIndex = 40;
+            this.salaireTxtBox.Location = new System.Drawing.Point(981, 259);
+            this.salaireTxtBox.Name = "salaireTxtBox";
+            this.salaireTxtBox.Size = new System.Drawing.Size(164, 31);
+            this.salaireTxtBox.TabIndex = 40;
             // 
-            // textBox5
+            // typeContratTxtBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(981, 200);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(164, 31);
-            this.textBox5.TabIndex = 39;
+            this.typeContratTxtBox.Location = new System.Drawing.Point(981, 200);
+            this.typeContratTxtBox.Name = "typeContratTxtBox";
+            this.typeContratTxtBox.Size = new System.Drawing.Size(164, 31);
+            this.typeContratTxtBox.TabIndex = 39;
             // 
-            // textBox6
+            // dateArriveeTxtBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(981, 138);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(164, 31);
-            this.textBox6.TabIndex = 38;
+            this.dateArriveeTxtBox.Location = new System.Drawing.Point(981, 138);
+            this.dateArriveeTxtBox.Name = "dateArriveeTxtBox";
+            this.dateArriveeTxtBox.Size = new System.Drawing.Size(164, 31);
+            this.dateArriveeTxtBox.TabIndex = 38;
             // 
-            // textBox3
+            // mdpTxtBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(546, 259);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(164, 31);
-            this.textBox3.TabIndex = 37;
+            this.mdpTxtBox.Location = new System.Drawing.Point(546, 259);
+            this.mdpTxtBox.Name = "mdpTxtBox";
+            this.mdpTxtBox.Size = new System.Drawing.Size(164, 31);
+            this.mdpTxtBox.TabIndex = 37;
             // 
-            // textBox2
+            // prenomTxtBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(546, 200);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(164, 31);
-            this.textBox2.TabIndex = 36;
+            this.prenomTxtBox.Location = new System.Drawing.Point(546, 200);
+            this.prenomTxtBox.Name = "prenomTxtBox";
+            this.prenomTxtBox.Size = new System.Drawing.Size(164, 31);
+            this.prenomTxtBox.TabIndex = 36;
             // 
-            // textBox1
+            // nomTxtBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(544, 138);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(164, 31);
-            this.textBox1.TabIndex = 35;
+            this.nomTxtBox.Location = new System.Drawing.Point(544, 138);
+            this.nomTxtBox.Name = "nomTxtBox";
+            this.nomTxtBox.Size = new System.Drawing.Size(164, 31);
+            this.nomTxtBox.TabIndex = 35;
             // 
             // prenomLbl
             // 
@@ -116,13 +116,13 @@
             this.mdpLbl.TabIndex = 31;
             this.mdpLbl.Text = "Mot de passe :";
             // 
-            // listView1
+            // listeEmployesListView
             // 
-            this.listView1.Location = new System.Drawing.Point(53, 528);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1518, 521);
-            this.listView1.TabIndex = 30;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listeEmployesListView.Location = new System.Drawing.Point(53, 528);
+            this.listeEmployesListView.Name = "listeEmployesListView";
+            this.listeEmployesListView.Size = new System.Drawing.Size(1518, 521);
+            this.listeEmployesListView.TabIndex = 30;
+            this.listeEmployesListView.UseCompatibleStateImageBehavior = false;
             // 
             // supprimerBtn
             // 
@@ -205,16 +205,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1624, 1079);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.salaireTxtBox);
+            this.Controls.Add(this.typeContratTxtBox);
+            this.Controls.Add(this.dateArriveeTxtBox);
+            this.Controls.Add(this.mdpTxtBox);
+            this.Controls.Add(this.prenomTxtBox);
+            this.Controls.Add(this.nomTxtBox);
             this.Controls.Add(this.prenomLbl);
             this.Controls.Add(this.nomLbl);
             this.Controls.Add(this.mdpLbl);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listeEmployesListView);
             this.Controls.Add(this.supprimerBtn);
             this.Controls.Add(this.modifierBtn);
             this.Controls.Add(this.validerBtn);
@@ -233,16 +233,16 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox salaireTxtBox;
+        private System.Windows.Forms.TextBox typeContratTxtBox;
+        private System.Windows.Forms.TextBox dateArriveeTxtBox;
+        private System.Windows.Forms.TextBox mdpTxtBox;
+        private System.Windows.Forms.TextBox prenomTxtBox;
+        private System.Windows.Forms.TextBox nomTxtBox;
         private System.Windows.Forms.Label prenomLbl;
         private System.Windows.Forms.Label nomLbl;
         private System.Windows.Forms.Label mdpLbl;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listeEmployesListView;
         private System.Windows.Forms.Button supprimerBtn;
         private System.Windows.Forms.Button modifierBtn;
         private System.Windows.Forms.Button validerBtn;
