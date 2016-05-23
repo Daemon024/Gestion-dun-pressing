@@ -31,6 +31,11 @@ namespace Gestion_dun_pressing
             CAChart.Series["ChiffreAffaire"].Points.AddXY("Oct", "13 000");
             CAChart.Series["ChiffreAffaire"].Points.AddXY("Nov", "1 000");
             CAChart.Series["ChiffreAffaire"].Points.AddXY("Déc", "20 000");
+
+            typesProduitsChart.Series["TypesProduits"].Points.Add(25);
+            typesProduitsChart.Series["TypesProduits"].Points.Add(38);
+            typesProduitsChart.Series["TypesProduits"].Points[0].AxisLabel = "Chemises";
+            typesProduitsChart.Series["TypesProduits"].Points[1].AxisLabel = "Pantalons";
         }
     }
 }
