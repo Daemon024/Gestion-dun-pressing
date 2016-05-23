@@ -39,5 +39,11 @@ namespace Gestion_dun_pressing
             typesProduitsChart.Series["TypesProduits"].Points[1].LegendText = "Pantalons";
             typesProduitsChart.Series["TypesProduits"].Points[1].AxisLabel = "38%";
         }
+
+        private void gererClientBtn_Click(object sender, EventArgs e)
+        {
+            GestionClients gestionClientsForm = new GestionClients();
+            gestionClientsForm.Show();
+        }
     }
 }
