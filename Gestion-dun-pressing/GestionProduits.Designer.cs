@@ -31,7 +31,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.identifiantTxtBox = new System.Windows.Forms.TextBox();
             this.identifiantLbl = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listeProduitsListView = new System.Windows.Forms.ListView();
             this.supprimerBtn = new System.Windows.Forms.Button();
             this.modifierBtn = new System.Windows.Forms.Button();
             this.validerBtn = new System.Windows.Forms.Button();
@@ -62,13 +62,13 @@
             this.identifiantLbl.TabIndex = 50;
             this.identifiantLbl.Text = "Identifiant :";
             // 
-            // listView1
+            // listeProduitsListView
             // 
-            this.listView1.Location = new System.Drawing.Point(53, 398);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1518, 651);
-            this.listView1.TabIndex = 48;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listeProduitsListView.Location = new System.Drawing.Point(53, 398);
+            this.listeProduitsListView.Name = "listeProduitsListView";
+            this.listeProduitsListView.Size = new System.Drawing.Size(1518, 651);
+            this.listeProduitsListView.TabIndex = 48;
+            this.listeProduitsListView.UseCompatibleStateImageBehavior = false;
             // 
             // supprimerBtn
             // 
@@ -136,7 +136,7 @@
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.identifiantTxtBox);
             this.Controls.Add(this.identifiantLbl);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listeProduitsListView);
             this.Controls.Add(this.supprimerBtn);
             this.Controls.Add(this.modifierBtn);
             this.Controls.Add(this.validerBtn);
@@ -156,7 +156,7 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox identifiantTxtBox;
         private System.Windows.Forms.Label identifiantLbl;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listeProduitsListView;
         private System.Windows.Forms.Button supprimerBtn;
         private System.Windows.Forms.Button modifierBtn;
         private System.Windows.Forms.Button validerBtn;
