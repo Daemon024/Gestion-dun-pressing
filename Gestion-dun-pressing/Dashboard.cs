@@ -34,8 +34,10 @@ namespace Gestion_dun_pressing
 
             typesProduitsChart.Series["TypesProduits"].Points.Add(25);
             typesProduitsChart.Series["TypesProduits"].Points.Add(38);
-            typesProduitsChart.Series["TypesProduits"].Points[0].AxisLabel = "Chemises";
-            typesProduitsChart.Series["TypesProduits"].Points[1].AxisLabel = "Pantalons";
+            typesProduitsChart.Series["TypesProduits"].Points[0].LegendText = "Chemises";
+            typesProduitsChart.Series["TypesProduits"].Points[0].AxisLabel = "25%";
+            typesProduitsChart.Series["TypesProduits"].Points[1].LegendText = "Pantalons";
+            typesProduitsChart.Series["TypesProduits"].Points[1].AxisLabel = "38%";
         }
     }
 }
