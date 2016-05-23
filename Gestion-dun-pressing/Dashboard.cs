@@ -45,5 +45,11 @@ namespace Gestion_dun_pressing
             GestionClients gestionClientsForm = new GestionClients();
             gestionClientsForm.Show();
         }
+
+        private void gererEmployeBtn_Click(object sender, EventArgs e)
+        {
+            GestionEmployes gestionEmployesForm = new GestionEmployes();
+            gestionEmployesForm.Show();
+        }
     }
 }

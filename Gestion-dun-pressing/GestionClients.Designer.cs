@@ -268,7 +268,7 @@
             this.MinimumSize = new System.Drawing.Size(1650, 1150);
             this.Name = "GestionClients";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "GestionClients";
+            this.Text = "Gérer les clients";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
