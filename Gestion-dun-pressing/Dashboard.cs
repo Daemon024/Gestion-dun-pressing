@@ -57,5 +57,11 @@ namespace Gestion_dun_pressing
             GestionProduits gestionProduitsForm = new GestionProduits();
             gestionProduitsForm.Show();
         }
+
+        private void gererPrestationBtn_Click(object sender, EventArgs e)
+        {
+            GestionPrestations gestionPrestationsForm = new GestionPrestations();
+            gestionPrestationsForm.Show();
+        }
     }
 }

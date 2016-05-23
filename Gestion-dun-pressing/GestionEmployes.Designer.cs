@@ -204,6 +204,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1624, 1079);
             this.Controls.Add(this.salaireTxtBox);
             this.Controls.Add(this.typeContratTxtBox);
@@ -225,7 +226,9 @@
             this.MaximumSize = new System.Drawing.Size(1650, 1150);
             this.MinimumSize = new System.Drawing.Size(1650, 1150);
             this.Name = "GestionEmployes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gérer les employés";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 
