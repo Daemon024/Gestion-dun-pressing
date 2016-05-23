@@ -71,6 +71,12 @@
     <Compile Include="GestionEmployes.Designer.cs">
       <DependentUpon>GestionEmployes.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionProduits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionProduits.Designer.cs">
+      <DependentUpon>GestionProduits.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Connexion.resx">
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionEmployes.resx">
       <DependentUpon>GestionEmployes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionProduits.resx">
+      <DependentUpon>GestionProduits.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
