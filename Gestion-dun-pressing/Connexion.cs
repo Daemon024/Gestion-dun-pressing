@@ -19,6 +19,7 @@ namespace Gestion_dun_pressing
 
         private void connectBtn_Click(object sender, EventArgs e)
         {
+            GestionBDD.connexion();
             Dashboard dashboardWindow = new Dashboard();
             dashboardWindow.ShowDialog();
             this.Close();
