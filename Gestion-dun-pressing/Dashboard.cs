@@ -43,25 +43,25 @@ namespace Gestion_dun_pressing
         private void gererClientBtn_Click(object sender, EventArgs e)
         {
             GestionClients gestionClientsForm = new GestionClients();
-            gestionClientsForm.Show();
+            gestionClientsForm.ShowDialog();
         }
 
         private void gererEmployeBtn_Click(object sender, EventArgs e)
         {
             GestionEmployes gestionEmployesForm = new GestionEmployes();
-            gestionEmployesForm.Show();
+            gestionEmployesForm.ShowDialog();
         }
 
         private void gererProduitBtn_Click(object sender, EventArgs e)
         {
             GestionProduits gestionProduitsForm = new GestionProduits();
-            gestionProduitsForm.Show();
+            gestionProduitsForm.ShowDialog();
         }
 
         private void gererPrestationBtn_Click(object sender, EventArgs e)
         {
             GestionPrestations gestionPrestationsForm = new GestionPrestations();
-            gestionPrestationsForm.Show();
+            gestionPrestationsForm.ShowDialog();
         }
     }
 }
