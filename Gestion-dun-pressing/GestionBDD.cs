@@ -26,7 +26,6 @@ namespace Gestion_dun_pressing
             try // S'il n'y a pas d'erreur on se connecte et on affiche le message de réussite
             {
                 cnx.Open();
-                MessageBox.Show("Connexion réussie");
             }
             catch (Exception ex) // S'il y a une erreur, on affiche l'erreur et on quitte l'application
             {
