@@ -31,12 +31,14 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.identifiantTxtBox = new System.Windows.Forms.TextBox();
             this.identifiantLbl = new System.Windows.Forms.Label();
-            this.listeProduitsListView = new System.Windows.Forms.ListView();
             this.supprimerBtn = new System.Windows.Forms.Button();
             this.modifierBtn = new System.Windows.Forms.Button();
             this.validerBtn = new System.Windows.Forms.Button();
             this.typeLbl = new System.Windows.Forms.Label();
             this.titreLbl = new System.Windows.Forms.Label();
+            this.listeProduitsListView = new System.Windows.Forms.ListView();
+            this.Identifiant = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // textBox6
@@ -61,14 +63,6 @@
             this.identifiantLbl.Size = new System.Drawing.Size(117, 25);
             this.identifiantLbl.TabIndex = 50;
             this.identifiantLbl.Text = "Identifiant :";
-            // 
-            // listeProduitsListView
-            // 
-            this.listeProduitsListView.Location = new System.Drawing.Point(53, 398);
-            this.listeProduitsListView.Name = "listeProduitsListView";
-            this.listeProduitsListView.Size = new System.Drawing.Size(1518, 651);
-            this.listeProduitsListView.TabIndex = 48;
-            this.listeProduitsListView.UseCompatibleStateImageBehavior = false;
             // 
             // supprimerBtn
             // 
@@ -128,16 +122,38 @@
             this.titreLbl.TabIndex = 41;
             this.titreLbl.Text = "Gestion des produits";
             // 
+            // listeProduitsListView
+            // 
+            this.listeProduitsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Identifiant,
+            this.Type});
+            this.listeProduitsListView.Location = new System.Drawing.Point(50, 356);
+            this.listeProduitsListView.Name = "listeProduitsListView";
+            this.listeProduitsListView.Size = new System.Drawing.Size(1534, 679);
+            this.listeProduitsListView.TabIndex = 56;
+            this.listeProduitsListView.UseCompatibleStateImageBehavior = false;
+            this.listeProduitsListView.View = System.Windows.Forms.View.Details;
+            // 
+            // Identifiant
+            // 
+            this.Identifiant.Text = "Identifiant";
+            this.Identifiant.Width = 371;
+            // 
+            // Type
+            // 
+            this.Type.Text = "Type";
+            this.Type.Width = 403;
+            // 
             // GestionProduits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1624, 1079);
+            this.Controls.Add(this.listeProduitsListView);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.identifiantTxtBox);
             this.Controls.Add(this.identifiantLbl);
-            this.Controls.Add(this.listeProduitsListView);
             this.Controls.Add(this.supprimerBtn);
             this.Controls.Add(this.modifierBtn);
             this.Controls.Add(this.validerBtn);
@@ -149,6 +165,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gérer les produits";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.GestionProduits_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,11 +176,13 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox identifiantTxtBox;
         private System.Windows.Forms.Label identifiantLbl;
-        private System.Windows.Forms.ListView listeProduitsListView;
         private System.Windows.Forms.Button supprimerBtn;
         private System.Windows.Forms.Button modifierBtn;
         private System.Windows.Forms.Button validerBtn;
         private System.Windows.Forms.Label typeLbl;
         private System.Windows.Forms.Label titreLbl;
+        private System.Windows.Forms.ListView listeProduitsListView;
+        private System.Windows.Forms.ColumnHeader Identifiant;
+        private System.Windows.Forms.ColumnHeader Type;
     }
 }

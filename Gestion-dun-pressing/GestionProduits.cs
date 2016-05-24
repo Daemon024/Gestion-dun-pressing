@@ -16,5 +16,10 @@ namespace Gestion_dun_pressing
         {
             InitializeComponent();
         }
+
+        private void GestionProduits_Load(object sender, EventArgs e)
+        {
+            DataTable produits = Produit.produits();
+        }
     }
 }
