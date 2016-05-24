@@ -93,6 +93,7 @@
     <Compile Include="GestionProduits.Designer.cs">
       <DependentUpon>GestionProduits.cs</DependentUpon>
     </Compile>
+    <Compile Include="Prestation.cs" />
     <Compile Include="Produit.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
