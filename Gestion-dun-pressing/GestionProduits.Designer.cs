@@ -37,8 +37,10 @@
             this.typeLbl = new System.Windows.Forms.Label();
             this.titreLbl = new System.Windows.Forms.Label();
             this.listeProduitsListView = new System.Windows.Forms.ListView();
-            this.Identifiant = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dateCreation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.prix = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // textBox6
@@ -125,8 +127,10 @@
             // listeProduitsListView
             // 
             this.listeProduitsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Identifiant,
-            this.Type});
+            this.dateCreation,
+            this.prix,
+            this.id,
+            this.type});
             this.listeProduitsListView.Location = new System.Drawing.Point(50, 356);
             this.listeProduitsListView.Name = "listeProduitsListView";
             this.listeProduitsListView.Size = new System.Drawing.Size(1534, 679);
@@ -134,15 +138,25 @@
             this.listeProduitsListView.UseCompatibleStateImageBehavior = false;
             this.listeProduitsListView.View = System.Windows.Forms.View.Details;
             // 
-            // Identifiant
+            // dateCreation
             // 
-            this.Identifiant.Text = "Identifiant";
-            this.Identifiant.Width = 371;
+            this.dateCreation.DisplayIndex = 2;
+            this.dateCreation.Text = "Date de création";
             // 
-            // Type
+            // prix
             // 
-            this.Type.Text = "Type";
-            this.Type.Width = 403;
+            this.prix.DisplayIndex = 3;
+            this.prix.Text = "Prix";
+            // 
+            // id
+            // 
+            this.id.DisplayIndex = 0;
+            this.id.Text = "ID";
+            // 
+            // type
+            // 
+            this.type.DisplayIndex = 1;
+            this.type.Text = "Type";
             // 
             // GestionProduits
             // 
@@ -182,7 +196,9 @@
         private System.Windows.Forms.Label typeLbl;
         private System.Windows.Forms.Label titreLbl;
         private System.Windows.Forms.ListView listeProduitsListView;
-        private System.Windows.Forms.ColumnHeader Identifiant;
-        private System.Windows.Forms.ColumnHeader Type;
+        private System.Windows.Forms.ColumnHeader dateCreation;
+        private System.Windows.Forms.ColumnHeader prix;
+        private System.Windows.Forms.ColumnHeader id;
+        private System.Windows.Forms.ColumnHeader type;
     }
 }

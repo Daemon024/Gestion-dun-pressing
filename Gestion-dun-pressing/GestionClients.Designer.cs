@@ -49,6 +49,18 @@
             this.telTxtBox = new System.Windows.Forms.TextBox();
             this.codePostalTxtBox = new System.Windows.Forms.TextBox();
             this.adresseTxtBox = new System.Windows.Forms.TextBox();
+            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.nom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.prenom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.adresse = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CP = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ville = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dateCreation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.mdp = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.token = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dateModif = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // titreLbl
@@ -138,11 +150,25 @@
             // 
             // listeClientsListView
             // 
+            this.listeClientsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.id,
+            this.nom,
+            this.prenom,
+            this.adresse,
+            this.CP,
+            this.ville,
+            this.email,
+            this.dateCreation,
+            this.tel,
+            this.mdp,
+            this.token,
+            this.dateModif});
             this.listeClientsListView.Location = new System.Drawing.Point(52, 519);
             this.listeClientsListView.Name = "listeClientsListView";
             this.listeClientsListView.Size = new System.Drawing.Size(1518, 521);
             this.listeClientsListView.TabIndex = 8;
             this.listeClientsListView.UseCompatibleStateImageBehavior = false;
+            this.listeClientsListView.View = System.Windows.Forms.View.Details;
             // 
             // mdpLbl
             // 
@@ -236,6 +262,54 @@
             this.adresseTxtBox.Size = new System.Drawing.Size(164, 31);
             this.adresseTxtBox.TabIndex = 20;
             // 
+            // id
+            // 
+            this.id.Text = "ID";
+            // 
+            // nom
+            // 
+            this.nom.Text = "Nom";
+            // 
+            // prenom
+            // 
+            this.prenom.Text = "Prénom";
+            // 
+            // adresse
+            // 
+            this.adresse.Text = "Adresse";
+            // 
+            // CP
+            // 
+            this.CP.Text = "Code postal";
+            // 
+            // ville
+            // 
+            this.ville.Text = "Ville";
+            // 
+            // email
+            // 
+            this.email.Text = "Email";
+            // 
+            // dateCreation
+            // 
+            this.dateCreation.Text = "Date création";
+            // 
+            // tel
+            // 
+            this.tel.Text = "Tel";
+            // 
+            // mdp
+            // 
+            this.mdp.Text = "Mot de passe";
+            // 
+            // token
+            // 
+            this.token.Text = "Token";
+            // 
+            // dateModif
+            // 
+            this.dateModif.Text = "Date modification";
+            // 
             // GestionClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -270,6 +344,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Gérer les clients";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.GestionClients_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,5 +373,17 @@
         private System.Windows.Forms.TextBox telTxtBox;
         private System.Windows.Forms.TextBox codePostalTxtBox;
         private System.Windows.Forms.TextBox adresseTxtBox;
+        private System.Windows.Forms.ColumnHeader id;
+        private System.Windows.Forms.ColumnHeader nom;
+        private System.Windows.Forms.ColumnHeader prenom;
+        private System.Windows.Forms.ColumnHeader adresse;
+        private System.Windows.Forms.ColumnHeader CP;
+        private System.Windows.Forms.ColumnHeader ville;
+        private System.Windows.Forms.ColumnHeader email;
+        private System.Windows.Forms.ColumnHeader dateCreation;
+        private System.Windows.Forms.ColumnHeader tel;
+        private System.Windows.Forms.ColumnHeader mdp;
+        private System.Windows.Forms.ColumnHeader token;
+        private System.Windows.Forms.ColumnHeader dateModif;
     }
 }

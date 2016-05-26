@@ -19,7 +19,16 @@ namespace Gestion_dun_pressing
 
         private void GestionProduits_Load(object sender, EventArgs e)
         {
-            DataTable produits = Produit.produits();
+            DataTable lesProduits = Produit.produits();
+            for (int i = 0; i < lesProduits.Rows.Count; i++)
+            {
+                DataRow dr = lesProduits.Rows[i];
+                ListViewItem listitem = new ListViewItem(dr["id"].ToString());
+                listitem.SubItems.Add(dr["type"].ToString());
+                listitem.SubItems.Add(dr["created_at"].ToString());
+                listitem.SubItems.Add(dr["prix"].ToString());
+                listeProduitsListView.Items.Add(listitem);
+            }
         }
     }
 }

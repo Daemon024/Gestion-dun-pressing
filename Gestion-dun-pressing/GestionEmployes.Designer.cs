@@ -45,6 +45,13 @@
             this.emailLbl = new System.Windows.Forms.Label();
             this.villeLbl = new System.Windows.Forms.Label();
             this.titreLbl = new System.Windows.Forms.Label();
+            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.nom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.prenom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.mdp = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dateArrivee = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.typeContrat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.salaire = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // salaireTxtBox
@@ -118,11 +125,20 @@
             // 
             // listeEmployesListView
             // 
+            this.listeEmployesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.id,
+            this.nom,
+            this.prenom,
+            this.mdp,
+            this.dateArrivee,
+            this.typeContrat,
+            this.salaire});
             this.listeEmployesListView.Location = new System.Drawing.Point(53, 528);
             this.listeEmployesListView.Name = "listeEmployesListView";
             this.listeEmployesListView.Size = new System.Drawing.Size(1518, 521);
             this.listeEmployesListView.TabIndex = 30;
             this.listeEmployesListView.UseCompatibleStateImageBehavior = false;
+            this.listeEmployesListView.View = System.Windows.Forms.View.Details;
             // 
             // supprimerBtn
             // 
@@ -200,6 +216,34 @@
             this.titreLbl.TabIndex = 22;
             this.titreLbl.Text = "Gestion des employés";
             // 
+            // id
+            // 
+            this.id.Text = "ID";
+            // 
+            // nom
+            // 
+            this.nom.Text = "Nom";
+            // 
+            // prenom
+            // 
+            this.prenom.Text = "Prénom";
+            // 
+            // mdp
+            // 
+            this.mdp.Text = "Mot de passe";
+            // 
+            // dateArrivee
+            // 
+            this.dateArrivee.Text = "Date d\'arrivée";
+            // 
+            // typeContrat
+            // 
+            this.typeContrat.Text = "Type du contrat";
+            // 
+            // salaire
+            // 
+            this.salaire.Text = "Salaire";
+            // 
             // GestionEmployes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -229,6 +273,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gérer les employés";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.GestionEmployes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,5 +298,12 @@
         private System.Windows.Forms.Label emailLbl;
         private System.Windows.Forms.Label villeLbl;
         private System.Windows.Forms.Label titreLbl;
+        private System.Windows.Forms.ColumnHeader id;
+        private System.Windows.Forms.ColumnHeader nom;
+        private System.Windows.Forms.ColumnHeader prenom;
+        private System.Windows.Forms.ColumnHeader mdp;
+        private System.Windows.Forms.ColumnHeader dateArrivee;
+        private System.Windows.Forms.ColumnHeader typeContrat;
+        private System.Windows.Forms.ColumnHeader salaire;
     }
 }

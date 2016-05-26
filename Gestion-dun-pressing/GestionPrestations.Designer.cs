@@ -41,6 +41,12 @@
             this.libelleTxtBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dateRecuperationLbl = new System.Windows.Forms.Label();
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dateDepot = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dateRecuperation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pretRecuperation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.libelle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dateCreation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // dateDepotTxtBox
@@ -68,11 +74,19 @@
             // 
             // listePrestationsListView
             // 
-            this.listePrestationsListView.Location = new System.Drawing.Point(53, 398);
+            this.listePrestationsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ID,
+            this.dateDepot,
+            this.dateRecuperation,
+            this.pretRecuperation,
+            this.libelle,
+            this.dateCreation});
+            this.listePrestationsListView.Location = new System.Drawing.Point(36, 416);
             this.listePrestationsListView.Name = "listePrestationsListView";
             this.listePrestationsListView.Size = new System.Drawing.Size(1518, 651);
             this.listePrestationsListView.TabIndex = 61;
             this.listePrestationsListView.UseCompatibleStateImageBehavior = false;
+            this.listePrestationsListView.View = System.Windows.Forms.View.Details;
             // 
             // supprimerBtn
             // 
@@ -126,11 +140,11 @@
             // 
             this.titreLbl.AutoSize = true;
             this.titreLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titreLbl.Location = new System.Drawing.Point(575, 29);
+            this.titreLbl.Location = new System.Drawing.Point(558, 30);
             this.titreLbl.Name = "titreLbl";
-            this.titreLbl.Size = new System.Drawing.Size(490, 59);
+            this.titreLbl.Size = new System.Drawing.Size(558, 59);
             this.titreLbl.TabIndex = 56;
-            this.titreLbl.Text = "Gestion des produits";
+            this.titreLbl.Text = "Gestion des prestations";
             // 
             // dateRecuperationTxtBox
             // 
@@ -164,6 +178,30 @@
             this.dateRecuperationLbl.TabIndex = 65;
             this.dateRecuperationLbl.Text = "Date récupération :";
             // 
+            // ID
+            // 
+            this.ID.Text = "ID";
+            // 
+            // dateDepot
+            // 
+            this.dateDepot.Text = "Date de dépôt";
+            // 
+            // dateRecuperation
+            // 
+            this.dateRecuperation.Text = "Date de récupération";
+            // 
+            // pretRecuperation
+            // 
+            this.pretRecuperation.Text = "Prêt pour récupération";
+            // 
+            // libelle
+            // 
+            this.libelle.Text = "Libellé";
+            // 
+            // dateCreation
+            // 
+            this.dateCreation.Text = "Date de création";
+            // 
             // GestionPrestations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -189,6 +227,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gérer des prestations";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.GestionPrestations_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,5 +248,11 @@
         private System.Windows.Forms.TextBox libelleTxtBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label dateRecuperationLbl;
+        private System.Windows.Forms.ColumnHeader ID;
+        private System.Windows.Forms.ColumnHeader dateDepot;
+        private System.Windows.Forms.ColumnHeader dateRecuperation;
+        private System.Windows.Forms.ColumnHeader pretRecuperation;
+        private System.Windows.Forms.ColumnHeader libelle;
+        private System.Windows.Forms.ColumnHeader dateCreation;
     }
 }
