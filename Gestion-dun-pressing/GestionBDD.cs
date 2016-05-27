@@ -13,7 +13,7 @@ namespace Gestion_dun_pressing
     public static class GestionBDD
     {
         #region Propriétés
-        private static string connexionString = "SERVER=pressingdeshalles.fr; DATABASE=e4bdd; UID=admin; PASSWORD=admin134459; CONVERT ZERO DATETIME=True";
+        private static string connexionString = "SERVER=pressingdeshalles.fr; DATABASE=e4bdd2; UID=admin; PASSWORD=admin134459; CONVERT ZERO DATETIME=True";
         private static MySqlConnection cnx = new MySqlConnection(connexionString);
         private static MySqlCommand cmd = new MySqlCommand();
         #endregion
@@ -83,7 +83,14 @@ namespace Gestion_dun_pressing
         {
             string requete = "DELETE FROM " + table + " WHERE id=" + Convert.ToString(id); // On crée notre requete
             cmd = new MySqlCommand(requete, cnx); // On crée notre commande MySQL
-            cmd.ExecuteNonQuery(); // On exécute notre commande MySQL
+            try
+            {
+                cmd.ExecuteNonQuery(); // On exécute notre commande MySQL
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Une erreur s'est produite, pour plus d'information :\n" + ex);
+            }
         }
         #endregion
 

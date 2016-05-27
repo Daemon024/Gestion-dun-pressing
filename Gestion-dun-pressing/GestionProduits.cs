@@ -40,37 +40,23 @@ namespace Gestion_dun_pressing
 
         private void validerBtn_Click(object sender, EventArgs e)
         {
-            try
-            {
-                GestionBDD.executeRequestById("INSERT INTO produits VALUES(" + Convert.ToInt32(identifiantTxtBox.Text) + ", \"" + typeTxtBox.Text + "\", \"" + DateTime.Now.ToString("YYYY-MM-DD HH:MM:SS ") + "\", 12);");
-                rafraichir_ListView();
-                rafraichir_TextBox();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Erreur, plus d'infos: "+ ex.ToString());
-            }
+            Produit.ajouter(Convert.ToInt32(identifiantTxtBox.Text), typeTxtBox.Text, DateTime.Now.ToString("YYYY-MM-DD HH:MM:SS "), 12);
+            rafraichir_ListView();
+            rafraichir_TextBox();
         }
 
         private void modifierBtn_Click(object sender, EventArgs e)
         {
-            try
-            {
-                GestionBDD.executeRequestById("UPDATE produits SET id=" + Convert.ToInt32(identifiantTxtBox.Text) + ", type=\"" + typeTxtBox.Text + "\", created_at=\"" + DateTime.Now.ToString("YYYY-MM-DD HH:MM:SS ") + "\", prix=12 WHERE id="+ Convert.ToInt32(identifiantTxtBox.Text) +";");
-                rafraichir_ListView();
-                rafraichir_TextBox();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erreur, plus d'infos: " + ex.ToString());
-            }
+            Produit.modifier(Convert.ToInt32(identifiantTxtBox.Text), typeTxtBox.Text, DateTime.Now.ToString("YYYY-MM-DD HH:MM:SS "),12 );
+            rafraichir_ListView();
+            rafraichir_TextBox();
         }
 
         private void supprimerBtn_Click(object sender, EventArgs e)
         {
             Produit.supprimer(Convert.ToInt32(identifiantTxtBox.Text));
             rafraichir_ListView();
-
+            rafraichir_TextBox();
         }
 
         private void rafraichir_ListView()
