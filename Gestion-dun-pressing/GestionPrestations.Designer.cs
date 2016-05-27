@@ -28,37 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateDepotTxtBox = new System.Windows.Forms.TextBox();
             this.identifiantTxtBox = new System.Windows.Forms.TextBox();
             this.identifiantLbl = new System.Windows.Forms.Label();
             this.listePrestationsListView = new System.Windows.Forms.ListView();
             this.supprimerBtn = new System.Windows.Forms.Button();
             this.modifierBtn = new System.Windows.Forms.Button();
             this.validerBtn = new System.Windows.Forms.Button();
-            this.dateDepotLbl = new System.Windows.Forms.Label();
             this.titreLbl = new System.Windows.Forms.Label();
-            this.dateRecuperationTxtBox = new System.Windows.Forms.TextBox();
-            this.libelleTxtBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateRecuperationLbl = new System.Windows.Forms.Label();
-            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dateDepot = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dateRecuperation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pretRecuperation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.libelle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dateCreation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.commentaireTxtBox = new System.Windows.Forms.TextBox();
+            this.commentaireLbl = new System.Windows.Forms.Label();
+            this.clientLbl = new System.Windows.Forms.Label();
+            this.employeLbl = new System.Windows.Forms.Label();
+            this.typeServiceLbl = new System.Windows.Forms.Label();
+            this.employeComboBox = new System.Windows.Forms.ComboBox();
+            this.typeServiceComboBox = new System.Windows.Forms.ComboBox();
+            this.clientComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // dateDepotTxtBox
-            // 
-            this.dateDepotTxtBox.Location = new System.Drawing.Point(1005, 138);
-            this.dateDepotTxtBox.Name = "dateDepotTxtBox";
-            this.dateDepotTxtBox.Size = new System.Drawing.Size(164, 31);
-            this.dateDepotTxtBox.TabIndex = 64;
             // 
             // identifiantTxtBox
             // 
-            this.identifiantTxtBox.Location = new System.Drawing.Point(559, 138);
+            this.identifiantTxtBox.Location = new System.Drawing.Point(480, 135);
             this.identifiantTxtBox.Name = "identifiantTxtBox";
             this.identifiantTxtBox.Size = new System.Drawing.Size(164, 31);
             this.identifiantTxtBox.TabIndex = 63;
@@ -66,7 +55,7 @@
             // identifiantLbl
             // 
             this.identifiantLbl.AutoSize = true;
-            this.identifiantLbl.Location = new System.Drawing.Point(436, 141);
+            this.identifiantLbl.Location = new System.Drawing.Point(357, 138);
             this.identifiantLbl.Name = "identifiantLbl";
             this.identifiantLbl.Size = new System.Drawing.Size(117, 25);
             this.identifiantLbl.TabIndex = 62;
@@ -74,16 +63,9 @@
             // 
             // listePrestationsListView
             // 
-            this.listePrestationsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ID,
-            this.dateDepot,
-            this.dateRecuperation,
-            this.pretRecuperation,
-            this.libelle,
-            this.dateCreation});
-            this.listePrestationsListView.Location = new System.Drawing.Point(36, 416);
+            this.listePrestationsListView.Location = new System.Drawing.Point(36, 390);
             this.listePrestationsListView.Name = "listePrestationsListView";
-            this.listePrestationsListView.Size = new System.Drawing.Size(1518, 651);
+            this.listePrestationsListView.Size = new System.Drawing.Size(1554, 651);
             this.listePrestationsListView.TabIndex = 61;
             this.listePrestationsListView.UseCompatibleStateImageBehavior = false;
             this.listePrestationsListView.View = System.Windows.Forms.View.Details;
@@ -100,6 +82,7 @@
             this.supprimerBtn.TabIndex = 60;
             this.supprimerBtn.Text = "Supprimer";
             this.supprimerBtn.UseVisualStyleBackColor = false;
+            this.supprimerBtn.Click += new System.EventHandler(this.supprimerBtn_Click_1);
             // 
             // modifierBtn
             // 
@@ -113,6 +96,7 @@
             this.modifierBtn.TabIndex = 59;
             this.modifierBtn.Text = "Modifier";
             this.modifierBtn.UseVisualStyleBackColor = false;
+            this.modifierBtn.Click += new System.EventHandler(this.modifierBtn_Click_1);
             // 
             // validerBtn
             // 
@@ -126,15 +110,7 @@
             this.validerBtn.TabIndex = 58;
             this.validerBtn.Text = "Valider";
             this.validerBtn.UseVisualStyleBackColor = false;
-            // 
-            // dateDepotLbl
-            // 
-            this.dateDepotLbl.AutoSize = true;
-            this.dateDepotLbl.Location = new System.Drawing.Point(864, 141);
-            this.dateDepotLbl.Name = "dateDepotLbl";
-            this.dateDepotLbl.Size = new System.Drawing.Size(135, 25);
-            this.dateDepotLbl.TabIndex = 57;
-            this.dateDepotLbl.Text = "Date dépôt : ";
+            this.validerBtn.Click += new System.EventHandler(this.validerBtn_Click_1);
             // 
             // titreLbl
             // 
@@ -146,61 +122,72 @@
             this.titreLbl.TabIndex = 56;
             this.titreLbl.Text = "Gestion des prestations";
             // 
-            // dateRecuperationTxtBox
+            // commentaireTxtBox
             // 
-            this.dateRecuperationTxtBox.Location = new System.Drawing.Point(1005, 201);
-            this.dateRecuperationTxtBox.Name = "dateRecuperationTxtBox";
-            this.dateRecuperationTxtBox.Size = new System.Drawing.Size(164, 31);
-            this.dateRecuperationTxtBox.TabIndex = 68;
+            this.commentaireTxtBox.Location = new System.Drawing.Point(480, 198);
+            this.commentaireTxtBox.Name = "commentaireTxtBox";
+            this.commentaireTxtBox.Size = new System.Drawing.Size(164, 31);
+            this.commentaireTxtBox.TabIndex = 67;
             // 
-            // libelleTxtBox
+            // commentaireLbl
             // 
-            this.libelleTxtBox.Location = new System.Drawing.Point(559, 201);
-            this.libelleTxtBox.Name = "libelleTxtBox";
-            this.libelleTxtBox.Size = new System.Drawing.Size(164, 31);
-            this.libelleTxtBox.TabIndex = 67;
+            this.commentaireLbl.AutoSize = true;
+            this.commentaireLbl.Location = new System.Drawing.Point(323, 201);
+            this.commentaireLbl.Name = "commentaireLbl";
+            this.commentaireLbl.Size = new System.Drawing.Size(151, 25);
+            this.commentaireLbl.TabIndex = 66;
+            this.commentaireLbl.Text = "Commentaire :";
             // 
-            // label1
+            // clientLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(460, 204);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 25);
-            this.label1.TabIndex = 66;
-            this.label1.Text = "Libellé : ";
+            this.clientLbl.AutoSize = true;
+            this.clientLbl.Location = new System.Drawing.Point(783, 138);
+            this.clientLbl.Name = "clientLbl";
+            this.clientLbl.Size = new System.Drawing.Size(79, 25);
+            this.clientLbl.TabIndex = 68;
+            this.clientLbl.Text = "Client :";
             // 
-            // dateRecuperationLbl
+            // employeLbl
             // 
-            this.dateRecuperationLbl.AutoSize = true;
-            this.dateRecuperationLbl.Location = new System.Drawing.Point(802, 204);
-            this.dateRecuperationLbl.Name = "dateRecuperationLbl";
-            this.dateRecuperationLbl.Size = new System.Drawing.Size(195, 25);
-            this.dateRecuperationLbl.TabIndex = 65;
-            this.dateRecuperationLbl.Text = "Date récupération :";
+            this.employeLbl.AutoSize = true;
+            this.employeLbl.Location = new System.Drawing.Point(755, 199);
+            this.employeLbl.Name = "employeLbl";
+            this.employeLbl.Size = new System.Drawing.Size(107, 25);
+            this.employeLbl.TabIndex = 69;
+            this.employeLbl.Text = "Employé :";
             // 
-            // ID
+            // typeServiceLbl
             // 
-            this.ID.Text = "ID";
+            this.typeServiceLbl.AutoSize = true;
+            this.typeServiceLbl.Location = new System.Drawing.Point(1111, 170);
+            this.typeServiceLbl.Name = "typeServiceLbl";
+            this.typeServiceLbl.Size = new System.Drawing.Size(177, 25);
+            this.typeServiceLbl.TabIndex = 70;
+            this.typeServiceLbl.Text = "Type de service :";
             // 
-            // dateDepot
+            // employeComboBox
             // 
-            this.dateDepot.Text = "Date de dépôt";
+            this.employeComboBox.FormattingEnabled = true;
+            this.employeComboBox.Location = new System.Drawing.Point(868, 196);
+            this.employeComboBox.Name = "employeComboBox";
+            this.employeComboBox.Size = new System.Drawing.Size(164, 33);
+            this.employeComboBox.TabIndex = 71;
             // 
-            // dateRecuperation
+            // typeServiceComboBox
             // 
-            this.dateRecuperation.Text = "Date de récupération";
+            this.typeServiceComboBox.FormattingEnabled = true;
+            this.typeServiceComboBox.Location = new System.Drawing.Point(1294, 162);
+            this.typeServiceComboBox.Name = "typeServiceComboBox";
+            this.typeServiceComboBox.Size = new System.Drawing.Size(164, 33);
+            this.typeServiceComboBox.TabIndex = 72;
             // 
-            // pretRecuperation
+            // clientComboBox
             // 
-            this.pretRecuperation.Text = "Prêt pour récupération";
-            // 
-            // libelle
-            // 
-            this.libelle.Text = "Libellé";
-            // 
-            // dateCreation
-            // 
-            this.dateCreation.Text = "Date de création";
+            this.clientComboBox.FormattingEnabled = true;
+            this.clientComboBox.Location = new System.Drawing.Point(868, 133);
+            this.clientComboBox.Name = "clientComboBox";
+            this.clientComboBox.Size = new System.Drawing.Size(164, 33);
+            this.clientComboBox.TabIndex = 73;
             // 
             // GestionPrestations
             // 
@@ -208,18 +195,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1624, 1079);
-            this.Controls.Add(this.dateRecuperationTxtBox);
-            this.Controls.Add(this.libelleTxtBox);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateRecuperationLbl);
-            this.Controls.Add(this.dateDepotTxtBox);
+            this.Controls.Add(this.clientComboBox);
+            this.Controls.Add(this.typeServiceComboBox);
+            this.Controls.Add(this.employeComboBox);
+            this.Controls.Add(this.typeServiceLbl);
+            this.Controls.Add(this.employeLbl);
+            this.Controls.Add(this.clientLbl);
+            this.Controls.Add(this.commentaireTxtBox);
+            this.Controls.Add(this.commentaireLbl);
             this.Controls.Add(this.identifiantTxtBox);
             this.Controls.Add(this.identifiantLbl);
             this.Controls.Add(this.listePrestationsListView);
             this.Controls.Add(this.supprimerBtn);
             this.Controls.Add(this.modifierBtn);
             this.Controls.Add(this.validerBtn);
-            this.Controls.Add(this.dateDepotLbl);
             this.Controls.Add(this.titreLbl);
             this.MaximumSize = new System.Drawing.Size(1650, 1150);
             this.MinimumSize = new System.Drawing.Size(1650, 1150);
@@ -234,25 +223,20 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox dateDepotTxtBox;
         private System.Windows.Forms.TextBox identifiantTxtBox;
         private System.Windows.Forms.Label identifiantLbl;
         private System.Windows.Forms.ListView listePrestationsListView;
         private System.Windows.Forms.Button supprimerBtn;
         private System.Windows.Forms.Button modifierBtn;
         private System.Windows.Forms.Button validerBtn;
-        private System.Windows.Forms.Label dateDepotLbl;
         private System.Windows.Forms.Label titreLbl;
-        private System.Windows.Forms.TextBox dateRecuperationTxtBox;
-        private System.Windows.Forms.TextBox libelleTxtBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label dateRecuperationLbl;
-        private System.Windows.Forms.ColumnHeader ID;
-        private System.Windows.Forms.ColumnHeader dateDepot;
-        private System.Windows.Forms.ColumnHeader dateRecuperation;
-        private System.Windows.Forms.ColumnHeader pretRecuperation;
-        private System.Windows.Forms.ColumnHeader libelle;
-        private System.Windows.Forms.ColumnHeader dateCreation;
+        private System.Windows.Forms.TextBox commentaireTxtBox;
+        private System.Windows.Forms.Label commentaireLbl;
+        private System.Windows.Forms.Label clientLbl;
+        private System.Windows.Forms.Label employeLbl;
+        private System.Windows.Forms.Label typeServiceLbl;
+        private System.Windows.Forms.ComboBox employeComboBox;
+        private System.Windows.Forms.ComboBox typeServiceComboBox;
+        private System.Windows.Forms.ComboBox clientComboBox;
     }
 }
