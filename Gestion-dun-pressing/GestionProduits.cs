@@ -40,14 +40,14 @@ namespace Gestion_dun_pressing
 
         private void validerBtn_Click(object sender, EventArgs e)
         {
-            Produit.ajouter(Convert.ToInt32(identifiantTxtBox.Text), typeTxtBox.Text, DateTime.Now.ToString("YYYY-MM-DD HH:MM:SS "), 12);
+            Produit.ajouter(Convert.ToInt32(identifiantTxtBox.Text), typeTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"));
             rafraichir_ListView();
             rafraichir_TextBox();
         }
 
         private void modifierBtn_Click(object sender, EventArgs e)
         {
-            Produit.modifier(Convert.ToInt32(identifiantTxtBox.Text), typeTxtBox.Text, DateTime.Now.ToString("YYYY-MM-DD HH:MM:SS "),12 );
+            Produit.modifier(Convert.ToInt32(identifiantTxtBox.Text), typeTxtBox.Text);
             rafraichir_ListView();
             rafraichir_TextBox();
         }
@@ -65,7 +65,6 @@ namespace Gestion_dun_pressing
             listeProduitsListView.Columns.Add("ID");
             listeProduitsListView.Columns.Add("Type");
             listeProduitsListView.Columns.Add("Date de création");
-            listeProduitsListView.Columns.Add("Prix");
 
             DataTable lesProduits = Produit.produits();
             for (int i = 0; i < lesProduits.Rows.Count; i++)
@@ -74,7 +73,6 @@ namespace Gestion_dun_pressing
                 ListViewItem listitem = new ListViewItem(dr["id"].ToString());
                 listitem.SubItems.Add(dr["type"].ToString());
                 listitem.SubItems.Add(dr["created_at"].ToString());
-                listitem.SubItems.Add(dr["prix"].ToString());
                 listeProduitsListView.Items.Add(listitem);
             }
         }
