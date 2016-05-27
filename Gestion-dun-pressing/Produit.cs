@@ -14,10 +14,10 @@ namespace Gestion_dun_pressing
             return GestionBDD.select("produits");
         }
 
-        public static DataTable modifier(int id, string type, DateTime dateCreation)
+        public static DataTable modifier(int id, string type, DateTime dateCreation, int prix)
         {
-            string requete = string.Format("UPDATE produits SET id={0}, type='{1}', created_at='{2}' WHERE id={0}", id, type, dateCreation);
-            GestionBDD.editById(requete);
+            string requete = string.Format("UPDATE produits SET id={0}, type='{1}', created_at='{2}', prix={3} WHERE id={0}", id, type, dateCreation, prix);
+            GestionBDD.executeRequestById(requete);
             return produits();
         }
 

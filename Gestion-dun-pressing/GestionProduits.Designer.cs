@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.typeTxtBox = new System.Windows.Forms.TextBox();
             this.identifiantTxtBox = new System.Windows.Forms.TextBox();
             this.identifiantLbl = new System.Windows.Forms.Label();
             this.supprimerBtn = new System.Windows.Forms.Button();
@@ -37,18 +37,14 @@
             this.typeLbl = new System.Windows.Forms.Label();
             this.titreLbl = new System.Windows.Forms.Label();
             this.listeProduitsListView = new System.Windows.Forms.ListView();
-            this.dateCreation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.prix = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
-            // textBox6
+            // typeTxtBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(935, 138);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(164, 31);
-            this.textBox6.TabIndex = 55;
+            this.typeTxtBox.Location = new System.Drawing.Point(935, 138);
+            this.typeTxtBox.Name = "typeTxtBox";
+            this.typeTxtBox.Size = new System.Drawing.Size(164, 31);
+            this.typeTxtBox.TabIndex = 55;
             // 
             // identifiantTxtBox
             // 
@@ -78,6 +74,7 @@
             this.supprimerBtn.TabIndex = 47;
             this.supprimerBtn.Text = "Supprimer";
             this.supprimerBtn.UseVisualStyleBackColor = false;
+            this.supprimerBtn.Click += new System.EventHandler(this.supprimerBtn_Click);
             // 
             // modifierBtn
             // 
@@ -91,6 +88,7 @@
             this.modifierBtn.TabIndex = 46;
             this.modifierBtn.Text = "Modifier";
             this.modifierBtn.UseVisualStyleBackColor = false;
+            this.modifierBtn.Click += new System.EventHandler(this.modifierBtn_Click);
             // 
             // validerBtn
             // 
@@ -104,6 +102,7 @@
             this.validerBtn.TabIndex = 45;
             this.validerBtn.Text = "Valider";
             this.validerBtn.UseVisualStyleBackColor = false;
+            this.validerBtn.Click += new System.EventHandler(this.validerBtn_Click);
             // 
             // typeLbl
             // 
@@ -126,37 +125,13 @@
             // 
             // listeProduitsListView
             // 
-            this.listeProduitsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.dateCreation,
-            this.prix,
-            this.id,
-            this.type});
             this.listeProduitsListView.Location = new System.Drawing.Point(50, 356);
             this.listeProduitsListView.Name = "listeProduitsListView";
             this.listeProduitsListView.Size = new System.Drawing.Size(1534, 679);
             this.listeProduitsListView.TabIndex = 56;
             this.listeProduitsListView.UseCompatibleStateImageBehavior = false;
             this.listeProduitsListView.View = System.Windows.Forms.View.Details;
-            // 
-            // dateCreation
-            // 
-            this.dateCreation.DisplayIndex = 2;
-            this.dateCreation.Text = "Date de création";
-            // 
-            // prix
-            // 
-            this.prix.DisplayIndex = 3;
-            this.prix.Text = "Prix";
-            // 
-            // id
-            // 
-            this.id.DisplayIndex = 0;
-            this.id.Text = "ID";
-            // 
-            // type
-            // 
-            this.type.DisplayIndex = 1;
-            this.type.Text = "Type";
+            this.listeProduitsListView.SelectedIndexChanged += new System.EventHandler(this.listeProduitsListView_SelectedIndexChanged);
             // 
             // GestionProduits
             // 
@@ -165,7 +140,7 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1624, 1079);
             this.Controls.Add(this.listeProduitsListView);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.typeTxtBox);
             this.Controls.Add(this.identifiantTxtBox);
             this.Controls.Add(this.identifiantLbl);
             this.Controls.Add(this.supprimerBtn);
@@ -187,7 +162,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox typeTxtBox;
         private System.Windows.Forms.TextBox identifiantTxtBox;
         private System.Windows.Forms.Label identifiantLbl;
         private System.Windows.Forms.Button supprimerBtn;
@@ -196,9 +171,5 @@
         private System.Windows.Forms.Label typeLbl;
         private System.Windows.Forms.Label titreLbl;
         private System.Windows.Forms.ListView listeProduitsListView;
-        private System.Windows.Forms.ColumnHeader dateCreation;
-        private System.Windows.Forms.ColumnHeader prix;
-        private System.Windows.Forms.ColumnHeader id;
-        private System.Windows.Forms.ColumnHeader type;
     }
 }

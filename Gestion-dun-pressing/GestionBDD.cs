@@ -64,7 +64,7 @@ namespace Gestion_dun_pressing
         #endregion
 
         #region Edit by ID
-        public static void editById(string requete)
+        public static void executeRequestById(string requete)
         {
             cmd = new MySqlCommand(requete, cnx); // On crée notre commande MySQL
             cmd.ExecuteNonQuery(); // On exécute notre commande MySQL
