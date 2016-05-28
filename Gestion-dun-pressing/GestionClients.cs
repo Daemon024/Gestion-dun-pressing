@@ -37,8 +37,11 @@ namespace Gestion_dun_pressing
                 codePostalTxtBox.Text = item.SubItems[4].Text;
                 villeTxtBox.Text = item.SubItems[5].Text;
                 emailTxtBox.Text = item.SubItems[6].Text;
+                dateCreationTxtBox.Text = item.SubItems[7].Text;
                 telTxtBox.Text = item.SubItems[8].Text;
                 mdpTxtBox.Text = item.SubItems[9].Text;
+                tokenTxtBox.Text = item.SubItems[10].Text;
+                dateModificationTxtBox.Text = item.SubItems[11].Text;
             }
             else
             {
@@ -48,14 +51,14 @@ namespace Gestion_dun_pressing
 
         private void validerBtn_Click(object sender, EventArgs e)
         {
-            Client.ajouter(Convert.ToInt32(idTxtBox.Text), nomTxtBox.Text, prenomTxtBox.Text, adresseTxtBox.Text, codePostalTxtBox.Text, villeTxtBox.Text, emailTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd hh: mm:ss"), telTxtBox.Text, mdpTxtBox.Text, "", "Pas de modification");
+            Client.ajouter(nomTxtBox.Text, prenomTxtBox.Text, adresseTxtBox.Text, codePostalTxtBox.Text, villeTxtBox.Text, emailTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"), telTxtBox.Text, mdpTxtBox.Text, tokenTxtBox.Text, "Pas de modification");
             rafraichir_ListView();
             rafraichir_TextBox();
         }
 
         private void modifierBtn_Click(object sender, EventArgs e)
         {
-            Client.modifier(Convert.ToInt32(idTxtBox.Text), nomTxtBox.Text, prenomTxtBox.Text, adresseTxtBox.Text, codePostalTxtBox.Text, villeTxtBox.Text, emailTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd hh: mm:ss"), telTxtBox.Text, mdpTxtBox.Text, "", DateTime.Now.ToString("yyyy-MM-dd hh: mm:ss"));
+            Client.modifier(Convert.ToInt32(idTxtBox.Text), nomTxtBox.Text, prenomTxtBox.Text, adresseTxtBox.Text, codePostalTxtBox.Text, villeTxtBox.Text, emailTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"), telTxtBox.Text, mdpTxtBox.Text, tokenTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd hh: mm:ss"));
             rafraichir_ListView();
             rafraichir_TextBox();
         }
@@ -111,8 +114,11 @@ namespace Gestion_dun_pressing
             codePostalTxtBox.Text = string.Empty;
             villeTxtBox.Text = string.Empty;
             emailTxtBox.Text = string.Empty;
+            dateCreationTxtBox.Text = string.Empty;
             telTxtBox.Text = string.Empty;
             mdpTxtBox.Text = string.Empty;
+            tokenTxtBox.Text = string.Empty;
+            dateModificationTxtBox.Text = string.Empty;
         }
     }
 }
