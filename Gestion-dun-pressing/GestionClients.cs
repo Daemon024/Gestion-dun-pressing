@@ -26,7 +26,6 @@ namespace Gestion_dun_pressing
 
         private void listeClientsListView_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             if (listeClientsListView.SelectedItems.Count > 0)
             {
                 ListViewItem item = listeClientsListView.SelectedItems[0];
@@ -52,7 +51,7 @@ namespace Gestion_dun_pressing
         private void validerBtn_Click(object sender, EventArgs e)
         {
             if(nomTxtBox.Text != string.Empty && prenomTxtBox.Text != string.Empty && adresseTxtBox.Text != string.Empty && codePostalTxtBox.Text != string.Empty && villeTxtBox.Text != string.Empty && emailTxtBox.Text != string.Empty && telTxtBox.Text != string.Empty && mdpTxtBox.Text != string.Empty && tokenTxtBox.Text != string.Empty){
-                Client.ajouter(nomTxtBox.Text, prenomTxtBox.Text, adresseTxtBox.Text, codePostalTxtBox.Text, villeTxtBox.Text, emailTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"), telTxtBox.Text, mdpTxtBox.Text, tokenTxtBox.Text, "Pas de modification");
+                Client.ajouter(nomTxtBox.Text, prenomTxtBox.Text, adresseTxtBox.Text, codePostalTxtBox.Text, villeTxtBox.Text, emailTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), telTxtBox.Text, mdpTxtBox.Text, tokenTxtBox.Text, "Pas de modification");
                 rafraichir_ListView();
                 rafraichir_TextBox();
             }
@@ -66,7 +65,7 @@ namespace Gestion_dun_pressing
         {
             if (nomTxtBox.Text != string.Empty && prenomTxtBox.Text != string.Empty && adresseTxtBox.Text != string.Empty && codePostalTxtBox.Text != string.Empty && villeTxtBox.Text != string.Empty && emailTxtBox.Text != string.Empty && telTxtBox.Text != string.Empty && mdpTxtBox.Text != string.Empty && tokenTxtBox.Text != string.Empty)
             {
-                Client.modifier(Convert.ToInt32(idTxtBox.Text), nomTxtBox.Text, prenomTxtBox.Text, adresseTxtBox.Text, codePostalTxtBox.Text, villeTxtBox.Text, emailTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"), telTxtBox.Text, mdpTxtBox.Text, tokenTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd hh: mm:ss"));
+                Client.modifier(Convert.ToInt32(idTxtBox.Text), nomTxtBox.Text, prenomTxtBox.Text, adresseTxtBox.Text, codePostalTxtBox.Text, villeTxtBox.Text, emailTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), telTxtBox.Text, mdpTxtBox.Text, tokenTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd hh: mm:ss"));
                 rafraichir_ListView();
                 rafraichir_TextBox();
             }
@@ -89,6 +88,7 @@ namespace Gestion_dun_pressing
                 MessageBox.Show("Veuillez saisir un client à supprimer");
             }
         }
+
         private void rafraichir_ListView()
         {
             listeClientsListView.Clear();

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.salaireTxtBox = new System.Windows.Forms.TextBox();
-            this.typeContratTxtBox = new System.Windows.Forms.TextBox();
-            this.dateArriveeTxtBox = new System.Windows.Forms.TextBox();
             this.mdpTxtBox = new System.Windows.Forms.TextBox();
             this.prenomTxtBox = new System.Windows.Forms.TextBox();
             this.nomTxtBox = new System.Windows.Forms.TextBox();
@@ -45,53 +43,36 @@
             this.emailLbl = new System.Windows.Forms.Label();
             this.villeLbl = new System.Windows.Forms.Label();
             this.titreLbl = new System.Windows.Forms.Label();
-            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.nom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.prenom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.mdp = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dateArrivee = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.typeContrat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.salaire = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dateArriveePicker = new System.Windows.Forms.DateTimePicker();
+            this.typeContratComboBox = new System.Windows.Forms.ComboBox();
+            this.identifiantTxtBox = new System.Windows.Forms.TextBox();
+            this.identifiantLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // salaireTxtBox
             // 
-            this.salaireTxtBox.Location = new System.Drawing.Point(981, 259);
+            this.salaireTxtBox.Location = new System.Drawing.Point(997, 325);
             this.salaireTxtBox.Name = "salaireTxtBox";
             this.salaireTxtBox.Size = new System.Drawing.Size(164, 31);
             this.salaireTxtBox.TabIndex = 40;
             // 
-            // typeContratTxtBox
-            // 
-            this.typeContratTxtBox.Location = new System.Drawing.Point(981, 200);
-            this.typeContratTxtBox.Name = "typeContratTxtBox";
-            this.typeContratTxtBox.Size = new System.Drawing.Size(164, 31);
-            this.typeContratTxtBox.TabIndex = 39;
-            // 
-            // dateArriveeTxtBox
-            // 
-            this.dateArriveeTxtBox.Location = new System.Drawing.Point(981, 138);
-            this.dateArriveeTxtBox.Name = "dateArriveeTxtBox";
-            this.dateArriveeTxtBox.Size = new System.Drawing.Size(164, 31);
-            this.dateArriveeTxtBox.TabIndex = 38;
-            // 
             // mdpTxtBox
             // 
-            this.mdpTxtBox.Location = new System.Drawing.Point(546, 259);
+            this.mdpTxtBox.Location = new System.Drawing.Point(562, 325);
             this.mdpTxtBox.Name = "mdpTxtBox";
             this.mdpTxtBox.Size = new System.Drawing.Size(164, 31);
             this.mdpTxtBox.TabIndex = 37;
             // 
             // prenomTxtBox
             // 
-            this.prenomTxtBox.Location = new System.Drawing.Point(546, 200);
+            this.prenomTxtBox.Location = new System.Drawing.Point(562, 266);
             this.prenomTxtBox.Name = "prenomTxtBox";
             this.prenomTxtBox.Size = new System.Drawing.Size(164, 31);
             this.prenomTxtBox.TabIndex = 36;
             // 
             // nomTxtBox
             // 
-            this.nomTxtBox.Location = new System.Drawing.Point(544, 138);
+            this.nomTxtBox.Location = new System.Drawing.Point(560, 204);
             this.nomTxtBox.Name = "nomTxtBox";
             this.nomTxtBox.Size = new System.Drawing.Size(164, 31);
             this.nomTxtBox.TabIndex = 35;
@@ -99,7 +80,7 @@
             // prenomLbl
             // 
             this.prenomLbl.AutoSize = true;
-            this.prenomLbl.Location = new System.Drawing.Point(440, 203);
+            this.prenomLbl.Location = new System.Drawing.Point(456, 269);
             this.prenomLbl.Name = "prenomLbl";
             this.prenomLbl.Size = new System.Drawing.Size(98, 25);
             this.prenomLbl.TabIndex = 33;
@@ -108,7 +89,7 @@
             // nomLbl
             // 
             this.nomLbl.AutoSize = true;
-            this.nomLbl.Location = new System.Drawing.Point(464, 141);
+            this.nomLbl.Location = new System.Drawing.Point(480, 207);
             this.nomLbl.Name = "nomLbl";
             this.nomLbl.Size = new System.Drawing.Size(74, 25);
             this.nomLbl.TabIndex = 32;
@@ -117,7 +98,7 @@
             // mdpLbl
             // 
             this.mdpLbl.AutoSize = true;
-            this.mdpLbl.Location = new System.Drawing.Point(384, 262);
+            this.mdpLbl.Location = new System.Drawing.Point(400, 328);
             this.mdpLbl.Name = "mdpLbl";
             this.mdpLbl.Size = new System.Drawing.Size(154, 25);
             this.mdpLbl.TabIndex = 31;
@@ -125,20 +106,13 @@
             // 
             // listeEmployesListView
             // 
-            this.listeEmployesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.id,
-            this.nom,
-            this.prenom,
-            this.mdp,
-            this.dateArrivee,
-            this.typeContrat,
-            this.salaire});
             this.listeEmployesListView.Location = new System.Drawing.Point(53, 528);
             this.listeEmployesListView.Name = "listeEmployesListView";
             this.listeEmployesListView.Size = new System.Drawing.Size(1518, 521);
             this.listeEmployesListView.TabIndex = 30;
             this.listeEmployesListView.UseCompatibleStateImageBehavior = false;
             this.listeEmployesListView.View = System.Windows.Forms.View.Details;
+            this.listeEmployesListView.SelectedIndexChanged += new System.EventHandler(this.listeEmployesListView_SelectedIndexChanged);
             // 
             // supprimerBtn
             // 
@@ -146,12 +120,13 @@
             this.supprimerBtn.FlatAppearance.BorderSize = 0;
             this.supprimerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.supprimerBtn.ForeColor = System.Drawing.Color.White;
-            this.supprimerBtn.Location = new System.Drawing.Point(952, 361);
+            this.supprimerBtn.Location = new System.Drawing.Point(968, 427);
             this.supprimerBtn.Name = "supprimerBtn";
             this.supprimerBtn.Size = new System.Drawing.Size(162, 46);
             this.supprimerBtn.TabIndex = 29;
             this.supprimerBtn.Text = "Supprimer";
             this.supprimerBtn.UseVisualStyleBackColor = false;
+            this.supprimerBtn.Click += new System.EventHandler(this.supprimerBtn_Click);
             // 
             // modifierBtn
             // 
@@ -159,12 +134,13 @@
             this.modifierBtn.FlatAppearance.BorderSize = 0;
             this.modifierBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modifierBtn.ForeColor = System.Drawing.Color.White;
-            this.modifierBtn.Location = new System.Drawing.Point(733, 361);
+            this.modifierBtn.Location = new System.Drawing.Point(749, 427);
             this.modifierBtn.Name = "modifierBtn";
             this.modifierBtn.Size = new System.Drawing.Size(162, 46);
             this.modifierBtn.TabIndex = 28;
             this.modifierBtn.Text = "Modifier";
             this.modifierBtn.UseVisualStyleBackColor = false;
+            this.modifierBtn.Click += new System.EventHandler(this.modifierBtn_Click);
             // 
             // validerBtn
             // 
@@ -172,17 +148,18 @@
             this.validerBtn.FlatAppearance.BorderSize = 0;
             this.validerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.validerBtn.ForeColor = System.Drawing.Color.White;
-            this.validerBtn.Location = new System.Drawing.Point(502, 361);
+            this.validerBtn.Location = new System.Drawing.Point(518, 427);
             this.validerBtn.Name = "validerBtn";
             this.validerBtn.Size = new System.Drawing.Size(162, 46);
             this.validerBtn.TabIndex = 27;
-            this.validerBtn.Text = "Valider";
+            this.validerBtn.Text = "Ajouter";
             this.validerBtn.UseVisualStyleBackColor = false;
+            this.validerBtn.Click += new System.EventHandler(this.validerBtn_Click);
             // 
             // telLbl
             // 
             this.telLbl.AutoSize = true;
-            this.telLbl.Location = new System.Drawing.Point(816, 141);
+            this.telLbl.Location = new System.Drawing.Point(832, 207);
             this.telLbl.Name = "telLbl";
             this.telLbl.Size = new System.Drawing.Size(157, 25);
             this.telLbl.TabIndex = 26;
@@ -191,7 +168,7 @@
             // emailLbl
             // 
             this.emailLbl.AutoSize = true;
-            this.emailLbl.Location = new System.Drawing.Point(882, 262);
+            this.emailLbl.Location = new System.Drawing.Point(898, 328);
             this.emailLbl.Name = "emailLbl";
             this.emailLbl.Size = new System.Drawing.Size(91, 25);
             this.emailLbl.TabIndex = 25;
@@ -200,7 +177,7 @@
             // villeLbl
             // 
             this.villeLbl.AutoSize = true;
-            this.villeLbl.Location = new System.Drawing.Point(799, 203);
+            this.villeLbl.Location = new System.Drawing.Point(815, 269);
             this.villeLbl.Name = "villeLbl";
             this.villeLbl.Size = new System.Drawing.Size(174, 25);
             this.villeLbl.TabIndex = 24;
@@ -216,33 +193,45 @@
             this.titreLbl.TabIndex = 22;
             this.titreLbl.Text = "Gestion des employés";
             // 
-            // id
+            // dateArriveePicker
             // 
-            this.id.Text = "ID";
+            this.dateArriveePicker.Enabled = false;
+            this.dateArriveePicker.Location = new System.Drawing.Point(997, 207);
+            this.dateArriveePicker.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
+            this.dateArriveePicker.MinDate = new System.DateTime(1980, 1, 1, 0, 0, 0, 0);
+            this.dateArriveePicker.Name = "dateArriveePicker";
+            this.dateArriveePicker.Size = new System.Drawing.Size(164, 31);
+            this.dateArriveePicker.TabIndex = 41;
             // 
-            // nom
+            // typeContratComboBox
             // 
-            this.nom.Text = "Nom";
+            this.typeContratComboBox.FormattingEnabled = true;
+            this.typeContratComboBox.Items.AddRange(new object[] {
+            "CDD",
+            "CDI"});
+            this.typeContratComboBox.Location = new System.Drawing.Point(995, 266);
+            this.typeContratComboBox.MaxLength = 3;
+            this.typeContratComboBox.Name = "typeContratComboBox";
+            this.typeContratComboBox.Size = new System.Drawing.Size(166, 33);
+            this.typeContratComboBox.TabIndex = 42;
             // 
-            // prenom
+            // identifiantTxtBox
             // 
-            this.prenom.Text = "Prénom";
+            this.identifiantTxtBox.Enabled = false;
+            this.identifiantTxtBox.Location = new System.Drawing.Point(805, 130);
+            this.identifiantTxtBox.Name = "identifiantTxtBox";
+            this.identifiantTxtBox.ReadOnly = true;
+            this.identifiantTxtBox.Size = new System.Drawing.Size(164, 31);
+            this.identifiantTxtBox.TabIndex = 44;
             // 
-            // mdp
+            // identifiantLbl
             // 
-            this.mdp.Text = "Mot de passe";
-            // 
-            // dateArrivee
-            // 
-            this.dateArrivee.Text = "Date d\'arrivée";
-            // 
-            // typeContrat
-            // 
-            this.typeContrat.Text = "Type du contrat";
-            // 
-            // salaire
-            // 
-            this.salaire.Text = "Salaire";
+            this.identifiantLbl.AutoSize = true;
+            this.identifiantLbl.Location = new System.Drawing.Point(682, 133);
+            this.identifiantLbl.Name = "identifiantLbl";
+            this.identifiantLbl.Size = new System.Drawing.Size(117, 25);
+            this.identifiantLbl.TabIndex = 43;
+            this.identifiantLbl.Text = "Identifiant :";
             // 
             // GestionEmployes
             // 
@@ -250,9 +239,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1624, 1079);
+            this.Controls.Add(this.identifiantTxtBox);
+            this.Controls.Add(this.identifiantLbl);
+            this.Controls.Add(this.typeContratComboBox);
+            this.Controls.Add(this.dateArriveePicker);
             this.Controls.Add(this.salaireTxtBox);
-            this.Controls.Add(this.typeContratTxtBox);
-            this.Controls.Add(this.dateArriveeTxtBox);
             this.Controls.Add(this.mdpTxtBox);
             this.Controls.Add(this.prenomTxtBox);
             this.Controls.Add(this.nomTxtBox);
@@ -282,8 +273,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox salaireTxtBox;
-        private System.Windows.Forms.TextBox typeContratTxtBox;
-        private System.Windows.Forms.TextBox dateArriveeTxtBox;
         private System.Windows.Forms.TextBox mdpTxtBox;
         private System.Windows.Forms.TextBox prenomTxtBox;
         private System.Windows.Forms.TextBox nomTxtBox;
@@ -298,12 +287,9 @@
         private System.Windows.Forms.Label emailLbl;
         private System.Windows.Forms.Label villeLbl;
         private System.Windows.Forms.Label titreLbl;
-        private System.Windows.Forms.ColumnHeader id;
-        private System.Windows.Forms.ColumnHeader nom;
-        private System.Windows.Forms.ColumnHeader prenom;
-        private System.Windows.Forms.ColumnHeader mdp;
-        private System.Windows.Forms.ColumnHeader dateArrivee;
-        private System.Windows.Forms.ColumnHeader typeContrat;
-        private System.Windows.Forms.ColumnHeader salaire;
+        private System.Windows.Forms.DateTimePicker dateArriveePicker;
+        private System.Windows.Forms.ComboBox typeContratComboBox;
+        private System.Windows.Forms.TextBox identifiantTxtBox;
+        private System.Windows.Forms.Label identifiantLbl;
     }
 }
