@@ -51,23 +51,43 @@ namespace Gestion_dun_pressing
 
         private void validerBtn_Click(object sender, EventArgs e)
         {
-            Client.ajouter(nomTxtBox.Text, prenomTxtBox.Text, adresseTxtBox.Text, codePostalTxtBox.Text, villeTxtBox.Text, emailTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"), telTxtBox.Text, mdpTxtBox.Text, tokenTxtBox.Text, "Pas de modification");
-            rafraichir_ListView();
-            rafraichir_TextBox();
+            if(nomTxtBox.Text != string.Empty && prenomTxtBox.Text != string.Empty && adresseTxtBox.Text != string.Empty && codePostalTxtBox.Text != string.Empty && villeTxtBox.Text != string.Empty && emailTxtBox.Text != string.Empty && telTxtBox.Text != string.Empty && mdpTxtBox.Text != string.Empty && tokenTxtBox.Text != string.Empty){
+                Client.ajouter(nomTxtBox.Text, prenomTxtBox.Text, adresseTxtBox.Text, codePostalTxtBox.Text, villeTxtBox.Text, emailTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"), telTxtBox.Text, mdpTxtBox.Text, tokenTxtBox.Text, "Pas de modification");
+                rafraichir_ListView();
+                rafraichir_TextBox();
+            }
+            else
+            {
+                MessageBox.Show("Veuillez remplir tous les champs.");
+            }
         }
 
         private void modifierBtn_Click(object sender, EventArgs e)
         {
-            Client.modifier(Convert.ToInt32(idTxtBox.Text), nomTxtBox.Text, prenomTxtBox.Text, adresseTxtBox.Text, codePostalTxtBox.Text, villeTxtBox.Text, emailTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"), telTxtBox.Text, mdpTxtBox.Text, tokenTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd hh: mm:ss"));
-            rafraichir_ListView();
-            rafraichir_TextBox();
+            if (nomTxtBox.Text != string.Empty && prenomTxtBox.Text != string.Empty && adresseTxtBox.Text != string.Empty && codePostalTxtBox.Text != string.Empty && villeTxtBox.Text != string.Empty && emailTxtBox.Text != string.Empty && telTxtBox.Text != string.Empty && mdpTxtBox.Text != string.Empty && tokenTxtBox.Text != string.Empty)
+            {
+                Client.modifier(Convert.ToInt32(idTxtBox.Text), nomTxtBox.Text, prenomTxtBox.Text, adresseTxtBox.Text, codePostalTxtBox.Text, villeTxtBox.Text, emailTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"), telTxtBox.Text, mdpTxtBox.Text, tokenTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd hh: mm:ss"));
+                rafraichir_ListView();
+                rafraichir_TextBox();
+            }
+            else
+            {
+                MessageBox.Show("Veuillez remplir tous les champs.");
+            }
         }
 
         private void supprimerBtn_Click(object sender, EventArgs e)
         {
-            Client.supprimer(Convert.ToInt32(idTxtBox.Text));
-            rafraichir_ListView();
-            rafraichir_TextBox();
+            if (idTxtBox.Text != string.Empty && nomTxtBox.Text != string.Empty && prenomTxtBox.Text != string.Empty)
+            {
+                Client.supprimer(Convert.ToInt32(idTxtBox.Text));
+                rafraichir_ListView();
+                rafraichir_TextBox();
+            }
+            else
+            {
+                MessageBox.Show("Veuillez saisir un client à supprimer");
+            }
         }
         private void rafraichir_ListView()
         {
