@@ -33,7 +33,7 @@ namespace Gestion_dun_pressing
 
         private void modifierBtn_Click_1(object sender, EventArgs e)
         {
-            Prestation.ajouter(Convert.ToInt32(identifiantTxtBox.Text), commentaireTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"), string.Empty);
+            Prestation.modifier(Convert.ToInt32(identifiantTxtBox.Text), commentaireTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"), string.Empty);
             rafraichir_ListView();
             rafraichir_TextBox();
         }
@@ -69,8 +69,6 @@ namespace Gestion_dun_pressing
         {
             identifiantTxtBox.Text = string.Empty;
             commentaireTxtBox.Text = string.Empty;
-            dateDepotTxtBox.Text = string.Empty;
-            dateRecuperationTxtBox.Text = string.Empty;
         }
     }
 }

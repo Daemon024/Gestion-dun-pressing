@@ -49,25 +49,15 @@
             this.telTxtBox = new System.Windows.Forms.TextBox();
             this.codePostalTxtBox = new System.Windows.Forms.TextBox();
             this.adresseTxtBox = new System.Windows.Forms.TextBox();
-            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.nom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.prenom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.adresse = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.CP = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ville = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dateCreation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.mdp = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.token = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dateModif = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.idTxtBox = new System.Windows.Forms.TextBox();
+            this.IDLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titreLbl
             // 
             this.titreLbl.AutoSize = true;
             this.titreLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titreLbl.Location = new System.Drawing.Point(596, 20);
+            this.titreLbl.Location = new System.Drawing.Point(596, 9);
             this.titreLbl.Name = "titreLbl";
             this.titreLbl.Size = new System.Drawing.Size(454, 59);
             this.titreLbl.TabIndex = 0;
@@ -76,7 +66,7 @@
             // codePostalLbl
             // 
             this.codePostalLbl.AutoSize = true;
-            this.codePostalLbl.Location = new System.Drawing.Point(439, 317);
+            this.codePostalLbl.Location = new System.Drawing.Point(645, 269);
             this.codePostalLbl.Name = "codePostalLbl";
             this.codePostalLbl.Size = new System.Drawing.Size(139, 25);
             this.codePostalLbl.TabIndex = 1;
@@ -85,7 +75,7 @@
             // villeLbl
             // 
             this.villeLbl.AutoSize = true;
-            this.villeLbl.Location = new System.Drawing.Point(878, 196);
+            this.villeLbl.Location = new System.Drawing.Point(1070, 210);
             this.villeLbl.Name = "villeLbl";
             this.villeLbl.Size = new System.Drawing.Size(65, 25);
             this.villeLbl.TabIndex = 2;
@@ -94,7 +84,7 @@
             // emailLbl
             // 
             this.emailLbl.AutoSize = true;
-            this.emailLbl.Location = new System.Drawing.Point(866, 255);
+            this.emailLbl.Location = new System.Drawing.Point(1058, 269);
             this.emailLbl.Name = "emailLbl";
             this.emailLbl.Size = new System.Drawing.Size(77, 25);
             this.emailLbl.TabIndex = 3;
@@ -103,7 +93,7 @@
             // telLbl
             // 
             this.telLbl.AutoSize = true;
-            this.telLbl.Location = new System.Drawing.Point(889, 134);
+            this.telLbl.Location = new System.Drawing.Point(1081, 148);
             this.telLbl.Name = "telLbl";
             this.telLbl.Size = new System.Drawing.Size(54, 25);
             this.telLbl.TabIndex = 4;
@@ -115,12 +105,13 @@
             this.validerBtn.FlatAppearance.BorderSize = 0;
             this.validerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.validerBtn.ForeColor = System.Drawing.Color.White;
-            this.validerBtn.Location = new System.Drawing.Point(501, 408);
+            this.validerBtn.Location = new System.Drawing.Point(512, 355);
             this.validerBtn.Name = "validerBtn";
             this.validerBtn.Size = new System.Drawing.Size(162, 46);
             this.validerBtn.TabIndex = 5;
             this.validerBtn.Text = "Valider";
             this.validerBtn.UseVisualStyleBackColor = false;
+            this.validerBtn.Click += new System.EventHandler(this.validerBtn_Click);
             // 
             // modifierBtn
             // 
@@ -128,12 +119,13 @@
             this.modifierBtn.FlatAppearance.BorderSize = 0;
             this.modifierBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modifierBtn.ForeColor = System.Drawing.Color.White;
-            this.modifierBtn.Location = new System.Drawing.Point(732, 408);
+            this.modifierBtn.Location = new System.Drawing.Point(743, 355);
             this.modifierBtn.Name = "modifierBtn";
             this.modifierBtn.Size = new System.Drawing.Size(162, 46);
             this.modifierBtn.TabIndex = 6;
             this.modifierBtn.Text = "Modifier";
             this.modifierBtn.UseVisualStyleBackColor = false;
+            this.modifierBtn.Click += new System.EventHandler(this.modifierBtn_Click);
             // 
             // supprimerBtn
             // 
@@ -141,39 +133,28 @@
             this.supprimerBtn.FlatAppearance.BorderSize = 0;
             this.supprimerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.supprimerBtn.ForeColor = System.Drawing.Color.White;
-            this.supprimerBtn.Location = new System.Drawing.Point(951, 408);
+            this.supprimerBtn.Location = new System.Drawing.Point(962, 355);
             this.supprimerBtn.Name = "supprimerBtn";
             this.supprimerBtn.Size = new System.Drawing.Size(162, 46);
             this.supprimerBtn.TabIndex = 7;
             this.supprimerBtn.Text = "Supprimer";
             this.supprimerBtn.UseVisualStyleBackColor = false;
+            this.supprimerBtn.Click += new System.EventHandler(this.supprimerBtn_Click);
             // 
             // listeClientsListView
             // 
-            this.listeClientsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.id,
-            this.nom,
-            this.prenom,
-            this.adresse,
-            this.CP,
-            this.ville,
-            this.email,
-            this.dateCreation,
-            this.tel,
-            this.mdp,
-            this.token,
-            this.dateModif});
-            this.listeClientsListView.Location = new System.Drawing.Point(52, 519);
+            this.listeClientsListView.Location = new System.Drawing.Point(52, 448);
             this.listeClientsListView.Name = "listeClientsListView";
-            this.listeClientsListView.Size = new System.Drawing.Size(1518, 521);
+            this.listeClientsListView.Size = new System.Drawing.Size(1518, 592);
             this.listeClientsListView.TabIndex = 8;
             this.listeClientsListView.UseCompatibleStateImageBehavior = false;
             this.listeClientsListView.View = System.Windows.Forms.View.Details;
+            this.listeClientsListView.SelectedIndexChanged += new System.EventHandler(this.listeClientsListView_SelectedIndexChanged);
             // 
             // mdpLbl
             // 
             this.mdpLbl.AutoSize = true;
-            this.mdpLbl.Location = new System.Drawing.Point(424, 255);
+            this.mdpLbl.Location = new System.Drawing.Point(631, 148);
             this.mdpLbl.Name = "mdpLbl";
             this.mdpLbl.Size = new System.Drawing.Size(154, 25);
             this.mdpLbl.TabIndex = 9;
@@ -182,7 +163,7 @@
             // adresseLbl
             // 
             this.adresseLbl.AutoSize = true;
-            this.adresseLbl.Location = new System.Drawing.Point(840, 314);
+            this.adresseLbl.Location = new System.Drawing.Point(682, 210);
             this.adresseLbl.Name = "adresseLbl";
             this.adresseLbl.Size = new System.Drawing.Size(103, 25);
             this.adresseLbl.TabIndex = 13;
@@ -191,7 +172,7 @@
             // prenomLbl
             // 
             this.prenomLbl.AutoSize = true;
-            this.prenomLbl.Location = new System.Drawing.Point(480, 196);
+            this.prenomLbl.Location = new System.Drawing.Point(273, 269);
             this.prenomLbl.Name = "prenomLbl";
             this.prenomLbl.Size = new System.Drawing.Size(98, 25);
             this.prenomLbl.TabIndex = 12;
@@ -200,7 +181,7 @@
             // nomLbl
             // 
             this.nomLbl.AutoSize = true;
-            this.nomLbl.Location = new System.Drawing.Point(504, 134);
+            this.nomLbl.Location = new System.Drawing.Point(299, 210);
             this.nomLbl.Name = "nomLbl";
             this.nomLbl.Size = new System.Drawing.Size(74, 25);
             this.nomLbl.TabIndex = 11;
@@ -208,107 +189,76 @@
             // 
             // nomTxtBox
             // 
-            this.nomTxtBox.Location = new System.Drawing.Point(584, 131);
+            this.nomTxtBox.Location = new System.Drawing.Point(379, 207);
             this.nomTxtBox.Name = "nomTxtBox";
             this.nomTxtBox.Size = new System.Drawing.Size(164, 31);
             this.nomTxtBox.TabIndex = 14;
             // 
             // prenomTxtBox
             // 
-            this.prenomTxtBox.Location = new System.Drawing.Point(586, 193);
+            this.prenomTxtBox.Location = new System.Drawing.Point(379, 266);
             this.prenomTxtBox.Name = "prenomTxtBox";
             this.prenomTxtBox.Size = new System.Drawing.Size(164, 31);
             this.prenomTxtBox.TabIndex = 15;
             // 
             // mdpTxtBox
             // 
-            this.mdpTxtBox.Location = new System.Drawing.Point(586, 252);
+            this.mdpTxtBox.Location = new System.Drawing.Point(793, 145);
             this.mdpTxtBox.Name = "mdpTxtBox";
             this.mdpTxtBox.Size = new System.Drawing.Size(164, 31);
             this.mdpTxtBox.TabIndex = 16;
             // 
             // emailTxtBox
             // 
-            this.emailTxtBox.Location = new System.Drawing.Point(951, 252);
+            this.emailTxtBox.Location = new System.Drawing.Point(1143, 266);
             this.emailTxtBox.Name = "emailTxtBox";
             this.emailTxtBox.Size = new System.Drawing.Size(164, 31);
             this.emailTxtBox.TabIndex = 19;
             // 
             // villeTxtBox
             // 
-            this.villeTxtBox.Location = new System.Drawing.Point(951, 193);
+            this.villeTxtBox.Location = new System.Drawing.Point(1143, 207);
             this.villeTxtBox.Name = "villeTxtBox";
             this.villeTxtBox.Size = new System.Drawing.Size(164, 31);
             this.villeTxtBox.TabIndex = 18;
             // 
             // telTxtBox
             // 
-            this.telTxtBox.Location = new System.Drawing.Point(951, 131);
+            this.telTxtBox.Location = new System.Drawing.Point(1143, 145);
             this.telTxtBox.Name = "telTxtBox";
             this.telTxtBox.Size = new System.Drawing.Size(164, 31);
             this.telTxtBox.TabIndex = 17;
             // 
             // codePostalTxtBox
             // 
-            this.codePostalTxtBox.Location = new System.Drawing.Point(587, 314);
+            this.codePostalTxtBox.Location = new System.Drawing.Point(793, 266);
             this.codePostalTxtBox.Name = "codePostalTxtBox";
             this.codePostalTxtBox.Size = new System.Drawing.Size(164, 31);
             this.codePostalTxtBox.TabIndex = 21;
             // 
             // adresseTxtBox
             // 
-            this.adresseTxtBox.Location = new System.Drawing.Point(951, 311);
+            this.adresseTxtBox.Location = new System.Drawing.Point(793, 207);
             this.adresseTxtBox.Name = "adresseTxtBox";
             this.adresseTxtBox.Size = new System.Drawing.Size(164, 31);
             this.adresseTxtBox.TabIndex = 20;
             // 
-            // id
+            // idTxtBox
             // 
-            this.id.Text = "ID";
+            this.idTxtBox.HideSelection = false;
+            this.idTxtBox.Location = new System.Drawing.Point(379, 145);
+            this.idTxtBox.Name = "idTxtBox";
+            this.idTxtBox.Size = new System.Drawing.Size(164, 31);
+            this.idTxtBox.TabIndex = 23;
             // 
-            // nom
+            // IDLabel
             // 
-            this.nom.Text = "Nom";
-            // 
-            // prenom
-            // 
-            this.prenom.Text = "Prénom";
-            // 
-            // adresse
-            // 
-            this.adresse.Text = "Adresse";
-            // 
-            // CP
-            // 
-            this.CP.Text = "Code postal";
-            // 
-            // ville
-            // 
-            this.ville.Text = "Ville";
-            // 
-            // email
-            // 
-            this.email.Text = "Email";
-            // 
-            // dateCreation
-            // 
-            this.dateCreation.Text = "Date création";
-            // 
-            // tel
-            // 
-            this.tel.Text = "Tel";
-            // 
-            // mdp
-            // 
-            this.mdp.Text = "Mot de passe";
-            // 
-            // token
-            // 
-            this.token.Text = "Token";
-            // 
-            // dateModif
-            // 
-            this.dateModif.Text = "Date modification";
+            this.IDLabel.AutoSize = true;
+            this.IDLabel.Location = new System.Drawing.Point(250, 148);
+            this.IDLabel.Name = "IDLabel";
+            this.IDLabel.Size = new System.Drawing.Size(123, 25);
+            this.IDLabel.TabIndex = 22;
+            this.IDLabel.Text = "Identifiant : ";
             // 
             // GestionClients
             // 
@@ -316,6 +266,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1624, 1079);
+            this.Controls.Add(this.idTxtBox);
+            this.Controls.Add(this.IDLabel);
             this.Controls.Add(this.codePostalTxtBox);
             this.Controls.Add(this.adresseTxtBox);
             this.Controls.Add(this.emailTxtBox);
@@ -373,17 +325,7 @@
         private System.Windows.Forms.TextBox telTxtBox;
         private System.Windows.Forms.TextBox codePostalTxtBox;
         private System.Windows.Forms.TextBox adresseTxtBox;
-        private System.Windows.Forms.ColumnHeader id;
-        private System.Windows.Forms.ColumnHeader nom;
-        private System.Windows.Forms.ColumnHeader prenom;
-        private System.Windows.Forms.ColumnHeader adresse;
-        private System.Windows.Forms.ColumnHeader CP;
-        private System.Windows.Forms.ColumnHeader ville;
-        private System.Windows.Forms.ColumnHeader email;
-        private System.Windows.Forms.ColumnHeader dateCreation;
-        private System.Windows.Forms.ColumnHeader tel;
-        private System.Windows.Forms.ColumnHeader mdp;
-        private System.Windows.Forms.ColumnHeader token;
-        private System.Windows.Forms.ColumnHeader dateModif;
+        private System.Windows.Forms.TextBox idTxtBox;
+        private System.Windows.Forms.Label IDLabel;
     }
 }
