@@ -36,6 +36,7 @@ namespace Gestion_dun_pressing
         private void listeEmployesListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             validerBtn.Text = "Ajouter"; // Si on sélectionne une ligne de la list view, on modifie le bouton d'ajout
+            activer_modification_suppresion(); // On active les modif/suppr
             if (listeEmployesListView.SelectedItems.Count > 0) // Si une donnée existe, on pré-remplie les text box
             {
                 ListViewItem item = listeEmployesListView.SelectedItems[0];
@@ -59,13 +60,14 @@ namespace Gestion_dun_pressing
 
         private void validerBtn_Click(object sender, EventArgs e)
         {
-            if (validerBtn.Text == "Ajouter") // Si l'ajout est sélectionner, on active les text box et on les vide
+            if (validerBtn.Text == "Ajouter") // Si l'ajout est sélectionner, on active les text box, on les vide et on désactive la suppression et la modification
             {
                 validerBtn.Text = "Valider";
                 activer_TextBox();
                 rafraichir_TextBox();
+                desactiver_modification_suppression();
             }
-            else if (validerBtn.Text == "Valider")
+            else
             {
                 if (nomTxtBox.Text != string.Empty && prenomTxtBox.Text != string.Empty && mdpTxtBox.Text != string.Empty && dateArriveePicker.Text != string.Empty && typeContratComboBox.Text != string.Empty && salaireTxtBox.Text != string.Empty)
                 {
@@ -76,9 +78,10 @@ namespace Gestion_dun_pressing
                     rafraichir_TextBox(); // On vide les text box
                     desactiver_TextBox(); // On désactive les text box
 
-                    // On change le bouton d'ajout et on désactive le date picker
+                    // On change le bouton d'ajout et on désactive le date picker et on réactive la modif et la suppr
                     validerBtn.Text = "Ajouter";
                     dateArriveePicker.Enabled = false;
+                    activer_modification_suppresion();
                 }
                 else // Si certains champs sont vides, on affiche un message d'erreur
                 {
@@ -175,6 +178,18 @@ namespace Gestion_dun_pressing
             dateArriveePicker.Enabled = false;
             typeContratComboBox.Enabled = false;
             salaireTxtBox.Enabled = false;
+        }
+
+        private void activer_modification_suppresion()
+        {
+            modifierBtn.Enabled = true;
+            supprimerBtn.Enabled = true;
+        }
+
+        private void desactiver_modification_suppression()
+        {
+            modifierBtn.Enabled = false;
+            supprimerBtn.Enabled = false;
         }
     }
 }
