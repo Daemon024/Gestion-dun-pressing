@@ -20,12 +20,7 @@ namespace Gestion_dun_pressing
             listeEmployesListView.GridLines = true;
 
             // On désactive les boutons
-            identifiantTxtBox.Enabled = false;
-            nomTxtBox.Enabled = false;
-            prenomTxtBox.Enabled = false;
-            mdpTxtBox.Enabled = false;
-            typeContratComboBox.Enabled = false;
-            salaireTxtBox.Enabled = false;
+            desactiver_TextBox();
         }
 
         private void GestionEmployes_Load(object sender, EventArgs e)

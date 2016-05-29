@@ -46,17 +46,17 @@
             this.telTxtBox = new System.Windows.Forms.TextBox();
             this.emailTxtBox = new System.Windows.Forms.TextBox();
             this.villeTxtBox = new System.Windows.Forms.TextBox();
-            this.dateCreationTxtBox = new System.Windows.Forms.TextBox();
             this.codePostalTxtBox = new System.Windows.Forms.TextBox();
             this.adresseTxtBox = new System.Windows.Forms.TextBox();
             this.idTxtBox = new System.Windows.Forms.TextBox();
             this.IDLabel = new System.Windows.Forms.Label();
             this.mdpTxtBox = new System.Windows.Forms.TextBox();
             this.tokenTxtBox = new System.Windows.Forms.TextBox();
-            this.dateModificationTxtBox = new System.Windows.Forms.TextBox();
             this.dateModificationLbl = new System.Windows.Forms.Label();
             this.tokenLbl = new System.Windows.Forms.Label();
             this.mdpLbl = new System.Windows.Forms.Label();
+            this.dateCreationPicker = new System.Windows.Forms.DateTimePicker();
+            this.dateModificationPicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // titreLbl
@@ -115,7 +115,7 @@
             this.validerBtn.Name = "validerBtn";
             this.validerBtn.Size = new System.Drawing.Size(162, 46);
             this.validerBtn.TabIndex = 10;
-            this.validerBtn.Text = "Valider";
+            this.validerBtn.Text = "Ajouter";
             this.validerBtn.UseVisualStyleBackColor = false;
             this.validerBtn.Click += new System.EventHandler(this.validerBtn_Click);
             // 
@@ -218,7 +218,7 @@
             // 
             this.emailTxtBox.Location = new System.Drawing.Point(958, 142);
             this.emailTxtBox.Name = "emailTxtBox";
-            this.emailTxtBox.Size = new System.Drawing.Size(164, 31);
+            this.emailTxtBox.Size = new System.Drawing.Size(166, 31);
             this.emailTxtBox.TabIndex = 6;
             // 
             // villeTxtBox
@@ -227,15 +227,6 @@
             this.villeTxtBox.Name = "villeTxtBox";
             this.villeTxtBox.Size = new System.Drawing.Size(164, 31);
             this.villeTxtBox.TabIndex = 5;
-            // 
-            // dateCreationTxtBox
-            // 
-            this.dateCreationTxtBox.Enabled = false;
-            this.dateCreationTxtBox.Location = new System.Drawing.Point(958, 204);
-            this.dateCreationTxtBox.Name = "dateCreationTxtBox";
-            this.dateCreationTxtBox.ReadOnly = true;
-            this.dateCreationTxtBox.Size = new System.Drawing.Size(164, 31);
-            this.dateCreationTxtBox.TabIndex = 8;
             // 
             // codePostalTxtBox
             // 
@@ -284,15 +275,6 @@
             this.tokenTxtBox.Size = new System.Drawing.Size(164, 31);
             this.tokenTxtBox.TabIndex = 9;
             // 
-            // dateModificationTxtBox
-            // 
-            this.dateModificationTxtBox.Enabled = false;
-            this.dateModificationTxtBox.Location = new System.Drawing.Point(1364, 263);
-            this.dateModificationTxtBox.Name = "dateModificationTxtBox";
-            this.dateModificationTxtBox.ReadOnly = true;
-            this.dateModificationTxtBox.Size = new System.Drawing.Size(164, 31);
-            this.dateModificationTxtBox.TabIndex = 12;
-            // 
             // dateModificationLbl
             // 
             this.dateModificationLbl.AutoSize = true;
@@ -320,15 +302,30 @@
             this.mdpLbl.TabIndex = 10;
             this.mdpLbl.Text = "Mot de passe :";
             // 
+            // dateCreationPicker
+            // 
+            this.dateCreationPicker.Location = new System.Drawing.Point(958, 202);
+            this.dateCreationPicker.Name = "dateCreationPicker";
+            this.dateCreationPicker.Size = new System.Drawing.Size(166, 31);
+            this.dateCreationPicker.TabIndex = 25;
+            // 
+            // dateModificationPicker
+            // 
+            this.dateModificationPicker.Location = new System.Drawing.Point(1360, 263);
+            this.dateModificationPicker.Name = "dateModificationPicker";
+            this.dateModificationPicker.Size = new System.Drawing.Size(166, 31);
+            this.dateModificationPicker.TabIndex = 26;
+            // 
             // GestionClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1624, 1079);
+            this.Controls.Add(this.dateModificationPicker);
+            this.Controls.Add(this.dateCreationPicker);
             this.Controls.Add(this.mdpTxtBox);
             this.Controls.Add(this.tokenTxtBox);
-            this.Controls.Add(this.dateModificationTxtBox);
             this.Controls.Add(this.dateModificationLbl);
             this.Controls.Add(this.tokenLbl);
             this.Controls.Add(this.mdpLbl);
@@ -338,7 +335,6 @@
             this.Controls.Add(this.adresseTxtBox);
             this.Controls.Add(this.emailTxtBox);
             this.Controls.Add(this.villeTxtBox);
-            this.Controls.Add(this.dateCreationTxtBox);
             this.Controls.Add(this.telTxtBox);
             this.Controls.Add(this.prenomTxtBox);
             this.Controls.Add(this.nomTxtBox);
@@ -388,16 +384,16 @@
         private System.Windows.Forms.TextBox telTxtBox;
         private System.Windows.Forms.TextBox emailTxtBox;
         private System.Windows.Forms.TextBox villeTxtBox;
-        private System.Windows.Forms.TextBox dateCreationTxtBox;
         private System.Windows.Forms.TextBox codePostalTxtBox;
         private System.Windows.Forms.TextBox adresseTxtBox;
         private System.Windows.Forms.TextBox idTxtBox;
         private System.Windows.Forms.Label IDLabel;
         private System.Windows.Forms.TextBox tokenTxtBox;
-        private System.Windows.Forms.TextBox dateModificationTxtBox;
         private System.Windows.Forms.Label dateModificationLbl;
         private System.Windows.Forms.Label tokenLbl;
         private System.Windows.Forms.Label mdpLbl;
         private System.Windows.Forms.TextBox mdpTxtBox;
+        private System.Windows.Forms.DateTimePicker dateCreationPicker;
+        private System.Windows.Forms.DateTimePicker dateModificationPicker;
     }
 }
