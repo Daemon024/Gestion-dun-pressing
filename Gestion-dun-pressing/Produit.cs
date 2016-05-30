@@ -14,15 +14,15 @@ namespace Gestion_dun_pressing
             return GestionBDD.select("produits");
         }
 
-        public static void ajouter(int id, string type, string dateCreation)
+        public static void ajouter(string type, string dateCreation)
         {
-            string requete = string.Format("INSERT INTO produits VALUES({0}, \"{1}\", \"{2}\")", id, type, dateCreation);
+            string requete = string.Format("INSERT INTO produits VALUES(\"\", \"{0}\", \"{1}\")", type, dateCreation);
             GestionBDD.executeRequest(requete);
         }
 
         public static void modifier(int id, string type)
         {
-            string requete = string.Format("UPDATE produits SET id={0}, type='{1}' WHERE id={0}", id, type);
+            string requete = string.Format("UPDATE produits SET id={0}, typeProd='{1}' WHERE id={0}", id, type);
             GestionBDD.executeRequest(requete);
         }
 

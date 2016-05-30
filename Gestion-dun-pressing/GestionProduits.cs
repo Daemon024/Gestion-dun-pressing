@@ -15,8 +15,12 @@ namespace Gestion_dun_pressing
         public GestionProduits()
         {
             InitializeComponent();
+            // On active la selection d'une ligne complète de la list view
             listeProduitsListView.FullRowSelect = true;
             listeProduitsListView.GridLines = true;
+
+            // On désactive les boutons
+            desactiver_TextBox();
         }
 
         private void GestionProduits_Load(object sender, EventArgs e)
@@ -26,37 +30,90 @@ namespace Gestion_dun_pressing
 
         private void listeProduitsListView_SelectedIndexChanged(object sender, EventArgs e)
         {
+            validerBtn.Text = "Ajouter"; // Si on sélectionne une ligne de la list view, on modifie le bouton d'ajout
+            activer_modification_suppresion(); // On active les modif/suppr
             if (listeProduitsListView.SelectedItems.Count > 0)
             {
                 ListViewItem item = listeProduitsListView.SelectedItems[0];
                 identifiantTxtBox.Text = item.SubItems[0].Text;
                 typeTxtBox.Text = item.SubItems[1].Text;
+
+                // On active pour la modification (sauf le DatePicker)
+                activer_TextBox();
+                dateCreationPicker.Enabled = false;
             }
-            else
+            else // Si aucune donnée n'est sélectionnée, on vide les text box
             {
                 rafraichir_TextBox();
+                desactiver_TextBox();
             }
         }
 
         private void validerBtn_Click(object sender, EventArgs e)
         {
-            Produit.ajouter(Convert.ToInt32(identifiantTxtBox.Text), typeTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"));
-            rafraichir_ListView();
-            rafraichir_TextBox();
+
+            if (validerBtn.Text == "Ajouter") // Si l'ajout est sélectionner, on active les text box, on les vide et on désactive la suppression et la modification
+            {
+                validerBtn.Text = "Valider";
+                activer_TextBox();
+                rafraichir_TextBox();
+                desactiver_modification_suppression();
+            }
+            else
+            {
+
+                if (typeTxtBox.Text != string.Empty && dateCreationPicker.Text != string.Empty)
+                {
+                    // On lance la requête d'ajout
+                    Produit.ajouter(typeTxtBox.Text, dateCreationPicker.Value.ToString("yyyy-MM-dd hh:mm:ss"));
+
+                    rafraichir_ListView(); // On actualise les données de la Liste View
+                    rafraichir_TextBox(); // On vide les text box
+                    desactiver_TextBox(); // On désactive les text box
+
+                    // On change le bouton d'ajout et on désactive le date picker et on réactive la modif et la suppr
+                    validerBtn.Text = "Ajouter";
+                    dateCreationPicker.Enabled = false;
+                    activer_modification_suppresion();
+                }
+                else // Si certains champs sont vides, on affiche un message d'erreur
+                {
+                    MessageBox.Show("Veuillez remplir tous les champs.");
+                }
+            }
         }
 
         private void modifierBtn_Click(object sender, EventArgs e)
         {
-            Produit.modifier(Convert.ToInt32(identifiantTxtBox.Text), typeTxtBox.Text);
-            rafraichir_ListView();
-            rafraichir_TextBox();
+            if (typeTxtBox.Text != string.Empty && dateCreationPicker.Text != string.Empty)
+            {
+                // On éffectue la modification si tous les champs sont remplis
+                Produit.modifier(Convert.ToInt32(identifiantTxtBox.Text), typeTxtBox.Text);
+
+                // On actualise les données, on vide les text box et on les désactive
+                rafraichir_ListView();
+                rafraichir_TextBox();
+                desactiver_TextBox();
+            }
+            else
+            {
+                MessageBox.Show("Veuillez remplir tous les champs.");
+            }
         }
 
         private void supprimerBtn_Click(object sender, EventArgs e)
         {
-            Produit.supprimer(Convert.ToInt32(identifiantTxtBox.Text));
-            rafraichir_ListView();
-            rafraichir_TextBox();
+            desactiver_TextBox();
+            if (identifiantTxtBox.Text != string.Empty && typeTxtBox.Text != string.Empty)
+            {
+                Produit.supprimer(Convert.ToInt32(identifiantTxtBox.Text));
+                rafraichir_ListView();
+                rafraichir_TextBox();
+            }
+            else
+            {
+                MessageBox.Show("Veuillez saisir un client à supprimer");
+            }
         }
 
         private void rafraichir_ListView()
@@ -71,7 +128,7 @@ namespace Gestion_dun_pressing
             {
                 DataRow dr = lesProduits.Rows[i];
                 ListViewItem listitem = new ListViewItem(dr["id"].ToString());
-                listitem.SubItems.Add(dr["type"].ToString());
+                listitem.SubItems.Add(dr["typeProd"].ToString());
                 listitem.SubItems.Add(dr["created_at"].ToString());
                 listeProduitsListView.Items.Add(listitem);
             }
@@ -81,6 +138,31 @@ namespace Gestion_dun_pressing
         {
             identifiantTxtBox.Text = string.Empty;
             typeTxtBox.Text = string.Empty;
+            dateCreationPicker.Text = string.Empty;
+        }
+
+        private void activer_TextBox()
+        {
+            typeTxtBox.Enabled = true;
+            dateCreationPicker.Enabled = true;
+        }
+
+        private void desactiver_TextBox()
+        {
+            typeTxtBox.Enabled = false;
+            dateCreationPicker.Enabled = false;
+        }
+
+        private void activer_modification_suppresion()
+        {
+            modifierBtn.Enabled = true;
+            supprimerBtn.Enabled = true;
+        }
+
+        private void desactiver_modification_suppression()
+        {
+            modifierBtn.Enabled = false;
+            supprimerBtn.Enabled = false;
         }
     }
 }

@@ -59,7 +59,6 @@ namespace Gestion_dun_pressing
 
         private void validerBtn_Click(object sender, EventArgs e)
         {
-
             if (validerBtn.Text == "Ajouter") // Si l'ajout est sélectionner, on active les text box, on les vide et on désactive la suppression et la modification
             {
                 validerBtn.Text = "Valider";
@@ -179,7 +178,6 @@ namespace Gestion_dun_pressing
 
         private void activer_TextBox()
         {
-            idTxtBox.Enabled = true;
             nomTxtBox.Enabled = true;
             prenomTxtBox.Enabled = true;
             adresseTxtBox.Enabled = true;
@@ -195,7 +193,6 @@ namespace Gestion_dun_pressing
 
         private void desactiver_TextBox()
         {
-            idTxtBox.Enabled = false;
             nomTxtBox.Enabled = false;
             prenomTxtBox.Enabled = false;
             adresseTxtBox.Enabled = false;
