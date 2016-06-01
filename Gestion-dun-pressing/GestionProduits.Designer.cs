@@ -28,26 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.typeTxtBox = new System.Windows.Forms.TextBox();
+            this.nomTxtBox = new System.Windows.Forms.TextBox();
             this.identifiantTxtBox = new System.Windows.Forms.TextBox();
             this.identifiantLbl = new System.Windows.Forms.Label();
             this.supprimerBtn = new System.Windows.Forms.Button();
             this.modifierBtn = new System.Windows.Forms.Button();
             this.validerBtn = new System.Windows.Forms.Button();
-            this.typeLbl = new System.Windows.Forms.Label();
+            this.nomLbl = new System.Windows.Forms.Label();
             this.titreLbl = new System.Windows.Forms.Label();
             this.listeProduitsListView = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
-            // typeTxtBox
+            // nomTxtBox
             // 
-            this.typeTxtBox.Location = new System.Drawing.Point(935, 138);
-            this.typeTxtBox.Name = "typeTxtBox";
-            this.typeTxtBox.Size = new System.Drawing.Size(164, 31);
-            this.typeTxtBox.TabIndex = 55;
+            this.nomTxtBox.Location = new System.Drawing.Point(935, 138);
+            this.nomTxtBox.Name = "nomTxtBox";
+            this.nomTxtBox.Size = new System.Drawing.Size(164, 31);
+            this.nomTxtBox.TabIndex = 55;
             // 
             // identifiantTxtBox
             // 
+            this.identifiantTxtBox.Enabled = false;
             this.identifiantTxtBox.Location = new System.Drawing.Point(611, 138);
             this.identifiantTxtBox.Name = "identifiantTxtBox";
             this.identifiantTxtBox.Size = new System.Drawing.Size(164, 31);
@@ -68,7 +69,7 @@
             this.supprimerBtn.FlatAppearance.BorderSize = 0;
             this.supprimerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.supprimerBtn.ForeColor = System.Drawing.Color.White;
-            this.supprimerBtn.Location = new System.Drawing.Point(949, 249);
+            this.supprimerBtn.Location = new System.Drawing.Point(949, 228);
             this.supprimerBtn.Name = "supprimerBtn";
             this.supprimerBtn.Size = new System.Drawing.Size(162, 46);
             this.supprimerBtn.TabIndex = 47;
@@ -82,7 +83,7 @@
             this.modifierBtn.FlatAppearance.BorderSize = 0;
             this.modifierBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modifierBtn.ForeColor = System.Drawing.Color.White;
-            this.modifierBtn.Location = new System.Drawing.Point(730, 249);
+            this.modifierBtn.Location = new System.Drawing.Point(730, 228);
             this.modifierBtn.Name = "modifierBtn";
             this.modifierBtn.Size = new System.Drawing.Size(162, 46);
             this.modifierBtn.TabIndex = 46;
@@ -96,22 +97,22 @@
             this.validerBtn.FlatAppearance.BorderSize = 0;
             this.validerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.validerBtn.ForeColor = System.Drawing.Color.White;
-            this.validerBtn.Location = new System.Drawing.Point(499, 249);
+            this.validerBtn.Location = new System.Drawing.Point(499, 228);
             this.validerBtn.Name = "validerBtn";
             this.validerBtn.Size = new System.Drawing.Size(162, 46);
             this.validerBtn.TabIndex = 45;
-            this.validerBtn.Text = "Valider";
+            this.validerBtn.Text = "Ajouter";
             this.validerBtn.UseVisualStyleBackColor = false;
             this.validerBtn.Click += new System.EventHandler(this.validerBtn_Click);
             // 
-            // typeLbl
+            // nomLbl
             // 
-            this.typeLbl.AutoSize = true;
-            this.typeLbl.Location = new System.Drawing.Point(855, 141);
-            this.typeLbl.Name = "typeLbl";
-            this.typeLbl.Size = new System.Drawing.Size(72, 25);
-            this.typeLbl.TabIndex = 44;
-            this.typeLbl.Text = "Type :";
+            this.nomLbl.AutoSize = true;
+            this.nomLbl.Location = new System.Drawing.Point(861, 141);
+            this.nomLbl.Name = "nomLbl";
+            this.nomLbl.Size = new System.Drawing.Size(68, 25);
+            this.nomLbl.TabIndex = 44;
+            this.nomLbl.Text = "Nom :";
             // 
             // titreLbl
             // 
@@ -125,9 +126,9 @@
             // 
             // listeProduitsListView
             // 
-            this.listeProduitsListView.Location = new System.Drawing.Point(50, 356);
+            this.listeProduitsListView.Location = new System.Drawing.Point(50, 322);
             this.listeProduitsListView.Name = "listeProduitsListView";
-            this.listeProduitsListView.Size = new System.Drawing.Size(1534, 679);
+            this.listeProduitsListView.Size = new System.Drawing.Size(1534, 713);
             this.listeProduitsListView.TabIndex = 56;
             this.listeProduitsListView.UseCompatibleStateImageBehavior = false;
             this.listeProduitsListView.View = System.Windows.Forms.View.Details;
@@ -140,13 +141,13 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1624, 1079);
             this.Controls.Add(this.listeProduitsListView);
-            this.Controls.Add(this.typeTxtBox);
+            this.Controls.Add(this.nomTxtBox);
             this.Controls.Add(this.identifiantTxtBox);
             this.Controls.Add(this.identifiantLbl);
             this.Controls.Add(this.supprimerBtn);
             this.Controls.Add(this.modifierBtn);
             this.Controls.Add(this.validerBtn);
-            this.Controls.Add(this.typeLbl);
+            this.Controls.Add(this.nomLbl);
             this.Controls.Add(this.titreLbl);
             this.MaximumSize = new System.Drawing.Size(1650, 1150);
             this.MinimumSize = new System.Drawing.Size(1650, 1150);
@@ -162,13 +163,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox typeTxtBox;
+        private System.Windows.Forms.TextBox nomTxtBox;
         private System.Windows.Forms.TextBox identifiantTxtBox;
         private System.Windows.Forms.Label identifiantLbl;
         private System.Windows.Forms.Button supprimerBtn;
         private System.Windows.Forms.Button modifierBtn;
         private System.Windows.Forms.Button validerBtn;
-        private System.Windows.Forms.Label typeLbl;
+        private System.Windows.Forms.Label nomLbl;
         private System.Windows.Forms.Label titreLbl;
         private System.Windows.Forms.ListView listeProduitsListView;
     }

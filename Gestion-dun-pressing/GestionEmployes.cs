@@ -67,7 +67,7 @@ namespace Gestion_dun_pressing
                 if (nomTxtBox.Text != string.Empty && prenomTxtBox.Text != string.Empty && mdpTxtBox.Text != string.Empty && dateArriveePicker.Text != string.Empty && typeContratComboBox.Text != string.Empty && salaireTxtBox.Text != string.Empty)
                 {
                     // On lance la requête d'ajout
-                    Employe.ajouter(nomTxtBox.Text.ToUpper(), prenomTxtBox.Text, mdpTxtBox.Text, dateArriveePicker.Value.ToString("yyyy-MM-dd HH:mm:ss"), typeContratComboBox.Text, Convert.ToInt32(salaireTxtBox.Text));
+                    Employe.ajouter(nomTxtBox.Text.ToUpper(), prenomTxtBox.Text, mdpTxtBox.Text, dateArriveePicker.Value.ToString("yyyy-MM-dd"), typeContratComboBox.Text, Convert.ToInt32(salaireTxtBox.Text));
 
                     rafraichir_ListView(); // On actualise les données de la Liste View
                     rafraichir_TextBox(); // On vide les text box
@@ -134,8 +134,8 @@ namespace Gestion_dun_pressing
             {
                 DataRow dr = lesEmployes.Rows[i];
                 ListViewItem listitem = new ListViewItem(dr["id"].ToString());
-                listitem.SubItems.Add(dr["nomEmploye"].ToString());
-                listitem.SubItems.Add(dr["prenomEmploye"].ToString());
+                listitem.SubItems.Add(dr["nom"].ToString());
+                listitem.SubItems.Add(dr["prenom"].ToString());
                 listitem.SubItems.Add(dr["password"].ToString());
                 listitem.SubItems.Add(dr["dateArrivee"].ToString());
                 listitem.SubItems.Add(dr["typeContrat"].ToString());
