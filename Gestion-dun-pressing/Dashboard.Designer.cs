@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.questionLbl = new System.Windows.Forms.Label();
             this.statLbl = new System.Windows.Forms.Label();
             this.gererClientBtn = new System.Windows.Forms.Button();
@@ -46,6 +46,8 @@
             this.caLbl2 = new System.Windows.Forms.Label();
             this.typeProduitLbl2 = new System.Windows.Forms.Label();
             this.typeProduitLbl = new System.Windows.Forms.Label();
+            this.gererTarifBtn = new System.Windows.Forms.Button();
+            this.gererCommandeBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CAChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typesProduitsChart)).BeginInit();
             this.SuspendLayout();
@@ -115,39 +117,39 @@
             // 
             // CAChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.CAChart.ChartAreas.Add(chartArea1);
+            chartArea3.Name = "ChartArea1";
+            this.CAChart.ChartAreas.Add(chartArea3);
             this.CAChart.Location = new System.Drawing.Point(27, 505);
             this.CAChart.Name = "CAChart";
-            series1.BorderWidth = 2;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            series1.Name = "ChiffreAffaire";
-            this.CAChart.Series.Add(series1);
+            series3.BorderWidth = 2;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            series3.Name = "ChiffreAffaire";
+            this.CAChart.Series.Add(series3);
             this.CAChart.Size = new System.Drawing.Size(1021, 531);
             this.CAChart.TabIndex = 6;
             this.CAChart.Text = "Chiffre d\'affaire";
-            title1.Name = "Vide pour le titre en label";
-            this.CAChart.Titles.Add(title1);
+            title2.Name = "Vide pour le titre en label";
+            this.CAChart.Titles.Add(title2);
             // 
             // typesProduitsChart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.typesProduitsChart.ChartAreas.Add(chartArea2);
-            legend1.Alignment = System.Drawing.StringAlignment.Center;
-            legend1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDot;
-            legend1.Name = "Legend1";
-            this.typesProduitsChart.Legends.Add(legend1);
+            chartArea4.Name = "ChartArea1";
+            this.typesProduitsChart.ChartAreas.Add(chartArea4);
+            legend2.Alignment = System.Drawing.StringAlignment.Center;
+            legend2.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDot;
+            legend2.Name = "Legend1";
+            this.typesProduitsChart.Legends.Add(legend2);
             this.typesProduitsChart.Location = new System.Drawing.Point(1083, 505);
             this.typesProduitsChart.Name = "typesProduitsChart";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.LabelForeColor = System.Drawing.Color.White;
-            series2.Legend = "Legend1";
-            series2.Name = "TypesProduits";
-            series2.YValuesPerPoint = 2;
-            this.typesProduitsChart.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series4.LabelForeColor = System.Drawing.Color.White;
+            series4.Legend = "Legend1";
+            series4.Name = "TypesProduits";
+            series4.YValuesPerPoint = 2;
+            this.typesProduitsChart.Series.Add(series4);
             this.typesProduitsChart.Size = new System.Drawing.Size(511, 531);
             this.typesProduitsChart.TabIndex = 7;
             this.typesProduitsChart.Text = "Types de produits";
@@ -194,12 +196,35 @@
             this.typeProduitLbl.TabIndex = 10;
             this.typeProduitLbl.Text = "Types de produits |";
             // 
+            // gererTarifBtn
+            // 
+            this.gererTarifBtn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gererTarifBtn.Location = new System.Drawing.Point(855, 296);
+            this.gererTarifBtn.Name = "gererTarifBtn";
+            this.gererTarifBtn.Size = new System.Drawing.Size(225, 54);
+            this.gererTarifBtn.TabIndex = 13;
+            this.gererTarifBtn.Text = "Gérer les tarifs";
+            this.gererTarifBtn.UseVisualStyleBackColor = false;
+            // 
+            // gererCommandeBtn
+            // 
+            this.gererCommandeBtn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gererCommandeBtn.Location = new System.Drawing.Point(596, 293);
+            this.gererCommandeBtn.Name = "gererCommandeBtn";
+            this.gererCommandeBtn.Size = new System.Drawing.Size(225, 60);
+            this.gererCommandeBtn.TabIndex = 12;
+            this.gererCommandeBtn.Text = "Gérer les commandes";
+            this.gererCommandeBtn.UseVisualStyleBackColor = false;
+            this.gererCommandeBtn.Click += new System.EventHandler(this.gererCommandeBtn_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1624, 1079);
+            this.Controls.Add(this.gererTarifBtn);
+            this.Controls.Add(this.gererCommandeBtn);
             this.Controls.Add(this.typeProduitLbl2);
             this.Controls.Add(this.typeProduitLbl);
             this.Controls.Add(this.caLbl2);
@@ -241,5 +266,7 @@
         private System.Windows.Forms.Label caLbl2;
         private System.Windows.Forms.Label typeProduitLbl2;
         private System.Windows.Forms.Label typeProduitLbl;
+        private System.Windows.Forms.Button gererTarifBtn;
+        private System.Windows.Forms.Button gererCommandeBtn;
     }
 }

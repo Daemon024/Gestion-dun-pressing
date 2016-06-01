@@ -15,8 +15,12 @@ namespace Gestion_dun_pressing
         public GestionPrestations()
         {
             InitializeComponent();
+            // On active la selection d'une ligne complète de la list view
             listePrestationsListView.FullRowSelect = true;
             listePrestationsListView.GridLines = true;
+
+            // On désactive les boutons
+            desactiver_TextBox();
         }
 
         private void GestionPrestations_Load(object sender, EventArgs e)
@@ -24,43 +28,104 @@ namespace Gestion_dun_pressing
             rafraichir_ListView();
         }
 
+        private void listePrestationsListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            validerBtn.Text = "Ajouter"; // Si on sélectionne une ligne de la list view, on modifie le bouton d'ajout
+            activer_modification_suppresion(); // On active les modif/suppr
+            if (listePrestationsListView.SelectedItems.Count > 0)
+            {
+                ListViewItem item = listePrestationsListView.SelectedItems[0];
+                identifiantTxtBox.Text = item.SubItems[0].Text;
+                nomTxtBox.Text = item.SubItems[1].Text;
+
+                // On active pour la modification
+                activer_TextBox();
+            }
+            else // Si aucune donnée n'est sélectionnée, on vide les text box
+            {
+                rafraichir_TextBox();
+                desactiver_TextBox();
+            }
+        }
+
         private void validerBtn_Click_1(object sender, EventArgs e)
         {
-            Prestation.ajouter(Convert.ToInt32(identifiantTxtBox.Text), commentaireTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"), string.Empty);
-            rafraichir_ListView();
-            rafraichir_TextBox();
+            if (validerBtn.Text == "Ajouter") // Si l'ajout est sélectionner, on active les text box, on les vide et on désactive la suppression et la modification
+            {
+                validerBtn.Text = "Valider";
+                activer_TextBox();
+                rafraichir_TextBox();
+                desactiver_modification_suppression();
+            }
+            else
+            {
+                if (nomTxtBox.Text != string.Empty)
+                {
+                    // On lance la requête d'ajout
+                    Prestation.ajouter(nomTxtBox.Text, Convert.ToInt32(produitIdComboBox.Text));
+
+                    rafraichir_ListView(); // On actualise les données de la Liste View
+                    rafraichir_TextBox(); // On vide les text box
+                    desactiver_TextBox(); // On désactive les text box
+
+                    // On change le bouton d'ajout et on réactive la modif et la suppr
+                    validerBtn.Text = "Ajouter";
+                    activer_modification_suppresion();
+                }
+                else // Si certains champs sont vides, on affiche un message d'erreur
+                {
+                    MessageBox.Show("Veuillez remplir tous les champs.");
+                }
+            }
         }
 
         private void modifierBtn_Click_1(object sender, EventArgs e)
         {
-            Prestation.modifier(Convert.ToInt32(identifiantTxtBox.Text), commentaireTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"), string.Empty);
-            rafraichir_ListView();
-            rafraichir_TextBox();
+            if (identifiantTxtBox.Text != string.Empty && nomTxtBox.Text != string.Empty)
+            {
+                // On éffectue la modification si tous les champs sont remplis
+                Prestation.modifier(Convert.ToInt32(identifiantTxtBox.Text), nomTxtBox.Text, Convert.ToInt32(produitIdComboBox.Text));
+
+                // On actualise les données, on vide les text box et on les désactive
+                rafraichir_ListView();
+                rafraichir_TextBox();
+                desactiver_TextBox();
+            }
+            else
+            {
+                MessageBox.Show("Veuillez remplir tous les champs.");
+            }
         }
 
         private void supprimerBtn_Click_1(object sender, EventArgs e)
         {
-            Produit.supprimer(Convert.ToInt32(identifiantTxtBox.Text));
-            rafraichir_ListView();
-            rafraichir_TextBox();
+            desactiver_TextBox();
+            if (identifiantTxtBox.Text != string.Empty && nomTxtBox.Text != string.Empty)
+            {
+                Produit.supprimer(Convert.ToInt32(identifiantTxtBox.Text));
+                rafraichir_ListView();
+                rafraichir_TextBox();
+            }
+            else
+            {
+                MessageBox.Show("Veuillez saisir un client à supprimer");
+            }
         }
 
         private void rafraichir_ListView()
         {
             listePrestationsListView.Clear();
             listePrestationsListView.Columns.Add("ID");
-            listePrestationsListView.Columns.Add("Commentaire");
-            listePrestationsListView.Columns.Add("Date de dépôt");
-            listePrestationsListView.Columns.Add("Date de récupération");
+            listePrestationsListView.Columns.Add("Nom");
+            listePrestationsListView.Columns.Add("Produit");
 
             DataTable lesPrestations = Prestation.prestations();
             for (int i = 0; i < lesPrestations.Rows.Count; i++)
             {
                 DataRow dr = lesPrestations.Rows[i];
                 ListViewItem listitem = new ListViewItem(dr["id"].ToString());
-                listitem.SubItems.Add(dr["commentaire"].ToString());
-                listitem.SubItems.Add(dr["dateDepot"].ToString());
-                listitem.SubItems.Add(dr["dateRecuperation"].ToString());
+                listitem.SubItems.Add(dr["nom"].ToString());
+                listitem.SubItems.Add(dr["produits_id"].ToString());
                 listePrestationsListView.Items.Add(listitem);
             }
         }
@@ -68,7 +133,32 @@ namespace Gestion_dun_pressing
         private void rafraichir_TextBox()
         {
             identifiantTxtBox.Text = string.Empty;
-            commentaireTxtBox.Text = string.Empty;
+            nomTxtBox.Text = string.Empty;
+            produitIdComboBox.Text = string.Empty;
+        }
+
+        private void activer_TextBox()
+        {
+            nomTxtBox.Enabled = true;
+            produitIdComboBox.Enabled = true;
+        }
+
+        private void desactiver_TextBox()
+        {
+            nomTxtBox.Enabled = false;
+            produitIdComboBox.Enabled = false;
+        }
+
+        private void activer_modification_suppresion()
+        {
+            modifierBtn.Enabled = true;
+            supprimerBtn.Enabled = true;
+        }
+
+        private void desactiver_modification_suppression()
+        {
+            modifierBtn.Enabled = false;
+            supprimerBtn.Enabled = false;
         }
     }
 }

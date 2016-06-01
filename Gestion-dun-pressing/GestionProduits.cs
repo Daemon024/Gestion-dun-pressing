@@ -36,11 +36,10 @@ namespace Gestion_dun_pressing
             {
                 ListViewItem item = listeProduitsListView.SelectedItems[0];
                 identifiantTxtBox.Text = item.SubItems[0].Text;
-                typeTxtBox.Text = item.SubItems[1].Text;
+                nomTxtBox.Text = item.SubItems[1].Text;
 
                 // On active pour la modification (sauf le DatePicker)
                 activer_TextBox();
-                dateCreationPicker.Enabled = false;
             }
             else // Si aucune donnée n'est sélectionnée, on vide les text box
             {
@@ -62,10 +61,10 @@ namespace Gestion_dun_pressing
             else
             {
 
-                if (typeTxtBox.Text != string.Empty && dateCreationPicker.Text != string.Empty)
+                if (nomTxtBox.Text != string.Empty)
                 {
                     // On lance la requête d'ajout
-                    Produit.ajouter(typeTxtBox.Text, dateCreationPicker.Value.ToString("yyyy-MM-dd hh:mm:ss"));
+                    Produit.ajouter(nomTxtBox.Text);
 
                     rafraichir_ListView(); // On actualise les données de la Liste View
                     rafraichir_TextBox(); // On vide les text box
@@ -73,7 +72,6 @@ namespace Gestion_dun_pressing
 
                     // On change le bouton d'ajout et on désactive le date picker et on réactive la modif et la suppr
                     validerBtn.Text = "Ajouter";
-                    dateCreationPicker.Enabled = false;
                     activer_modification_suppresion();
                 }
                 else // Si certains champs sont vides, on affiche un message d'erreur
@@ -85,10 +83,10 @@ namespace Gestion_dun_pressing
 
         private void modifierBtn_Click(object sender, EventArgs e)
         {
-            if (typeTxtBox.Text != string.Empty && dateCreationPicker.Text != string.Empty)
+            if (nomTxtBox.Text != string.Empty)
             {
                 // On éffectue la modification si tous les champs sont remplis
-                Produit.modifier(Convert.ToInt32(identifiantTxtBox.Text), typeTxtBox.Text);
+                Produit.modifier(Convert.ToInt32(identifiantTxtBox.Text), nomTxtBox.Text);
 
                 // On actualise les données, on vide les text box et on les désactive
                 rafraichir_ListView();
@@ -104,7 +102,7 @@ namespace Gestion_dun_pressing
         private void supprimerBtn_Click(object sender, EventArgs e)
         {
             desactiver_TextBox();
-            if (identifiantTxtBox.Text != string.Empty && typeTxtBox.Text != string.Empty)
+            if (identifiantTxtBox.Text != string.Empty && nomTxtBox.Text != string.Empty)
             {
                 Produit.supprimer(Convert.ToInt32(identifiantTxtBox.Text));
                 rafraichir_ListView();
@@ -120,16 +118,14 @@ namespace Gestion_dun_pressing
         {
             listeProduitsListView.Clear();
             listeProduitsListView.Columns.Add("ID");
-            listeProduitsListView.Columns.Add("Type");
-            listeProduitsListView.Columns.Add("Date de création");
+            listeProduitsListView.Columns.Add("Nom");
 
             DataTable lesProduits = Produit.produits();
             for (int i = 0; i < lesProduits.Rows.Count; i++)
             {
                 DataRow dr = lesProduits.Rows[i];
                 ListViewItem listitem = new ListViewItem(dr["id"].ToString());
-                listitem.SubItems.Add(dr["typeProd"].ToString());
-                listitem.SubItems.Add(dr["created_at"].ToString());
+                listitem.SubItems.Add(dr["nom"].ToString());
                 listeProduitsListView.Items.Add(listitem);
             }
         }
@@ -137,20 +133,17 @@ namespace Gestion_dun_pressing
         private void rafraichir_TextBox()
         {
             identifiantTxtBox.Text = string.Empty;
-            typeTxtBox.Text = string.Empty;
-            dateCreationPicker.Text = string.Empty;
+            nomTxtBox.Text = string.Empty;
         }
 
         private void activer_TextBox()
         {
-            typeTxtBox.Enabled = true;
-            dateCreationPicker.Enabled = true;
+            nomTxtBox.Enabled = true;
         }
 
         private void desactiver_TextBox()
         {
-            typeTxtBox.Enabled = false;
-            dateCreationPicker.Enabled = false;
+            nomTxtBox.Enabled = false;
         }
 
         private void activer_modification_suppresion()

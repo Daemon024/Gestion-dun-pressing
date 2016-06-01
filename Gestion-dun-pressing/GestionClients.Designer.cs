@@ -32,7 +32,6 @@
             this.codePostalLbl = new System.Windows.Forms.Label();
             this.villeLbl = new System.Windows.Forms.Label();
             this.emailLbl = new System.Windows.Forms.Label();
-            this.dateCreationLbl = new System.Windows.Forms.Label();
             this.validerBtn = new System.Windows.Forms.Button();
             this.modifierBtn = new System.Windows.Forms.Button();
             this.supprimerBtn = new System.Windows.Forms.Button();
@@ -51,12 +50,7 @@
             this.idTxtBox = new System.Windows.Forms.TextBox();
             this.IDLabel = new System.Windows.Forms.Label();
             this.mdpTxtBox = new System.Windows.Forms.TextBox();
-            this.tokenTxtBox = new System.Windows.Forms.TextBox();
-            this.dateModificationLbl = new System.Windows.Forms.Label();
-            this.tokenLbl = new System.Windows.Forms.Label();
             this.mdpLbl = new System.Windows.Forms.Label();
-            this.dateCreationPicker = new System.Windows.Forms.DateTimePicker();
-            this.dateModificationPicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // titreLbl
@@ -72,7 +66,7 @@
             // codePostalLbl
             // 
             this.codePostalLbl.AutoSize = true;
-            this.codePostalLbl.Location = new System.Drawing.Point(424, 207);
+            this.codePostalLbl.Location = new System.Drawing.Point(632, 200);
             this.codePostalLbl.Name = "codePostalLbl";
             this.codePostalLbl.Size = new System.Drawing.Size(139, 25);
             this.codePostalLbl.TabIndex = 1;
@@ -81,7 +75,7 @@
             // villeLbl
             // 
             this.villeLbl.AutoSize = true;
-            this.villeLbl.Location = new System.Drawing.Point(497, 266);
+            this.villeLbl.Location = new System.Drawing.Point(705, 259);
             this.villeLbl.Name = "villeLbl";
             this.villeLbl.Size = new System.Drawing.Size(65, 25);
             this.villeLbl.TabIndex = 2;
@@ -90,20 +84,11 @@
             // emailLbl
             // 
             this.emailLbl.AutoSize = true;
-            this.emailLbl.Location = new System.Drawing.Point(875, 145);
+            this.emailLbl.Location = new System.Drawing.Point(1083, 138);
             this.emailLbl.Name = "emailLbl";
             this.emailLbl.Size = new System.Drawing.Size(77, 25);
             this.emailLbl.TabIndex = 3;
             this.emailLbl.Text = "Email :";
-            // 
-            // dateCreationLbl
-            // 
-            this.dateCreationLbl.AutoSize = true;
-            this.dateCreationLbl.Location = new System.Drawing.Point(770, 207);
-            this.dateCreationLbl.Name = "dateCreationLbl";
-            this.dateCreationLbl.Size = new System.Drawing.Size(182, 25);
-            this.dateCreationLbl.TabIndex = 4;
-            this.dateCreationLbl.Text = "Date de création :";
             // 
             // validerBtn
             // 
@@ -160,7 +145,7 @@
             // telLbl
             // 
             this.telLbl.AutoSize = true;
-            this.telLbl.Location = new System.Drawing.Point(898, 266);
+            this.telLbl.Location = new System.Drawing.Point(1104, 203);
             this.telLbl.Name = "telLbl";
             this.telLbl.Size = new System.Drawing.Size(54, 25);
             this.telLbl.TabIndex = 9;
@@ -169,7 +154,7 @@
             // adresseLbl
             // 
             this.adresseLbl.AutoSize = true;
-            this.adresseLbl.Location = new System.Drawing.Point(457, 145);
+            this.adresseLbl.Location = new System.Drawing.Point(665, 138);
             this.adresseLbl.Name = "adresseLbl";
             this.adresseLbl.Size = new System.Drawing.Size(103, 25);
             this.adresseLbl.TabIndex = 13;
@@ -178,7 +163,7 @@
             // prenomLbl
             // 
             this.prenomLbl.AutoSize = true;
-            this.prenomLbl.Location = new System.Drawing.Point(95, 269);
+            this.prenomLbl.Location = new System.Drawing.Point(303, 262);
             this.prenomLbl.Name = "prenomLbl";
             this.prenomLbl.Size = new System.Drawing.Size(98, 25);
             this.prenomLbl.TabIndex = 12;
@@ -187,7 +172,7 @@
             // nomLbl
             // 
             this.nomLbl.AutoSize = true;
-            this.nomLbl.Location = new System.Drawing.Point(119, 210);
+            this.nomLbl.Location = new System.Drawing.Point(327, 203);
             this.nomLbl.Name = "nomLbl";
             this.nomLbl.Size = new System.Drawing.Size(74, 25);
             this.nomLbl.TabIndex = 11;
@@ -195,49 +180,49 @@
             // 
             // nomTxtBox
             // 
-            this.nomTxtBox.Location = new System.Drawing.Point(199, 204);
+            this.nomTxtBox.Location = new System.Drawing.Point(407, 197);
             this.nomTxtBox.Name = "nomTxtBox";
             this.nomTxtBox.Size = new System.Drawing.Size(164, 31);
             this.nomTxtBox.TabIndex = 1;
             // 
             // prenomTxtBox
             // 
-            this.prenomTxtBox.Location = new System.Drawing.Point(199, 263);
+            this.prenomTxtBox.Location = new System.Drawing.Point(407, 256);
             this.prenomTxtBox.Name = "prenomTxtBox";
             this.prenomTxtBox.Size = new System.Drawing.Size(164, 31);
             this.prenomTxtBox.TabIndex = 2;
             // 
             // telTxtBox
             // 
-            this.telTxtBox.Location = new System.Drawing.Point(960, 263);
+            this.telTxtBox.Location = new System.Drawing.Point(1166, 200);
             this.telTxtBox.Name = "telTxtBox";
             this.telTxtBox.Size = new System.Drawing.Size(164, 31);
             this.telTxtBox.TabIndex = 7;
             // 
             // emailTxtBox
             // 
-            this.emailTxtBox.Location = new System.Drawing.Point(958, 142);
+            this.emailTxtBox.Location = new System.Drawing.Point(1166, 135);
             this.emailTxtBox.Name = "emailTxtBox";
             this.emailTxtBox.Size = new System.Drawing.Size(166, 31);
             this.emailTxtBox.TabIndex = 6;
             // 
             // villeTxtBox
             // 
-            this.villeTxtBox.Location = new System.Drawing.Point(568, 263);
+            this.villeTxtBox.Location = new System.Drawing.Point(776, 256);
             this.villeTxtBox.Name = "villeTxtBox";
             this.villeTxtBox.Size = new System.Drawing.Size(164, 31);
             this.villeTxtBox.TabIndex = 5;
             // 
             // codePostalTxtBox
             // 
-            this.codePostalTxtBox.Location = new System.Drawing.Point(569, 204);
+            this.codePostalTxtBox.Location = new System.Drawing.Point(777, 197);
             this.codePostalTxtBox.Name = "codePostalTxtBox";
             this.codePostalTxtBox.Size = new System.Drawing.Size(164, 31);
             this.codePostalTxtBox.TabIndex = 4;
             // 
             // adresseTxtBox
             // 
-            this.adresseTxtBox.Location = new System.Drawing.Point(569, 142);
+            this.adresseTxtBox.Location = new System.Drawing.Point(777, 135);
             this.adresseTxtBox.Name = "adresseTxtBox";
             this.adresseTxtBox.Size = new System.Drawing.Size(164, 31);
             this.adresseTxtBox.TabIndex = 3;
@@ -245,7 +230,7 @@
             // idTxtBox
             // 
             this.idTxtBox.Enabled = false;
-            this.idTxtBox.Location = new System.Drawing.Point(199, 142);
+            this.idTxtBox.Location = new System.Drawing.Point(407, 135);
             this.idTxtBox.Name = "idTxtBox";
             this.idTxtBox.ReadOnly = true;
             this.idTxtBox.Size = new System.Drawing.Size(164, 31);
@@ -254,7 +239,7 @@
             // IDLabel
             // 
             this.IDLabel.AutoSize = true;
-            this.IDLabel.Location = new System.Drawing.Point(70, 145);
+            this.IDLabel.Location = new System.Drawing.Point(278, 138);
             this.IDLabel.Name = "IDLabel";
             this.IDLabel.Size = new System.Drawing.Size(123, 25);
             this.IDLabel.TabIndex = 22;
@@ -262,59 +247,20 @@
             // 
             // mdpTxtBox
             // 
-            this.mdpTxtBox.Location = new System.Drawing.Point(1362, 142);
+            this.mdpTxtBox.Location = new System.Drawing.Point(1166, 259);
             this.mdpTxtBox.Name = "mdpTxtBox";
             this.mdpTxtBox.PasswordChar = '*';
             this.mdpTxtBox.Size = new System.Drawing.Size(164, 31);
             this.mdpTxtBox.TabIndex = 8;
             // 
-            // tokenTxtBox
-            // 
-            this.tokenTxtBox.Location = new System.Drawing.Point(1362, 204);
-            this.tokenTxtBox.Name = "tokenTxtBox";
-            this.tokenTxtBox.Size = new System.Drawing.Size(164, 31);
-            this.tokenTxtBox.TabIndex = 9;
-            // 
-            // dateModificationLbl
-            // 
-            this.dateModificationLbl.AutoSize = true;
-            this.dateModificationLbl.Location = new System.Drawing.Point(1136, 266);
-            this.dateModificationLbl.Name = "dateModificationLbl";
-            this.dateModificationLbl.Size = new System.Drawing.Size(220, 25);
-            this.dateModificationLbl.TabIndex = 12;
-            this.dateModificationLbl.Text = "Date de modification :";
-            // 
-            // tokenLbl
-            // 
-            this.tokenLbl.AutoSize = true;
-            this.tokenLbl.Location = new System.Drawing.Point(1272, 207);
-            this.tokenLbl.Name = "tokenLbl";
-            this.tokenLbl.Size = new System.Drawing.Size(84, 25);
-            this.tokenLbl.TabIndex = 24;
-            this.tokenLbl.Text = "Token :";
-            // 
             // mdpLbl
             // 
             this.mdpLbl.AutoSize = true;
-            this.mdpLbl.Location = new System.Drawing.Point(1202, 145);
+            this.mdpLbl.Location = new System.Drawing.Point(1006, 262);
             this.mdpLbl.Name = "mdpLbl";
             this.mdpLbl.Size = new System.Drawing.Size(154, 25);
             this.mdpLbl.TabIndex = 10;
             this.mdpLbl.Text = "Mot de passe :";
-            // 
-            // dateCreationPicker
-            // 
-            this.dateCreationPicker.Location = new System.Drawing.Point(958, 202);
-            this.dateCreationPicker.Name = "dateCreationPicker";
-            this.dateCreationPicker.Size = new System.Drawing.Size(166, 31);
-            this.dateCreationPicker.TabIndex = 25;
-            // 
-            // dateModificationPicker
-            // 
-            this.dateModificationPicker.Location = new System.Drawing.Point(1360, 263);
-            this.dateModificationPicker.Name = "dateModificationPicker";
-            this.dateModificationPicker.Size = new System.Drawing.Size(166, 31);
-            this.dateModificationPicker.TabIndex = 26;
             // 
             // GestionClients
             // 
@@ -322,12 +268,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1624, 1079);
-            this.Controls.Add(this.dateModificationPicker);
-            this.Controls.Add(this.dateCreationPicker);
             this.Controls.Add(this.mdpTxtBox);
-            this.Controls.Add(this.tokenTxtBox);
-            this.Controls.Add(this.dateModificationLbl);
-            this.Controls.Add(this.tokenLbl);
             this.Controls.Add(this.mdpLbl);
             this.Controls.Add(this.idTxtBox);
             this.Controls.Add(this.IDLabel);
@@ -346,7 +287,6 @@
             this.Controls.Add(this.supprimerBtn);
             this.Controls.Add(this.modifierBtn);
             this.Controls.Add(this.validerBtn);
-            this.Controls.Add(this.dateCreationLbl);
             this.Controls.Add(this.emailLbl);
             this.Controls.Add(this.villeLbl);
             this.Controls.Add(this.codePostalLbl);
@@ -370,7 +310,6 @@
         private System.Windows.Forms.Label codePostalLbl;
         private System.Windows.Forms.Label villeLbl;
         private System.Windows.Forms.Label emailLbl;
-        private System.Windows.Forms.Label dateCreationLbl;
         private System.Windows.Forms.Button validerBtn;
         private System.Windows.Forms.Button modifierBtn;
         private System.Windows.Forms.Button supprimerBtn;
@@ -388,12 +327,7 @@
         private System.Windows.Forms.TextBox adresseTxtBox;
         private System.Windows.Forms.TextBox idTxtBox;
         private System.Windows.Forms.Label IDLabel;
-        private System.Windows.Forms.TextBox tokenTxtBox;
-        private System.Windows.Forms.Label dateModificationLbl;
-        private System.Windows.Forms.Label tokenLbl;
         private System.Windows.Forms.Label mdpLbl;
         private System.Windows.Forms.TextBox mdpTxtBox;
-        private System.Windows.Forms.DateTimePicker dateCreationPicker;
-        private System.Windows.Forms.DateTimePicker dateModificationPicker;
     }
 }

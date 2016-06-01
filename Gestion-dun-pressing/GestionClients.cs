@@ -44,11 +44,9 @@ namespace Gestion_dun_pressing
                 emailTxtBox.Text = item.SubItems[6].Text;
                 telTxtBox.Text = item.SubItems[8].Text;
                 mdpTxtBox.Text = item.SubItems[9].Text;
-                tokenTxtBox.Text = item.SubItems[10].Text;
 
-                // On active pour la modification (sauf le DatePicker)
+                // On active pour la modification
                 activer_TextBox();
-                dateCreationPicker.Enabled = false;
             }
             else // Si aucune donnée n'est sélectionnée, on vide les text box
             {
@@ -63,25 +61,23 @@ namespace Gestion_dun_pressing
             {
                 validerBtn.Text = "Valider";
                 activer_TextBox();
-                dateModificationPicker.Enabled = false;
                 rafraichir_TextBox();
                 desactiver_modification_suppression();
             }
             else
             {
 
-                if (nomTxtBox.Text != string.Empty && prenomTxtBox.Text != string.Empty && adresseTxtBox.Text != string.Empty && codePostalTxtBox.Text != string.Empty && villeTxtBox.Text != string.Empty && emailTxtBox.Text != string.Empty && telTxtBox.Text != string.Empty && mdpTxtBox.Text != string.Empty && tokenTxtBox.Text != string.Empty)
+                if (nomTxtBox.Text != string.Empty && prenomTxtBox.Text != string.Empty && adresseTxtBox.Text != string.Empty && codePostalTxtBox.Text != string.Empty && villeTxtBox.Text != string.Empty && emailTxtBox.Text != string.Empty && telTxtBox.Text != string.Empty && mdpTxtBox.Text != string.Empty)
                 {
                     // On lance la requête d'ajout
-                    Client.ajouter(nomTxtBox.Text, prenomTxtBox.Text, adresseTxtBox.Text, codePostalTxtBox.Text, villeTxtBox.Text, emailTxtBox.Text, dateCreationPicker.Value.ToString("yyyy-MM-dd HH:mm:ss"), telTxtBox.Text, mdpTxtBox.Text, tokenTxtBox.Text, "Pas encore de modification");
+                    Client.ajouter(nomTxtBox.Text, prenomTxtBox.Text, adresseTxtBox.Text, codePostalTxtBox.Text, villeTxtBox.Text, emailTxtBox.Text, DateTime.Now.ToString("yyyy-MM-dd"), telTxtBox.Text, mdpTxtBox.Text);
 
                     rafraichir_ListView(); // On actualise les données de la Liste View
                     rafraichir_TextBox(); // On vide les text box
                     desactiver_TextBox(); // On désactive les text box
 
-                    // On change le bouton d'ajout et on désactive le date picker et on réactive la modif et la suppr
+                    // On change le bouton d'ajout et on réactive la modif et la suppr
                     validerBtn.Text = "Ajouter";
-                    dateCreationPicker.Enabled = false;
                     activer_modification_suppresion();
                 }
                 else // Si certains champs sont vides, on affiche un message d'erreur
@@ -93,10 +89,10 @@ namespace Gestion_dun_pressing
 
         private void modifierBtn_Click(object sender, EventArgs e)
         {
-            if (nomTxtBox.Text != string.Empty && prenomTxtBox.Text != string.Empty && adresseTxtBox.Text != string.Empty && codePostalTxtBox.Text != string.Empty && villeTxtBox.Text != string.Empty && emailTxtBox.Text != string.Empty && telTxtBox.Text != string.Empty && mdpTxtBox.Text != string.Empty && tokenTxtBox.Text != string.Empty)
+            if (nomTxtBox.Text != string.Empty && prenomTxtBox.Text != string.Empty && adresseTxtBox.Text != string.Empty && codePostalTxtBox.Text != string.Empty && villeTxtBox.Text != string.Empty && emailTxtBox.Text != string.Empty && telTxtBox.Text != string.Empty && mdpTxtBox.Text != string.Empty)
             {
                 // On éffectue la modification si tous les champs sont remplis
-                Client.modifier(Convert.ToInt32(idTxtBox.Text), nomTxtBox.Text, prenomTxtBox.Text, adresseTxtBox.Text, codePostalTxtBox.Text, villeTxtBox.Text, emailTxtBox.Text, telTxtBox.Text, mdpTxtBox.Text, tokenTxtBox.Text, dateModificationPicker.Value.ToString("yyyy-MM-dd HH:mm:ss"));
+                Client.modifier(Convert.ToInt32(idTxtBox.Text), nomTxtBox.Text, prenomTxtBox.Text, adresseTxtBox.Text, codePostalTxtBox.Text, villeTxtBox.Text, emailTxtBox.Text, telTxtBox.Text, mdpTxtBox.Text);
 
                 // On actualise les données, on vide les text box et on les désactive
                 rafraichir_ListView();
@@ -137,8 +133,6 @@ namespace Gestion_dun_pressing
             listeClientsListView.Columns.Add("Date de création");
             listeClientsListView.Columns.Add("Tel");
             listeClientsListView.Columns.Add("Mot de passe");
-            listeClientsListView.Columns.Add("Token");
-            listeClientsListView.Columns.Add("Date de modification");
 
             DataTable lesClients = Client.clients();
             for (int i = 0; i < lesClients.Rows.Count; i++)
@@ -154,8 +148,6 @@ namespace Gestion_dun_pressing
                 listitem.SubItems.Add(dr["created_at"].ToString());
                 listitem.SubItems.Add(dr["tel"].ToString());
                 listitem.SubItems.Add(dr["password"].ToString());
-                listitem.SubItems.Add(dr["remember_token"].ToString());
-                listitem.SubItems.Add(dr["updated_at"].ToString());
                 listeClientsListView.Items.Add(listitem);
             }
         }
@@ -169,11 +161,8 @@ namespace Gestion_dun_pressing
             codePostalTxtBox.Text = string.Empty;
             villeTxtBox.Text = string.Empty;
             emailTxtBox.Text = string.Empty;
-            dateModificationPicker.Text = string.Empty;
             telTxtBox.Text = string.Empty;
             mdpTxtBox.Text = string.Empty;
-            tokenTxtBox.Text = string.Empty;
-            dateModificationPicker.Text = string.Empty;
         }
 
         private void activer_TextBox()
@@ -184,11 +173,8 @@ namespace Gestion_dun_pressing
             codePostalTxtBox.Enabled = true;
             villeTxtBox.Enabled = true;
             emailTxtBox.Enabled = true;
-            dateCreationPicker.Enabled = true;
             telTxtBox.Enabled = true;
             mdpTxtBox.Enabled = true;
-            tokenTxtBox.Enabled = true;
-            dateModificationPicker.Enabled = true;
         }
 
         private void desactiver_TextBox()
@@ -199,11 +185,8 @@ namespace Gestion_dun_pressing
             codePostalTxtBox.Enabled = false;
             villeTxtBox.Enabled = false;
             emailTxtBox.Enabled = false;
-            dateCreationPicker.Enabled = false;
             telTxtBox.Enabled = false;
             mdpTxtBox.Enabled = false;
-            tokenTxtBox.Enabled = false;
-            dateModificationPicker.Enabled = false;
         }
 
         private void activer_modification_suppresion()

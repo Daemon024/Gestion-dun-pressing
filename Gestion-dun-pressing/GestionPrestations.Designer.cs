@@ -35,19 +35,16 @@
             this.modifierBtn = new System.Windows.Forms.Button();
             this.validerBtn = new System.Windows.Forms.Button();
             this.titreLbl = new System.Windows.Forms.Label();
-            this.commentaireTxtBox = new System.Windows.Forms.TextBox();
-            this.commentaireLbl = new System.Windows.Forms.Label();
-            this.clientLbl = new System.Windows.Forms.Label();
-            this.employeLbl = new System.Windows.Forms.Label();
-            this.typeServiceLbl = new System.Windows.Forms.Label();
-            this.employeComboBox = new System.Windows.Forms.ComboBox();
-            this.typeServiceComboBox = new System.Windows.Forms.ComboBox();
-            this.clientComboBox = new System.Windows.Forms.ComboBox();
+            this.nomTxtBox = new System.Windows.Forms.TextBox();
+            this.nomLbl = new System.Windows.Forms.Label();
+            this.produitIdComboBox = new System.Windows.Forms.ComboBox();
+            this.produitIdLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // identifiantTxtBox
             // 
-            this.identifiantTxtBox.Location = new System.Drawing.Point(480, 135);
+            this.identifiantTxtBox.Enabled = false;
+            this.identifiantTxtBox.Location = new System.Drawing.Point(503, 132);
             this.identifiantTxtBox.Name = "identifiantTxtBox";
             this.identifiantTxtBox.Size = new System.Drawing.Size(164, 31);
             this.identifiantTxtBox.TabIndex = 63;
@@ -55,7 +52,7 @@
             // identifiantLbl
             // 
             this.identifiantLbl.AutoSize = true;
-            this.identifiantLbl.Location = new System.Drawing.Point(357, 138);
+            this.identifiantLbl.Location = new System.Drawing.Point(380, 135);
             this.identifiantLbl.Name = "identifiantLbl";
             this.identifiantLbl.Size = new System.Drawing.Size(117, 25);
             this.identifiantLbl.TabIndex = 62;
@@ -63,12 +60,13 @@
             // 
             // listePrestationsListView
             // 
-            this.listePrestationsListView.Location = new System.Drawing.Point(36, 390);
+            this.listePrestationsListView.Location = new System.Drawing.Point(36, 314);
             this.listePrestationsListView.Name = "listePrestationsListView";
-            this.listePrestationsListView.Size = new System.Drawing.Size(1554, 651);
+            this.listePrestationsListView.Size = new System.Drawing.Size(1554, 727);
             this.listePrestationsListView.TabIndex = 61;
             this.listePrestationsListView.UseCompatibleStateImageBehavior = false;
             this.listePrestationsListView.View = System.Windows.Forms.View.Details;
+            this.listePrestationsListView.SelectedIndexChanged += new System.EventHandler(this.listePrestationsListView_SelectedIndexChanged);
             // 
             // supprimerBtn
             // 
@@ -76,7 +74,7 @@
             this.supprimerBtn.FlatAppearance.BorderSize = 0;
             this.supprimerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.supprimerBtn.ForeColor = System.Drawing.Color.White;
-            this.supprimerBtn.Location = new System.Drawing.Point(943, 299);
+            this.supprimerBtn.Location = new System.Drawing.Point(972, 218);
             this.supprimerBtn.Name = "supprimerBtn";
             this.supprimerBtn.Size = new System.Drawing.Size(162, 46);
             this.supprimerBtn.TabIndex = 60;
@@ -90,7 +88,7 @@
             this.modifierBtn.FlatAppearance.BorderSize = 0;
             this.modifierBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modifierBtn.ForeColor = System.Drawing.Color.White;
-            this.modifierBtn.Location = new System.Drawing.Point(724, 299);
+            this.modifierBtn.Location = new System.Drawing.Point(753, 218);
             this.modifierBtn.Name = "modifierBtn";
             this.modifierBtn.Size = new System.Drawing.Size(162, 46);
             this.modifierBtn.TabIndex = 59;
@@ -104,11 +102,11 @@
             this.validerBtn.FlatAppearance.BorderSize = 0;
             this.validerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.validerBtn.ForeColor = System.Drawing.Color.White;
-            this.validerBtn.Location = new System.Drawing.Point(493, 299);
+            this.validerBtn.Location = new System.Drawing.Point(522, 218);
             this.validerBtn.Name = "validerBtn";
             this.validerBtn.Size = new System.Drawing.Size(162, 46);
             this.validerBtn.TabIndex = 58;
-            this.validerBtn.Text = "Valider";
+            this.validerBtn.Text = "Ajouter";
             this.validerBtn.UseVisualStyleBackColor = false;
             this.validerBtn.Click += new System.EventHandler(this.validerBtn_Click_1);
             // 
@@ -122,72 +120,38 @@
             this.titreLbl.TabIndex = 56;
             this.titreLbl.Text = "Gestion des prestations";
             // 
-            // commentaireTxtBox
+            // nomTxtBox
             // 
-            this.commentaireTxtBox.Location = new System.Drawing.Point(480, 198);
-            this.commentaireTxtBox.Name = "commentaireTxtBox";
-            this.commentaireTxtBox.Size = new System.Drawing.Size(164, 31);
-            this.commentaireTxtBox.TabIndex = 67;
+            this.nomTxtBox.Location = new System.Drawing.Point(812, 132);
+            this.nomTxtBox.Name = "nomTxtBox";
+            this.nomTxtBox.Size = new System.Drawing.Size(164, 31);
+            this.nomTxtBox.TabIndex = 67;
             // 
-            // commentaireLbl
+            // nomLbl
             // 
-            this.commentaireLbl.AutoSize = true;
-            this.commentaireLbl.Location = new System.Drawing.Point(323, 201);
-            this.commentaireLbl.Name = "commentaireLbl";
-            this.commentaireLbl.Size = new System.Drawing.Size(151, 25);
-            this.commentaireLbl.TabIndex = 66;
-            this.commentaireLbl.Text = "Commentaire :";
+            this.nomLbl.AutoSize = true;
+            this.nomLbl.Location = new System.Drawing.Point(738, 135);
+            this.nomLbl.Name = "nomLbl";
+            this.nomLbl.Size = new System.Drawing.Size(68, 25);
+            this.nomLbl.TabIndex = 66;
+            this.nomLbl.Text = "Nom :";
             // 
-            // clientLbl
+            // produitIdComboBox
             // 
-            this.clientLbl.AutoSize = true;
-            this.clientLbl.Location = new System.Drawing.Point(783, 138);
-            this.clientLbl.Name = "clientLbl";
-            this.clientLbl.Size = new System.Drawing.Size(79, 25);
-            this.clientLbl.TabIndex = 68;
-            this.clientLbl.Text = "Client :";
+            this.produitIdComboBox.FormattingEnabled = true;
+            this.produitIdComboBox.Location = new System.Drawing.Point(1124, 130);
+            this.produitIdComboBox.Name = "produitIdComboBox";
+            this.produitIdComboBox.Size = new System.Drawing.Size(164, 33);
+            this.produitIdComboBox.TabIndex = 68;
             // 
-            // employeLbl
+            // produitIdLbl
             // 
-            this.employeLbl.AutoSize = true;
-            this.employeLbl.Location = new System.Drawing.Point(755, 199);
-            this.employeLbl.Name = "employeLbl";
-            this.employeLbl.Size = new System.Drawing.Size(107, 25);
-            this.employeLbl.TabIndex = 69;
-            this.employeLbl.Text = "Employé :";
-            // 
-            // typeServiceLbl
-            // 
-            this.typeServiceLbl.AutoSize = true;
-            this.typeServiceLbl.Location = new System.Drawing.Point(1111, 170);
-            this.typeServiceLbl.Name = "typeServiceLbl";
-            this.typeServiceLbl.Size = new System.Drawing.Size(177, 25);
-            this.typeServiceLbl.TabIndex = 70;
-            this.typeServiceLbl.Text = "Type de service :";
-            // 
-            // employeComboBox
-            // 
-            this.employeComboBox.FormattingEnabled = true;
-            this.employeComboBox.Location = new System.Drawing.Point(868, 196);
-            this.employeComboBox.Name = "employeComboBox";
-            this.employeComboBox.Size = new System.Drawing.Size(164, 33);
-            this.employeComboBox.TabIndex = 71;
-            // 
-            // typeServiceComboBox
-            // 
-            this.typeServiceComboBox.FormattingEnabled = true;
-            this.typeServiceComboBox.Location = new System.Drawing.Point(1294, 162);
-            this.typeServiceComboBox.Name = "typeServiceComboBox";
-            this.typeServiceComboBox.Size = new System.Drawing.Size(164, 33);
-            this.typeServiceComboBox.TabIndex = 72;
-            // 
-            // clientComboBox
-            // 
-            this.clientComboBox.FormattingEnabled = true;
-            this.clientComboBox.Location = new System.Drawing.Point(868, 133);
-            this.clientComboBox.Name = "clientComboBox";
-            this.clientComboBox.Size = new System.Drawing.Size(164, 33);
-            this.clientComboBox.TabIndex = 73;
+            this.produitIdLbl.AutoSize = true;
+            this.produitIdLbl.Location = new System.Drawing.Point(1026, 135);
+            this.produitIdLbl.Name = "produitIdLbl";
+            this.produitIdLbl.Size = new System.Drawing.Size(92, 25);
+            this.produitIdLbl.TabIndex = 69;
+            this.produitIdLbl.Text = "Produit :";
             // 
             // GestionPrestations
             // 
@@ -195,14 +159,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1624, 1079);
-            this.Controls.Add(this.clientComboBox);
-            this.Controls.Add(this.typeServiceComboBox);
-            this.Controls.Add(this.employeComboBox);
-            this.Controls.Add(this.typeServiceLbl);
-            this.Controls.Add(this.employeLbl);
-            this.Controls.Add(this.clientLbl);
-            this.Controls.Add(this.commentaireTxtBox);
-            this.Controls.Add(this.commentaireLbl);
+            this.Controls.Add(this.produitIdLbl);
+            this.Controls.Add(this.produitIdComboBox);
+            this.Controls.Add(this.nomTxtBox);
+            this.Controls.Add(this.nomLbl);
             this.Controls.Add(this.identifiantTxtBox);
             this.Controls.Add(this.identifiantLbl);
             this.Controls.Add(this.listePrestationsListView);
@@ -230,13 +190,9 @@
         private System.Windows.Forms.Button modifierBtn;
         private System.Windows.Forms.Button validerBtn;
         private System.Windows.Forms.Label titreLbl;
-        private System.Windows.Forms.TextBox commentaireTxtBox;
-        private System.Windows.Forms.Label commentaireLbl;
-        private System.Windows.Forms.Label clientLbl;
-        private System.Windows.Forms.Label employeLbl;
-        private System.Windows.Forms.Label typeServiceLbl;
-        private System.Windows.Forms.ComboBox employeComboBox;
-        private System.Windows.Forms.ComboBox typeServiceComboBox;
-        private System.Windows.Forms.ComboBox clientComboBox;
+        private System.Windows.Forms.TextBox nomTxtBox;
+        private System.Windows.Forms.Label nomLbl;
+        private System.Windows.Forms.ComboBox produitIdComboBox;
+        private System.Windows.Forms.Label produitIdLbl;
     }
 }

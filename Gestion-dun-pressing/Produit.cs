@@ -11,24 +11,24 @@ namespace Gestion_dun_pressing
     {
         public static DataTable produits()
         {
-            return GestionBDD.select("produits");
+            return GestionBDD.select("Produits");
         }
 
-        public static void ajouter(string type, string dateCreation)
+        public static void ajouter(string nom)
         {
-            string requete = string.Format("INSERT INTO produits VALUES(\"\", \"{0}\", \"{1}\")", type, dateCreation);
+            string requete = string.Format("INSERT INTO Produits VALUES(\"\", \"{0}\")", nom);
             GestionBDD.executeRequest(requete);
         }
 
-        public static void modifier(int id, string type)
+        public static void modifier(int id, string nom)
         {
-            string requete = string.Format("UPDATE produits SET id={0}, typeProd='{1}' WHERE id={0}", id, type);
+            string requete = string.Format("UPDATE Produits SET id={0}, nom='{1}' WHERE id={0}", id, nom);
             GestionBDD.executeRequest(requete);
         }
 
         public static void supprimer(int id)
         {
-            GestionBDD.deleteById(id, "produits");
+            GestionBDD.deleteById(id, "Produits");
         }
     }
 }

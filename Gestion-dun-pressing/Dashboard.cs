@@ -63,5 +63,11 @@ namespace Gestion_dun_pressing
             GestionPrestations gestionPrestationsForm = new GestionPrestations();
             gestionPrestationsForm.ShowDialog();
         }
+
+        private void gererCommandeBtn_Click(object sender, EventArgs e)
+        {
+            GestionCommandes gestionCommandesForm = new GestionCommandes();
+            gestionCommandesForm.ShowDialog();
+        }
     }
 }
