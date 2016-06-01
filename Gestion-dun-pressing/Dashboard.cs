@@ -69,5 +69,11 @@ namespace Gestion_dun_pressing
             GestionCommandes gestionCommandesForm = new GestionCommandes();
             gestionCommandesForm.ShowDialog();
         }
+
+        private void gererTarifBtn_Click(object sender, EventArgs e)
+        {
+            GestionTarifs gestionTarifsForm = new GestionTarifs();
+            gestionTarifsForm.ShowDialog();
+        }
     }
 }
