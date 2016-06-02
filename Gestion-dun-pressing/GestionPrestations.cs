@@ -21,6 +21,12 @@ namespace Gestion_dun_pressing
 
             // On désactive les boutons
             desactiver_TextBox();
+
+            // On alimente les comboBox
+            DataTable lesProduits = Produit.produits();
+            produitIdComboBox.DataSource = lesProduits;
+            produitIdComboBox.ValueMember = "id";
+            produitIdComboBox.DisplayMember = "nom";
         }
 
         private void GestionPrestations_Load(object sender, EventArgs e)
@@ -59,10 +65,10 @@ namespace Gestion_dun_pressing
             }
             else
             {
-                if (nomTxtBox.Text != string.Empty)
+                if (nomTxtBox.Text != string.Empty && produitIdComboBox.Text != string.Empty)
                 {
                     // On lance la requête d'ajout
-                    Prestation.ajouter(nomTxtBox.Text, Convert.ToInt32(produitIdComboBox.Text));
+                    Prestation.ajouter(nomTxtBox.Text, Convert.ToInt32(produitIdComboBox.SelectedValue));
 
                     rafraichir_ListView(); // On actualise les données de la Liste View
                     rafraichir_TextBox(); // On vide les text box
@@ -81,10 +87,10 @@ namespace Gestion_dun_pressing
 
         private void modifierBtn_Click_1(object sender, EventArgs e)
         {
-            if (identifiantTxtBox.Text != string.Empty && nomTxtBox.Text != string.Empty)
+            if (identifiantTxtBox.Text != string.Empty && nomTxtBox.Text != string.Empty && produitIdComboBox.Text != string.Empty)
             {
                 // On éffectue la modification si tous les champs sont remplis
-                Prestation.modifier(Convert.ToInt32(identifiantTxtBox.Text), nomTxtBox.Text, Convert.ToInt32(produitIdComboBox.Text));
+                Prestation.modifier(Convert.ToInt32(identifiantTxtBox.Text), nomTxtBox.Text, Convert.ToInt32(produitIdComboBox.SelectedValue));
 
                 // On actualise les données, on vide les text box et on les désactive
                 rafraichir_ListView();
@@ -100,7 +106,7 @@ namespace Gestion_dun_pressing
         private void supprimerBtn_Click_1(object sender, EventArgs e)
         {
             desactiver_TextBox();
-            if (identifiantTxtBox.Text != string.Empty && nomTxtBox.Text != string.Empty)
+            if (identifiantTxtBox.Text != string.Empty && nomTxtBox.Text != string.Empty && produitIdComboBox.Text != string.Empty)
             {
                 Produit.supprimer(Convert.ToInt32(identifiantTxtBox.Text));
                 rafraichir_ListView();
