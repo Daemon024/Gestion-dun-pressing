@@ -124,7 +124,7 @@ namespace Gestion_dun_pressing
             for (int i = 0; i < lesTarifs.Rows.Count; i++)
             {
                 DataRow dr = lesTarifs.Rows[i];
-                ListViewItem listitem = new ListViewItem(dr["id"].ToString());
+                ListViewItem listitem = new ListViewItem(dr["tarif"].ToString());
                 listitem.SubItems.Add(dr["produits_id"].ToString());
                 listitem.SubItems.Add(dr["prestations_id"].ToString());
                 listeTarifsListView.Items.Add(listitem);

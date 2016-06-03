@@ -56,7 +56,10 @@ namespace Gestion_dun_pressing
                 commentaireTxtBox.Text = item.SubItems[1].Text;
                 dateCreationPicker.Text = item.SubItems[2].Text;
                 dateDepotPicker.Text = item.SubItems[3].Text;
-                dateRecuperationPicker.Text = item.SubItems[4].Text;
+                if (item.SubItems[4].Tag != null)
+                {
+                    dateRecuperationPicker.Text = item.SubItems[4].Text;
+                }
                 pretRecuperationComboBox.Text = item.SubItems[5].Text;
 
                 // On active pour la modification
@@ -182,11 +185,20 @@ namespace Gestion_dun_pressing
             for (int i = 0; i < lesCommandes.Rows.Count; i++)
             {
                 DataRow dr = lesCommandes.Rows[i];
+
                 ListViewItem listitem = new ListViewItem(dr["id"].ToString());
                 listitem.SubItems.Add(dr["commentaire"].ToString());
                 listitem.SubItems.Add(Convert.ToDateTime(dr["dateCreation"]).ToShortDateString());
                 listitem.SubItems.Add(Convert.ToDateTime(dr["dateDepot"]).ToShortDateString());
-                listitem.SubItems.Add(Convert.ToDateTime(dr["dateRecuperation"]).ToShortDateString());
+                if (dr["dateRecuperation"].ToString() == string.Empty)
+                {
+                    listitem.SubItems.Add("Non récupéré");
+                }
+                else
+                {
+                    ListViewItem.ListViewSubItem lvsi = listitem.SubItems.Add(Convert.ToDateTime(dr["dateRecuperation"]).ToShortDateString());
+                    lvsi.Tag = Convert.ToDateTime(dr["dateRecuperation"]);
+                }
                 listitem.SubItems.Add(dr["pretPourRecuperation"].ToString());
                 listitem.SubItems.Add(dr["Prestation"].ToString());
                 listitem.SubItems.Add(dr["Client"].ToString());
