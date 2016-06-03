@@ -25,6 +25,19 @@ namespace Gestion_dun_pressing
             // On désactive les boutons
             desactiver_TextBox();
 
+            // On alimente les comboBox
+            DataTable lesPrestations = Prestation.prestations();
+            prestationComboBox.DataSource = lesPrestations;
+            prestationComboBox.ValueMember = "id";
+            prestationComboBox.DisplayMember = "nom";
+            DataTable lesClients = Client.clients();
+            clientComboBox.DataSource = lesClients;
+            clientComboBox.ValueMember = "id";
+            clientComboBox.DisplayMember = "nom";
+            DataTable lesEmployes = Employe.employes();
+            employeComboBox.DataSource = lesEmployes;
+            employeComboBox.ValueMember = "id";
+            employeComboBox.DisplayMember = "nom";
         }
 
         private void GestionCommandes_Load(object sender, EventArgs e)
@@ -86,7 +99,7 @@ namespace Gestion_dun_pressing
                     }
 
                     // On lance la requête d'ajout
-                    Commande.ajouter(commentaireTxtBox.Text, dateCreationPicker.Value.ToString("yyyy-MM-dd"), dateDepotPicker.Value.ToString("yyyy-MM-dd"), "", this.pretRecuperation);
+                    Commande.ajouter(commentaireTxtBox.Text, dateCreationPicker.Value.ToString("yyyy-MM-dd"), dateDepotPicker.Value.ToString("yyyy-MM-dd"), "", this.pretRecuperation, Convert.ToInt32(prestationComboBox.SelectedValue), Convert.ToInt32(clientComboBox.SelectedValue), Convert.ToInt32(employeComboBox.SelectedValue));
 
                     rafraichir_ListView(); // On actualise les données de la Liste View
                     rafraichir_TextBox(); // On vide les text box
@@ -124,7 +137,7 @@ namespace Gestion_dun_pressing
                 }
 
                 // On éffectue la modification si tous les champs sont remplis
-                Commande.modifier(Convert.ToInt32(idTxtBox.Text), commentaireTxtBox.Text, dateCreationPicker.Value.ToString("yyyy-MM-dd"), dateDepotPicker.Value.ToString("yyyy-MM-dd"), dateRecuperationPicker.Value.ToString("yyyy-MM-dd"), this.pretRecuperation);
+                Commande.modifier(Convert.ToInt32(idTxtBox.Text), commentaireTxtBox.Text, dateCreationPicker.Value.ToShortDateString(), dateDepotPicker.Value.ToShortDateString(), dateRecuperationPicker.Value.ToShortDateString(), this.pretRecuperation);
 
                 // On actualise les données, on vide les text box et on les désactive
                 rafraichir_ListView();
@@ -161,6 +174,9 @@ namespace Gestion_dun_pressing
             listeCommandesListView.Columns.Add("Date de dépôt");
             listeCommandesListView.Columns.Add("Date de récupération");
             listeCommandesListView.Columns.Add("Prêt pour la récupération ?");
+            listeCommandesListView.Columns.Add("Prestation");
+            listeCommandesListView.Columns.Add("Client");
+            listeCommandesListView.Columns.Add("Employe");
 
             DataTable lesCommandes = Commande.commandes();
             for (int i = 0; i < lesCommandes.Rows.Count; i++)
@@ -168,10 +184,13 @@ namespace Gestion_dun_pressing
                 DataRow dr = lesCommandes.Rows[i];
                 ListViewItem listitem = new ListViewItem(dr["id"].ToString());
                 listitem.SubItems.Add(dr["commentaire"].ToString());
-                listitem.SubItems.Add(dr["dateCreation"].ToString());
-                listitem.SubItems.Add(dr["dateDepot"].ToString());
-                listitem.SubItems.Add(dr["dateRecuperation"].ToString());
+                listitem.SubItems.Add(Convert.ToDateTime(dr["dateCreation"]).ToShortDateString());
+                listitem.SubItems.Add(Convert.ToDateTime(dr["dateDepot"]).ToShortDateString());
+                listitem.SubItems.Add(Convert.ToDateTime(dr["dateRecuperation"]).ToShortDateString());
                 listitem.SubItems.Add(dr["pretPourRecuperation"].ToString());
+                listitem.SubItems.Add(dr["Prestation"].ToString());
+                listitem.SubItems.Add(dr["Client"].ToString());
+                listitem.SubItems.Add(dr["Employe"].ToString());
                 listeCommandesListView.Items.Add(listitem);
             }
         }
@@ -183,7 +202,6 @@ namespace Gestion_dun_pressing
             dateCreationPicker.Text = string.Empty;
             dateDepotPicker.Text = string.Empty;
             dateRecuperationPicker.Text = string.Empty;
-            pretRecuperationComboBox.Text = string.Empty;
         }
 
         private void activer_TextBox()
@@ -193,6 +211,10 @@ namespace Gestion_dun_pressing
             dateDepotPicker.Enabled = true;
             dateRecuperationPicker.Enabled = true;
             pretRecuperationComboBox.Enabled = true;
+            prestationComboBox.Enabled = true;
+            employeComboBox.Enabled = true;
+            clientComboBox.Enabled = true;
+
         }
 
         private void desactiver_TextBox()
@@ -202,6 +224,9 @@ namespace Gestion_dun_pressing
             dateDepotPicker.Enabled = false;
             dateRecuperationPicker.Enabled = false;
             pretRecuperationComboBox.Enabled = false;
+            prestationComboBox.Enabled = false;
+            employeComboBox.Enabled = false;
+            clientComboBox.Enabled = false;
         }
 
         private void activer_modification_suppresion()

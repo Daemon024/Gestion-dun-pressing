@@ -45,13 +45,19 @@
             this.dateCreationLbl = new System.Windows.Forms.Label();
             this.idTxtBox = new System.Windows.Forms.TextBox();
             this.idLbl = new System.Windows.Forms.Label();
+            this.prestationComboBox = new System.Windows.Forms.ComboBox();
+            this.employeComboBox = new System.Windows.Forms.ComboBox();
+            this.clientComboBox = new System.Windows.Forms.ComboBox();
+            this.employeLbl = new System.Windows.Forms.Label();
+            this.clientLbl = new System.Windows.Forms.Label();
+            this.prestationLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listeCommandesListView
             // 
-            this.listeCommandesListView.Location = new System.Drawing.Point(35, 332);
+            this.listeCommandesListView.Location = new System.Drawing.Point(35, 406);
             this.listeCommandesListView.Name = "listeCommandesListView";
-            this.listeCommandesListView.Size = new System.Drawing.Size(1554, 719);
+            this.listeCommandesListView.Size = new System.Drawing.Size(1554, 645);
             this.listeCommandesListView.TabIndex = 84;
             this.listeCommandesListView.UseCompatibleStateImageBehavior = false;
             this.listeCommandesListView.View = System.Windows.Forms.View.Details;
@@ -63,7 +69,7 @@
             this.supprimerBtn.FlatAppearance.BorderSize = 0;
             this.supprimerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.supprimerBtn.ForeColor = System.Drawing.Color.White;
-            this.supprimerBtn.Location = new System.Drawing.Point(971, 261);
+            this.supprimerBtn.Location = new System.Drawing.Point(973, 321);
             this.supprimerBtn.Name = "supprimerBtn";
             this.supprimerBtn.Size = new System.Drawing.Size(162, 46);
             this.supprimerBtn.TabIndex = 83;
@@ -77,7 +83,7 @@
             this.modifierBtn.FlatAppearance.BorderSize = 0;
             this.modifierBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modifierBtn.ForeColor = System.Drawing.Color.White;
-            this.modifierBtn.Location = new System.Drawing.Point(752, 261);
+            this.modifierBtn.Location = new System.Drawing.Point(754, 321);
             this.modifierBtn.Name = "modifierBtn";
             this.modifierBtn.Size = new System.Drawing.Size(162, 46);
             this.modifierBtn.TabIndex = 82;
@@ -91,7 +97,7 @@
             this.validerBtn.FlatAppearance.BorderSize = 0;
             this.validerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.validerBtn.ForeColor = System.Drawing.Color.White;
-            this.validerBtn.Location = new System.Drawing.Point(521, 261);
+            this.validerBtn.Location = new System.Drawing.Point(523, 321);
             this.validerBtn.Name = "validerBtn";
             this.validerBtn.Size = new System.Drawing.Size(162, 46);
             this.validerBtn.TabIndex = 81;
@@ -111,28 +117,28 @@
             // 
             // dateCreationPicker
             // 
-            this.dateCreationPicker.Location = new System.Drawing.Point(303, 179);
+            this.dateCreationPicker.Location = new System.Drawing.Point(385, 181);
             this.dateCreationPicker.Name = "dateCreationPicker";
             this.dateCreationPicker.Size = new System.Drawing.Size(200, 31);
             this.dateCreationPicker.TabIndex = 85;
             // 
             // dateDepotPicker
             // 
-            this.dateDepotPicker.Location = new System.Drawing.Point(789, 116);
+            this.dateDepotPicker.Location = new System.Drawing.Point(385, 237);
             this.dateDepotPicker.Name = "dateDepotPicker";
             this.dateDepotPicker.Size = new System.Drawing.Size(200, 31);
             this.dateDepotPicker.TabIndex = 86;
             // 
             // dateRecuperationPicker
             // 
-            this.dateRecuperationPicker.Location = new System.Drawing.Point(789, 180);
+            this.dateRecuperationPicker.Location = new System.Drawing.Point(871, 123);
             this.dateRecuperationPicker.Name = "dateRecuperationPicker";
             this.dateRecuperationPicker.Size = new System.Drawing.Size(200, 31);
             this.dateRecuperationPicker.TabIndex = 87;
             // 
             // commentaireTxtBox
             // 
-            this.commentaireTxtBox.Location = new System.Drawing.Point(1256, 116);
+            this.commentaireTxtBox.Location = new System.Drawing.Point(871, 181);
             this.commentaireTxtBox.Name = "commentaireTxtBox";
             this.commentaireTxtBox.Size = new System.Drawing.Size(200, 31);
             this.commentaireTxtBox.TabIndex = 88;
@@ -140,7 +146,7 @@
             // pretRecuperationComboBox
             // 
             this.pretRecuperationComboBox.FormattingEnabled = true;
-            this.pretRecuperationComboBox.Location = new System.Drawing.Point(1256, 181);
+            this.pretRecuperationComboBox.Location = new System.Drawing.Point(871, 239);
             this.pretRecuperationComboBox.Name = "pretRecuperationComboBox";
             this.pretRecuperationComboBox.Size = new System.Drawing.Size(200, 33);
             this.pretRecuperationComboBox.TabIndex = 89;
@@ -148,7 +154,7 @@
             // pretRecuperationLbl
             // 
             this.pretRecuperationLbl.AutoSize = true;
-            this.pretRecuperationLbl.Location = new System.Drawing.Point(1012, 184);
+            this.pretRecuperationLbl.Location = new System.Drawing.Point(627, 242);
             this.pretRecuperationLbl.Name = "pretRecuperationLbl";
             this.pretRecuperationLbl.Size = new System.Drawing.Size(238, 25);
             this.pretRecuperationLbl.TabIndex = 90;
@@ -157,7 +163,7 @@
             // commentaireLbl
             // 
             this.commentaireLbl.AutoSize = true;
-            this.commentaireLbl.Location = new System.Drawing.Point(1099, 119);
+            this.commentaireLbl.Location = new System.Drawing.Point(714, 184);
             this.commentaireLbl.Name = "commentaireLbl";
             this.commentaireLbl.Size = new System.Drawing.Size(151, 25);
             this.commentaireLbl.TabIndex = 91;
@@ -166,7 +172,7 @@
             // dateRecuperationLbl
             // 
             this.dateRecuperationLbl.AutoSize = true;
-            this.dateRecuperationLbl.Location = new System.Drawing.Point(558, 183);
+            this.dateRecuperationLbl.Location = new System.Drawing.Point(640, 126);
             this.dateRecuperationLbl.Name = "dateRecuperationLbl";
             this.dateRecuperationLbl.Size = new System.Drawing.Size(225, 25);
             this.dateRecuperationLbl.TabIndex = 92;
@@ -175,7 +181,7 @@
             // dateDepotLbl
             // 
             this.dateDepotLbl.AutoSize = true;
-            this.dateDepotLbl.Location = new System.Drawing.Point(624, 121);
+            this.dateDepotLbl.Location = new System.Drawing.Point(220, 242);
             this.dateDepotLbl.Name = "dateDepotLbl";
             this.dateDepotLbl.Size = new System.Drawing.Size(159, 25);
             this.dateDepotLbl.TabIndex = 93;
@@ -184,7 +190,7 @@
             // dateCreationLbl
             // 
             this.dateCreationLbl.AutoSize = true;
-            this.dateCreationLbl.Location = new System.Drawing.Point(115, 182);
+            this.dateCreationLbl.Location = new System.Drawing.Point(197, 184);
             this.dateCreationLbl.Name = "dateCreationLbl";
             this.dateCreationLbl.Size = new System.Drawing.Size(182, 25);
             this.dateCreationLbl.TabIndex = 94;
@@ -193,7 +199,7 @@
             // idTxtBox
             // 
             this.idTxtBox.Enabled = false;
-            this.idTxtBox.Location = new System.Drawing.Point(303, 121);
+            this.idTxtBox.Location = new System.Drawing.Point(385, 123);
             this.idTxtBox.Name = "idTxtBox";
             this.idTxtBox.Size = new System.Drawing.Size(200, 31);
             this.idTxtBox.TabIndex = 95;
@@ -201,17 +207,74 @@
             // idLbl
             // 
             this.idLbl.AutoSize = true;
-            this.idLbl.Location = new System.Drawing.Point(180, 124);
+            this.idLbl.Location = new System.Drawing.Point(262, 126);
             this.idLbl.Name = "idLbl";
             this.idLbl.Size = new System.Drawing.Size(117, 25);
             this.idLbl.TabIndex = 96;
             this.idLbl.Text = "Identifiant :";
+            // 
+            // prestationComboBox
+            // 
+            this.prestationComboBox.FormattingEnabled = true;
+            this.prestationComboBox.Location = new System.Drawing.Point(1270, 119);
+            this.prestationComboBox.Name = "prestationComboBox";
+            this.prestationComboBox.Size = new System.Drawing.Size(200, 33);
+            this.prestationComboBox.TabIndex = 97;
+            // 
+            // employeComboBox
+            // 
+            this.employeComboBox.FormattingEnabled = true;
+            this.employeComboBox.Location = new System.Drawing.Point(1270, 239);
+            this.employeComboBox.Name = "employeComboBox";
+            this.employeComboBox.Size = new System.Drawing.Size(200, 33);
+            this.employeComboBox.TabIndex = 98;
+            // 
+            // clientComboBox
+            // 
+            this.clientComboBox.FormattingEnabled = true;
+            this.clientComboBox.Location = new System.Drawing.Point(1270, 183);
+            this.clientComboBox.Name = "clientComboBox";
+            this.clientComboBox.Size = new System.Drawing.Size(200, 33);
+            this.clientComboBox.TabIndex = 99;
+            // 
+            // employeLbl
+            // 
+            this.employeLbl.AutoSize = true;
+            this.employeLbl.Location = new System.Drawing.Point(1157, 244);
+            this.employeLbl.Name = "employeLbl";
+            this.employeLbl.Size = new System.Drawing.Size(107, 25);
+            this.employeLbl.TabIndex = 100;
+            this.employeLbl.Text = "Employé :";
+            // 
+            // clientLbl
+            // 
+            this.clientLbl.AutoSize = true;
+            this.clientLbl.Location = new System.Drawing.Point(1185, 188);
+            this.clientLbl.Name = "clientLbl";
+            this.clientLbl.Size = new System.Drawing.Size(79, 25);
+            this.clientLbl.TabIndex = 101;
+            this.clientLbl.Text = "Client :";
+            // 
+            // prestationLbl
+            // 
+            this.prestationLbl.AutoSize = true;
+            this.prestationLbl.Location = new System.Drawing.Point(1143, 124);
+            this.prestationLbl.Name = "prestationLbl";
+            this.prestationLbl.Size = new System.Drawing.Size(121, 25);
+            this.prestationLbl.TabIndex = 102;
+            this.prestationLbl.Text = "Prestation :";
             // 
             // GestionCommandes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1624, 1079);
+            this.Controls.Add(this.prestationLbl);
+            this.Controls.Add(this.clientLbl);
+            this.Controls.Add(this.employeLbl);
+            this.Controls.Add(this.clientComboBox);
+            this.Controls.Add(this.employeComboBox);
+            this.Controls.Add(this.prestationComboBox);
             this.Controls.Add(this.idLbl);
             this.Controls.Add(this.idTxtBox);
             this.Controls.Add(this.dateCreationLbl);
@@ -259,5 +322,11 @@
         private System.Windows.Forms.Label dateCreationLbl;
         private System.Windows.Forms.TextBox idTxtBox;
         private System.Windows.Forms.Label idLbl;
+        private System.Windows.Forms.ComboBox prestationComboBox;
+        private System.Windows.Forms.ComboBox employeComboBox;
+        private System.Windows.Forms.ComboBox clientComboBox;
+        private System.Windows.Forms.Label employeLbl;
+        private System.Windows.Forms.Label clientLbl;
+        private System.Windows.Forms.Label prestationLbl;
     }
 }

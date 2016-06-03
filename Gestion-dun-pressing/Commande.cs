@@ -11,12 +11,12 @@ namespace Gestion_dun_pressing
     {
         public static DataTable commandes()
         {
-            return GestionBDD.select("Commandes");
+            return GestionBDD.selectPerso("CALL afficher_commandes()");
         }
 
-        public static void ajouter(string commentaire, string dateCreation, string dateDepot, string dateRecuperation, bool pretRecuperation)
+        public static void ajouter(string commentaire, string dateCreation, string dateDepot, string dateRecuperation, bool pretRecuperation, int prestation, int client, int employe)
         {
-            string requete = string.Format("INSERT INTO Commandes VALUES(\"\", \"{0}\", \"{1}\", \"{2}\", \"{3}\", \"{4}\")", commentaire, dateCreation, dateDepot, dateRecuperation, pretRecuperation);
+            string requete = string.Format("INSERT INTO Commandes VALUES(\"\", \"{0}\", \"{1}\", \"{2}\", \"{3}\", \"{4}\", \"{5}\", \"{6}\", \"{7}\")", commentaire, dateCreation, dateDepot, dateRecuperation, pretRecuperation, prestation, client, employe);
             GestionBDD.executeRequest(requete);
         }
 

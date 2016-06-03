@@ -63,6 +63,17 @@ namespace Gestion_dun_pressing
         }
         #endregion
 
+        #region Select Perso
+        public static DataTable selectPerso(string requete)
+        {
+            DataTable mesDonnees = new DataTable(); // On crée notre dataTable qui contiendra les donnéees
+            MySqlDataAdapter adapter = new MySqlDataAdapter(requete, connexionString); // On crée un Adapter
+            adapter.Fill(mesDonnees); // On fait passer les données dans le dataTable
+
+            return mesDonnees;
+        }
+        #endregion
+
         #region Request
         public static void executeRequest(string requete)
         {
