@@ -11,7 +11,7 @@ namespace Gestion_dun_pressing
     {
         public static DataTable commandes()
         {
-            return GestionBDD.selectPerso("CALL afficher_commandes()");
+            return GestionBDD.selectPerso("CALL recuperer_commandes()");
         }
 
         public static void ajouter(string commentaire, string dateCreation, string dateDepot, string dateRecuperation, bool pretRecuperation, int prestation, int client, int employe)
