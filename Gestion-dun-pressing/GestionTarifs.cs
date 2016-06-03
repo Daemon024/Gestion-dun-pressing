@@ -21,6 +21,16 @@ namespace Gestion_dun_pressing
 
             // On désactive les boutons
             desactiver_TextBox();
+
+            // On alimente les comboBox
+            DataTable lesPrestations = Prestation.prestations();
+            prestationComboBox.DataSource = lesPrestations;
+            prestationComboBox.ValueMember = "id";
+            prestationComboBox.DisplayMember = "nom";
+            DataTable lesProduits = Produit.produits();
+            produitComboBox.DataSource = lesProduits;
+            produitComboBox.ValueMember = "id";
+            produitComboBox.DisplayMember = "nom";
         }
 
         private void GestionTarifs_Load(object sender, EventArgs e)
@@ -63,7 +73,7 @@ namespace Gestion_dun_pressing
                 if (tarifTxtBox.Text != string.Empty && prestationComboBox.Text != string.Empty && produitComboBox.Text != string.Empty)
                 {
                     // On lance la requête d'ajout
-                    Tarif.ajouter(Convert.ToInt32(tarifTxtBox.Text), Convert.ToInt32(produitComboBox.Text), Convert.ToInt32(prestationComboBox.Text));
+                    Tarif.ajouter(Convert.ToInt32(tarifTxtBox.Text), Convert.ToInt32(produitComboBox.SelectedValue), Convert.ToInt32(prestationComboBox.SelectedValue));
 
                     rafraichir_ListView(); // On actualise les données de la Liste View
                     rafraichir_TextBox(); // On vide les text box
@@ -85,7 +95,7 @@ namespace Gestion_dun_pressing
             if (tarifTxtBox.Text != string.Empty && prestationComboBox.Text != string.Empty && produitComboBox.Text != string.Empty)
             {
                 // On éffectue la modification si tous les champs sont remplis
-                Tarif.modifier(Convert.ToInt32(tarifTxtBox.Text), Convert.ToInt32(produitComboBox.Text), Convert.ToInt32(prestationComboBox.Text));
+                Tarif.modifier(Convert.ToInt32(tarifTxtBox.Text), Convert.ToInt32(produitComboBox.SelectedValue), Convert.ToInt32(prestationComboBox.SelectedValue));
 
                 // On actualise les données, on vide les text box et on les désactive
                 rafraichir_ListView();
@@ -124,9 +134,9 @@ namespace Gestion_dun_pressing
             for (int i = 0; i < lesTarifs.Rows.Count; i++)
             {
                 DataRow dr = lesTarifs.Rows[i];
-                ListViewItem listitem = new ListViewItem(dr["tarif"].ToString());
-                listitem.SubItems.Add(dr["produits_id"].ToString());
-                listitem.SubItems.Add(dr["prestations_id"].ToString());
+                ListViewItem listitem = new ListViewItem(dr["tarif"].ToString()+"€");
+                listitem.SubItems.Add(dr["Produit"].ToString());
+                listitem.SubItems.Add(dr["Prestation"].ToString());
                 listeTarifsListView.Items.Add(listitem);
             }
         }
