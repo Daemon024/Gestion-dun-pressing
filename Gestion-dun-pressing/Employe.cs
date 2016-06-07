@@ -14,15 +14,15 @@ namespace Gestion_dun_pressing
             return GestionBDD.select("Employes");
         }
 
-        public static void ajouter(string nom, string prenom, string motDePasse, string dateArrivee, string typeContrat, int salaire)
+        public static void ajouter(string nom, string prenom, string dateArrivee, string typeContrat, int salaire)
         {
-            string requete = string.Format("INSERT INTO Employes VALUES(\"\", \"{0}\", \"{1}\", \"{2}\", \"{3}\", \"{4}\", \"{5}\")", nom, prenom, motDePasse, dateArrivee, typeContrat, salaire);
+            string requete = string.Format("INSERT INTO Employes VALUES(\"\", \"{0}\", \"{1}\", \"{2}\", \"{3}\", \"{4}\")", nom, prenom, dateArrivee, typeContrat, salaire);
             GestionBDD.executeRequest(requete);
         }
 
-        public static void modifier(int id, string nom, string prenom, string motDePasse, string typeContrat, int salaire)
+        public static void modifier(int id, string nom, string prenom, string typeContrat, int salaire)
         {
-            string requete = string.Format("UPDATE Employes SET id={0}, nomEmploye='{1}', prenomEmploye='{2}', password='{3}', typeContrat='{4}', salaire='{5}' WHERE id={0}", id, nom, prenom, motDePasse, typeContrat, salaire);
+            string requete = string.Format("UPDATE Employes SET id={0}, nomEmploye='{1}', prenomEmploye='{2}', typeContrat='{3}', salaire='{4}' WHERE id={0}", id, nom, prenom, typeContrat, salaire);
             GestionBDD.executeRequest(requete);
         }
 

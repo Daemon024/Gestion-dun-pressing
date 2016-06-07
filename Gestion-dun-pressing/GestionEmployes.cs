@@ -38,9 +38,8 @@ namespace Gestion_dun_pressing
                 identifiantTxtBox.Text = item.SubItems[0].Text;
                 nomTxtBox.Text = item.SubItems[1].Text;
                 prenomTxtBox.Text = item.SubItems[2].Text;
-                mdpTxtBox.Text = item.SubItems[3].Text;
-                typeContratComboBox.Text = item.SubItems[5].Text;
-                salaireTxtBox.Text = item.SubItems[6].Text;
+                typeContratComboBox.Text = item.SubItems[4].Text;
+                salaireTxtBox.Text = item.SubItems[5].Text;
 
                 // On active pour la modification (sauf le DatePicker)
                 activer_TextBox();
@@ -64,10 +63,10 @@ namespace Gestion_dun_pressing
             }
             else
             {
-                if (nomTxtBox.Text != string.Empty && prenomTxtBox.Text != string.Empty && mdpTxtBox.Text != string.Empty && dateArriveePicker.Text != string.Empty && typeContratComboBox.Text != string.Empty && salaireTxtBox.Text != string.Empty)
+                if (nomTxtBox.Text != string.Empty && prenomTxtBox.Text != string.Empty && dateArriveePicker.Text != string.Empty && typeContratComboBox.Text != string.Empty && salaireTxtBox.Text != string.Empty)
                 {
                     // On lance la requête d'ajout
-                    Employe.ajouter(nomTxtBox.Text.ToUpper(), prenomTxtBox.Text, mdpTxtBox.Text, dateArriveePicker.Value.ToString("yyyy-MM-dd"), typeContratComboBox.Text, Convert.ToInt32(salaireTxtBox.Text));
+                    Employe.ajouter(nomTxtBox.Text.ToUpper(), prenomTxtBox.Text, dateArriveePicker.Value.ToString("yyyy-MM-dd"), typeContratComboBox.Text, Convert.ToInt32(salaireTxtBox.Text));
 
                     rafraichir_ListView(); // On actualise les données de la Liste View
                     rafraichir_TextBox(); // On vide les text box
@@ -87,10 +86,10 @@ namespace Gestion_dun_pressing
 
         private void modifierBtn_Click(object sender, EventArgs e)
         {
-            if (nomTxtBox.Text != string.Empty && prenomTxtBox.Text != string.Empty && mdpTxtBox.Text != string.Empty && dateArriveePicker.Text != string.Empty && typeContratComboBox.Text != string.Empty && salaireTxtBox.Text != string.Empty)
+            if (nomTxtBox.Text != string.Empty && prenomTxtBox.Text != string.Empty && dateArriveePicker.Text != string.Empty && typeContratComboBox.Text != string.Empty && salaireTxtBox.Text != string.Empty)
             {
                 // On éffectue la modification si tous les champs sont remplis
-                Employe.modifier(Convert.ToInt32(identifiantTxtBox.Text), nomTxtBox.Text.ToUpper(), prenomTxtBox.Text, mdpTxtBox.Text, typeContratComboBox.Text, Convert.ToInt32(salaireTxtBox.Text));
+                Employe.modifier(Convert.ToInt32(identifiantTxtBox.Text), nomTxtBox.Text.ToUpper(), prenomTxtBox.Text, typeContratComboBox.Text, Convert.ToInt32(salaireTxtBox.Text));
 
                 // On actualise les données, on vide les text box et on les désactive
                 rafraichir_ListView();
@@ -124,7 +123,6 @@ namespace Gestion_dun_pressing
             listeEmployesListView.Columns.Add("ID");
             listeEmployesListView.Columns.Add("Nom");
             listeEmployesListView.Columns.Add("Prénom");
-            listeEmployesListView.Columns.Add("Mot de passe");
             listeEmployesListView.Columns.Add("Date d'arrivée");
             listeEmployesListView.Columns.Add("Type de contrat");
             listeEmployesListView.Columns.Add("Salaire");
@@ -136,7 +134,6 @@ namespace Gestion_dun_pressing
                 ListViewItem listitem = new ListViewItem(dr["id"].ToString());
                 listitem.SubItems.Add(dr["nom"].ToString());
                 listitem.SubItems.Add(dr["prenom"].ToString());
-                listitem.SubItems.Add(dr["password"].ToString());
                 listitem.SubItems.Add(dr["dateArrivee"].ToString());
                 listitem.SubItems.Add(dr["typeContrat"].ToString());
                 listitem.SubItems.Add(dr["salaire"].ToString());
@@ -149,7 +146,6 @@ namespace Gestion_dun_pressing
             identifiantTxtBox.Text = string.Empty;
             nomTxtBox.Text = string.Empty;
             prenomTxtBox.Text = string.Empty;
-            mdpTxtBox.Text = string.Empty;
             dateArriveePicker.Text = string.Empty;
             typeContratComboBox.Text = string.Empty;
             salaireTxtBox.Text = string.Empty;
@@ -159,7 +155,6 @@ namespace Gestion_dun_pressing
         {
             nomTxtBox.Enabled = true;
             prenomTxtBox.Enabled = true;
-            mdpTxtBox.Enabled = true;
             dateArriveePicker.Enabled = true;
             typeContratComboBox.Enabled = true;
             salaireTxtBox.Enabled = true;
@@ -169,7 +164,6 @@ namespace Gestion_dun_pressing
         {
             nomTxtBox.Enabled = false;
             prenomTxtBox.Enabled = false;
-            mdpTxtBox.Enabled = false;
             dateArriveePicker.Enabled = false;
             typeContratComboBox.Enabled = false;
             salaireTxtBox.Enabled = false;

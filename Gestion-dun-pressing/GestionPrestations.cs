@@ -131,7 +131,7 @@ namespace Gestion_dun_pressing
                 DataRow dr = lesPrestations.Rows[i];
                 ListViewItem listitem = new ListViewItem(dr["id"].ToString());
                 listitem.SubItems.Add(dr["nom"].ToString());
-                listitem.SubItems.Add(dr["produits_id"].ToString());
+                listitem.SubItems.Add(dr["produit_nom"].ToString());
                 listePrestationsListView.Items.Add(listitem);
             }
         }

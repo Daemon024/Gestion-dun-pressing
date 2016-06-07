@@ -32,12 +32,13 @@ namespace Gestion_dun_pressing
             CAChart.Series["ChiffreAffaire"].Points.AddXY("Nov", "1 000");
             CAChart.Series["ChiffreAffaire"].Points.AddXY("Déc", "20 000");
 
-            typesProduitsChart.Series["TypesProduits"].Points.Add(25);
-            typesProduitsChart.Series["TypesProduits"].Points.Add(38);
-            typesProduitsChart.Series["TypesProduits"].Points[0].LegendText = "Chemises";
-            typesProduitsChart.Series["TypesProduits"].Points[0].AxisLabel = "25%";
-            typesProduitsChart.Series["TypesProduits"].Points[1].LegendText = "Pantalons";
-            typesProduitsChart.Series["TypesProduits"].Points[1].AxisLabel = "38%";
+            DataTable statsProduits = GestionBDD.selectPerso("CALL recuperer_statsProduits");
+            for (var j = 0; j < statsProduits.Rows.Count; j++)
+            {
+                DataRow dr = statsProduits.Rows[j];
+                typesProduitsChart.Series["TypesProduits"].Points.Add(Convert.ToInt32(dr["Total"].ToString()));
+                typesProduitsChart.Series["TypesProduits"].Points[j].LegendText = dr["Produit"].ToString();
+            }
         }
 
         private void gererClientBtn_Click(object sender, EventArgs e)

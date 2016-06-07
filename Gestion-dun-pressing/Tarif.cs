@@ -11,7 +11,7 @@ namespace Gestion_dun_pressing
     {
         public static DataTable tarifs()
         {
-            return GestionBDD.select("Tarifs");
+            return GestionBDD.selectPerso("CALL recuperer_tarifs()");
         }
 
         public static void ajouter(int tarif, int produits_id, int prestations_id)

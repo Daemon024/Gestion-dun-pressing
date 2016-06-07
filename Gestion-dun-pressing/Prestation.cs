@@ -11,7 +11,7 @@ namespace Gestion_dun_pressing
     {
         public static DataTable prestations()
         {
-            return GestionBDD.select("Prestations");
+            return GestionBDD.selectPerso("SELECT Prestations.id, Prestations.nom, Prestations.produits_id, Produits.nom as 'Produit_nom' FROM Prestations, Produits WHERE Prestations.produits_id=Produits.id");
         }
 
         public static void ajouter(string nom, int produit_id)

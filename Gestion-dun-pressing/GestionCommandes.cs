@@ -31,13 +31,17 @@ namespace Gestion_dun_pressing
             prestationComboBox.ValueMember = "id";
             prestationComboBox.DisplayMember = "nom";
             DataTable lesClients = Client.clients();
+            lesClients.Columns.Add("concatNomPrenom", typeof(string), "nom + ' ' +prenom");
             clientComboBox.DataSource = lesClients;
             clientComboBox.ValueMember = "id";
-            clientComboBox.DisplayMember = "nom";
+            clientComboBox.DisplayMember = "concatNomPrenom";
             DataTable lesEmployes = Employe.employes();
+            lesEmployes.Columns.Add("concatNomPrenom", typeof(string), "nom + ' ' +prenom");
             employeComboBox.DataSource = lesEmployes;
             employeComboBox.ValueMember = "id";
-            employeComboBox.DisplayMember = "nom";
+            employeComboBox.DisplayMember = "concatNomPrenom";
+            pretRecuperationComboBox.Items.Add("Non");
+            pretRecuperationComboBox.Items.Add("Oui");
         }
 
         private void GestionCommandes_Load(object sender, EventArgs e)
@@ -78,6 +82,7 @@ namespace Gestion_dun_pressing
             {
                 validerBtn.Text = "Valider";
                 activer_TextBox();
+                dateRecuperationPicker.Enabled = false;
                 rafraichir_TextBox();
                 desactiver_modification_suppression();
             }
