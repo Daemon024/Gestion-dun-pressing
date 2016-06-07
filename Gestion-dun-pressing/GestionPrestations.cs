@@ -32,6 +32,8 @@ namespace Gestion_dun_pressing
         private void GestionPrestations_Load(object sender, EventArgs e)
         {
             rafraichir_ListView();
+            // On redimensionne pour afficher correctement les valeurs dans le ListView
+            listePrestationsListView.Columns[1].Width = 100;
         }
 
         private void listePrestationsListView_SelectedIndexChanged(object sender, EventArgs e)

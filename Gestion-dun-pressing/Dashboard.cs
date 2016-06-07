@@ -15,6 +15,7 @@ namespace Gestion_dun_pressing
         public Dashboard()
         {
             InitializeComponent();
+            GestionBDD.connexion();
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -37,6 +38,7 @@ namespace Gestion_dun_pressing
             {
                 DataRow dr = statsProduits.Rows[j];
                 typesProduitsChart.Series["TypesProduits"].Points.Add(Convert.ToInt32(dr["Total"].ToString()));
+                typesProduitsChart.Series["TypesProduits"].Points[j].Label = dr["Total"].ToString();
                 typesProduitsChart.Series["TypesProduits"].Points[j].LegendText = dr["Produit"].ToString();
             }
         }
