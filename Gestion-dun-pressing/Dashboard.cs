@@ -78,5 +78,10 @@ namespace Gestion_dun_pressing
             GestionTarifs gestionTarifsForm = new GestionTarifs();
             gestionTarifsForm.ShowDialog();
         }
+
+        private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GestionBDD.deconnexion();
+        }
     }
 }

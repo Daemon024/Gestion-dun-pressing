@@ -60,7 +60,7 @@ namespace Gestion_dun_pressing
                 commentaireTxtBox.Text = item.SubItems[1].Text;
                 dateCreationPicker.Text = item.SubItems[2].Text;
                 dateDepotPicker.Text = item.SubItems[3].Text;
-                if (item.SubItems[4].Tag != null)
+                if (item.SubItems[4].Tag != null || item.SubItems[4].ToString() == "0000-00-00")
                 {
                     dateRecuperationPicker.Text = item.SubItems[4].Text;
                 }
