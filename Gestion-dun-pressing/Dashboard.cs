@@ -20,18 +20,12 @@ namespace Gestion_dun_pressing
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            CAChart.Series["ChiffreAffaire"].Points.AddXY("Jan", "10 000");
-            CAChart.Series["ChiffreAffaire"].Points.AddXY("Fév", "5 000");
-            CAChart.Series["ChiffreAffaire"].Points.AddXY("Mars", "3 000");
-            CAChart.Series["ChiffreAffaire"].Points.AddXY("Avr", "23 000");
-            CAChart.Series["ChiffreAffaire"].Points.AddXY("Mai", "1 000");
-            CAChart.Series["ChiffreAffaire"].Points.AddXY("Juin", "15 000");
-            CAChart.Series["ChiffreAffaire"].Points.AddXY("Juil", "13 000");
-            CAChart.Series["ChiffreAffaire"].Points.AddXY("Août", "12 000");
-            CAChart.Series["ChiffreAffaire"].Points.AddXY("Sept", "10 000");
-            CAChart.Series["ChiffreAffaire"].Points.AddXY("Oct", "13 000");
-            CAChart.Series["ChiffreAffaire"].Points.AddXY("Nov", "1 000");
-            CAChart.Series["ChiffreAffaire"].Points.AddXY("Déc", "20 000");
+            DataTable chartCA = GestionBDD.selectPerso("CALL recuperer_statsCA");
+            for (var j = 0; j < chartCA.Rows.Count; j++)
+            {
+                DataRow dr = chartCA.Rows[j];
+                CAChart.Series["ChiffreAffaire"].Points.AddXY(dr["Mois"].ToString(), dr["CA"].ToString());
+            }
 
             DataTable statsProduits = GestionBDD.selectPerso("CALL recuperer_statsProduits");
             for (var j = 0; j < statsProduits.Rows.Count; j++)
