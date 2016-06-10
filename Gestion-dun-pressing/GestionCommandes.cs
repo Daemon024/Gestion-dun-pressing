@@ -13,7 +13,7 @@ namespace Gestion_dun_pressing
     public partial class GestionCommandes : Form
     {
         // On crée une variable pour stocké le booléen de récupération
-        private bool pretRecuperation = false;
+        private int pretRecuperation = 0;
 
         public GestionCommandes()
         {
@@ -60,10 +60,6 @@ namespace Gestion_dun_pressing
                 commentaireTxtBox.Text = item.SubItems[1].Text;
                 dateCreationPicker.Text = item.SubItems[2].Text;
                 dateDepotPicker.Text = item.SubItems[3].Text;
-                if (item.SubItems[4].Tag != null || item.SubItems[4].ToString() == "0000-00-00")
-                {
-                    dateRecuperationPicker.Text = item.SubItems[4].Text;
-                }
                 pretRecuperationComboBox.Text = item.SubItems[5].Text;
 
                 // On active pour la modification
@@ -99,11 +95,11 @@ namespace Gestion_dun_pressing
                     // On traduit le booléen de Français en Anglais
                     if(pretRecuperationComboBox.Text == "Oui")
                     {
-                        this.pretRecuperation = true;
+                        this.pretRecuperation = 1;
                     }
                     else
                     {
-                        this.pretRecuperation = false;
+                        this.pretRecuperation = 0;
                     }
 
                     // On lance la requête d'ajout
@@ -126,7 +122,7 @@ namespace Gestion_dun_pressing
 
         private void modifierBtn_Click(object sender, EventArgs e)
         {
-            if (dateCreationPicker.Text != string.Empty && dateDepotPicker.Text != string.Empty && pretRecuperationComboBox.Text != string.Empty)
+            if (dateCreationPicker.Text != string.Empty && dateDepotPicker.Text != string.Empty)
             {
                 // Si il n'y a aucun commentaire, on précise qu'il n'y en a pas dans la valeur du champ
                 if (commentaireTxtBox.Text == string.Empty)
@@ -137,15 +133,20 @@ namespace Gestion_dun_pressing
                 // On traduit le booléen de Français en Anglais
                 if (pretRecuperationComboBox.Text == "Oui")
                 {
-                    this.pretRecuperation = true;
+                    this.pretRecuperation = 1;
                 }
                 else
                 {
-                    this.pretRecuperation = false;
+                    this.pretRecuperation = 0;
+                }
+
+                if (pretRecuperationComboBox.Text == string.Empty)
+                {
+                    pretRecuperationComboBox.Text = "Pas encore récupéré";
                 }
 
                 // On éffectue la modification si tous les champs sont remplis
-                Commande.modifier(Convert.ToInt32(idTxtBox.Text), commentaireTxtBox.Text, dateCreationPicker.Value.ToShortDateString(), dateDepotPicker.Value.ToShortDateString(), dateRecuperationPicker.Value.ToShortDateString(), this.pretRecuperation);
+                    Commande.modifier(Convert.ToInt32(idTxtBox.Text), commentaireTxtBox.Text, dateCreationPicker.Value.ToString("yyyy-MM-dd"), dateDepotPicker.Value.ToString("yyyy-MM-dd"), dateRecuperationPicker.Value.ToString("yyyy-MM-dd"), this.pretRecuperation);
 
                 // On actualise les données, on vide les text box et on les désactive
                 rafraichir_ListView();
